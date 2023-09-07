@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Probability &amp; Statistics in Engineering</title>
+<meta name="author" content="Kostas Andreadis"/>
+<meta name="description" content="Setup file for reveal.js presentations"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/night.css" id="theme"/>
+
+<link rel="stylesheet" href="custom.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/chalkboard/style.css">
+<link rel="stylesheet" href="./reveal.js/plugin/customcontrols/style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1 class="title">Probability &amp; Statistics in Engineering</h1><h2 class="date">Fall 2023 - 5 Sep</h2>
+</section>
+<section>
+<section id="slide-org86b5931">
+<h2 id="org86b5931">Introductions</h2>
+</section>
+</section>
+<section>
+<section id="slide-org20cc5ed">
+<h2 id="org20cc5ed">Logistics</h2>
+<ul>
+<li>Office Hours, Tu 12-1pm &amp; Thu 11am-1pm (Marston 18C)</li>
+<li>TuTh 1-2:15pm</li>
+<li>Echo360 lecture recordings</li>
+<li>Supplemental Instruction: Julia Leventis</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org707fe9c">
+<h2 id="org707fe9c">Grading</h2>
+<table>
+
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-right">
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">Homework</td>
+<td class="org-right">30%</td>
+</tr>
+
+<tr>
+<td class="org-left">Midterm</td>
+<td class="org-right">30%</td>
+</tr>
+
+<tr>
+<td class="org-left">Final</td>
+<td class="org-right">35%</td>
+</tr>
+
+<tr>
+<td class="org-left">Quizzes</td>
+<td class="org-right">5%</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section>
+<section id="slide-orgfd662f6">
+<h2 id="orgfd662f6">Textbook</h2>
+<div class="twocolumn"><div>
+
+<figure id="org8c0b3a8">
+<img src="images/textbook.jpg" alt="textbook.jpg" width="80%">
+
+</figure>
+</div><div>
+<p>
+<a href="https://www.sciencedirect.com/book/9780128243466/introduction-to-probability-and-statistics-for-engineers-and-scientists">S. Ross, Introduction to Probability and Statistics for Engineers and Scientists, Academic Press, 6th edition, 2020</a>
+</p>
+
+<p>
+and additional notes/material on specific topics (e.g., Bayes' theorem)
+</p>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org989869f">
+<h2 id="org989869f">Gradescope</h2>
+<p>
+<img src="images/gradescope.png" alt="gradescope.png">
+<a href="https://www.gradescope.com/courses/571014/">https://www.gradescope.com/courses/571014/</a>
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org8613b7d">
+<h2 id="org8613b7d"></h2>
+<ul>
+<li>Disability Statement</li>
+
+</ul>
+
+<p>
+<a href="http://www.umass.edu/disability/">http://www.umass.edu/disability/</a>
+</p>
+
+<ul>
+<li>Inclusivity</li>
+
+</ul>
+
+<p>
+<a href="https://engineering.umass.edu/about-us/inclusivity-statement">https://engineering.umass.edu/about-us/inclusivity-statement</a>
+</p>
+
+<ul>
+<li>Academic Honesty Policy Statement</li>
+
+</ul>
+
+<p>
+<a href="http://umass.edu/dean_students/codeofconduct/acadhonesty/">http://umass.edu/dean_students/codeofconduct/acadhonesty/</a>
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-orgcac39b6">
+<h2 id="orgcac39b6">Course objectives</h2>
+<ul>
+<li class="fragment roll-in">Understand the fundamental concepts of probability (e.g., independence, expectation, density functions)</li>
+<li class="fragment roll-in">Identify, apply and evaluate the proper probability model for different systems</li>
+<li class="fragment roll-in">Utilize statistical methods to make inferences about systems from data</li>
+<li class="fragment roll-in">Perform regression analyses, test hypotheses, and calculate confidence intervals for solving engineering problems</li>
+<li class="fragment roll-in">Acquire a basic understanding of statistical inference and sampling theory</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgabd90a4">
+<h2 id="orgabd90a4">Schedule</h2>
+<div style="font-size: 80%;">
+<table>
+
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-left">
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">Week 1</td>
+<td class="org-left">Descriptive statistics</td>
+</tr>
+
+<tr>
+<td class="org-left">Week 2</td>
+<td class="org-left">Probability</td>
+</tr>
+
+<tr>
+<td class="org-left">Week 3</td>
+<td class="org-left">Random variables</td>
+</tr>
+
+<tr>
+<td class="org-left">Week 4</td>
+<td class="org-left">Discrete distributions</td>
+</tr>
+
+<tr>
+<td class="org-left">Week 5</td>
+<td class="org-left">Normal distribution</td>
+</tr>
+
+<tr>
+<td class="org-left">Week 6</td>
+<td class="org-left">Continuous distributions</td>
+</tr>
+
+<tr>
+<td class="org-left">Week 7</td>
+<td class="org-left">Central Limit Theorem; Sampling distributions</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section>
+<div style="white-space: nowrap; font-size: 80%;">
+<table>
+
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-left">
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">Week 8</td>
+<td class="org-left"><b>Midterm</b></td>
+</tr>
+
+<tr>
+<td class="org-left">Week 9</td>
+<td class="org-left">Parameter estimation</td>
+</tr>
+
+<tr>
+<td class="org-left">Week 10</td>
+<td class="org-left">Confidence intervals</td>
+</tr>
+
+<tr>
+<td class="org-left">Week 11</td>
+<td class="org-left">Bayes Theorem</td>
+</tr>
+
+<tr>
+<td class="org-left">Week 12</td>
+<td class="org-left">Hypothesis testing</td>
+</tr>
+
+<tr>
+<td class="org-left">Week 13</td>
+<td class="org-left">Linear regression</td>
+</tr>
+
+<tr>
+<td class="org-left">Week 14</td>
+<td class="org-left">Goodness-of-fit; ANOVA; Simulation</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section>
+<section id="slide-org7d0c6bf">
+<h2 id="org7d0c6bf"></h2>
+<blockquote>
+<p>
+People can come up with statistics to prove anything. Forty percent of all people know that
+</p>
+</blockquote>
+</section>
+</section>
+<section>
+<section id="slide-org5dbb025">
+<h2 id="org5dbb025"></h2>
+
+<figure id="org94c578d">
+<img src="images/homer.jpg" alt="homer.jpg" width="75%">
+
+</figure>
+</section>
+</section>
+<section>
+<section id="slide-orga35f997">
+<h2 id="orga35f997"></h2>
+<div class="twocolumn"><div>
+
+<figure id="orgbb9b3a8">
+<img src="images/news.png" alt="news.png">
+
+</figure>
+</div><div>
+
+<figure id="org12008f3">
+<img src="https://upload.wikimedia.org/wikipedia/en/2/2a/How_to_Lie_with_Statistics.jpg" alt="How_to_Lie_with_Statistics.jpg" class="fragment">
+
+</figure>
+<p class="fragment">
+<a href="https://projecteuclid.org/journals/statistical-science/volume-20/issue-3/Lies-Calculations-and-Constructions--Beyond-How-to-Lie-with/10.1214/088342305000000232.pdf" class="fragment">Lies, calculations and constructions: beyond "how to lie with statistics"</a>
+</p>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org9bd3f7a">
+<h2 id="org9bd3f7a">Uncertainty</h2>
+<ul>
+<li class="fragment roll-in">Randomness with the underlying process that is exhibited as variability</li>
+<li class="fragment roll-in"><b><font color="skyblue3">Aleatory</font></b> uncertainty</li>
+<li class="fragment roll-in">Inherent in nature and cannot be reduced</li>
+<li class="fragment roll-in">Imperfect or insufficient models of the process of interest</li>
+<li class="fragment roll-in"><b><font color="indianred">Epistemic</font></b> uncertainty</li>
+<li class="fragment roll-in">Improved models or measurements could reduce it</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orga1b2da1" data-background="https://images.nationalgeographic.org/image/upload/v1638887315/EducationHub/photos/frozen-thermometer.jpg" data-background-opacity="0.5" data-background-transition="slide">
+<h2 id="orga1b2da1">What is the room's average temperature?</h2>
+</section>
+</section>
+<section>
+<section id="slide-org0d43def">
+<h2 id="org0d43def">Aleatory uncertainty</h2>
+<p>
+Variability - Randomness
+</p>
+
+<figure id="org0279d5a">
+<img src="images/rainfall_table.png" alt="rainfall_table.png" width="90%" class="fragment">
+
+</figure>
+</section>
+<section id="slide-org8652c6f">
+<h3 id="org8652c6f">Histograms</h3>
+
+<figure id="org345dbed">
+<img src="images/rainfall_histograms.png" alt="rainfall_histograms.png">
+
+</figure>
+</section>
+<section id="slide-org306e38c">
+<h3 id="org306e38c">Joint variability</h3>
+
+<figure id="org0209f02">
+<img src="images/dos_santos.png" alt="dos_santos.png" width="85%">
+
+</figure>
+</section>
+</section>
+<section>
+<section id="slide-org9159a37">
+<h2 id="org9159a37">Epistemic uncertainty</h2>
+<ul>
+<li class="fragment roll-in">Predictions and analysis require <b>models</b></li>
+<li class="fragment roll-in"><i>All models are wrong, but some are useful</i></li>
+<li class="fragment roll-in">Reducible uncertainty as more knowledge is gained</li>
+
+</ul>
+</section>
+<section id="slide-orgfbcce3b">
+<h3 id="orgfbcce3b">Example</h3>
+<div class="twocolumn"><div>
+
+<figure id="org20d83d2">
+<img src="images/cantilever_beam.png" alt="cantilever_beam.png">
+
+</figure>
+</div><div>
+<p>
+\[ \Delta_B = \dfrac{P L^3}{3 E I}\]
+</p>
+<ul>
+<li class="fragment roll-in">Material is linearly elastic</li>
+<li class="fragment roll-in">Beam remains plane under load \(P\)</li>
+<li class="fragment roll-in">Support of the beam at point \(A\) is perfectly rigid</li>
+
+</ul>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org1edc063">
+<h2 id="org1edc063">What type of uncertainty?</h2>
+<script data-quiz src="./quizzes/uncertainty.js"></script>
+</section>
+</section>
+<section>
+<section id="slide-org86a312a">
+<h2 id="org86a312a">Decision making under uncertainty</h2>
+<ul>
+<li>No single observation is representative of the system</li>
+<li>Evaluation or predictions are based on imperfect models</li>
+<li>Statistics allow us to describe the <i>unavoidable</i> uncertainty</li>
+<li>Make decisions based on trade offs (cost, benefit etc.)</li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/dist/reveal.js"></script>
+<script src="./reveal.js/plugin/highlight/highlight.js"></script>
+<script src="./reveal.js/plugin/zoom/zoom.js"></script>
+<script src="./reveal.js/plugin/notes/notes.js"></script>
+<script src="./reveal.js/plugin/math/math.js"></script>
+<script src="./reveal.js/plugin/chalkboard/plugin.js"></script>
+<script src="./reveal.js/plugin/menu/menu.js"></script>
+<script src="./reveal.js/plugin/customcontrols/plugin.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+width: 1280,
+height: 720,
+
+transition: 'convex',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealHighlight, RevealZoom, RevealNotes, RevealMath, RevealChalkboard, RevealMenu, RevealCustomControls ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+{ src: './reveal.js/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, skipStartButton: true}); } }]
+
+,customcontrols: {controls: [ {id: 'toggle-overview', title: 'Toggle overview (O)', icon: '<i class="fa fa-th"></i>', action: 'Reveal.toggleOverview();'}, { icon: '<i class="fa fa-pen-square"></i>', title: 'Toggle chalkboard (B)', action: 'RevealChalkboard.toggleChalkboard();'}, { icon: '<i class="fa fa-pen"></i>', title: 'Toggle notes canvas (C)', action: 'RevealChalkboard.toggleNotesCanvas();'} ]}, chalkboard: { theme: "whiteboard", grid: false, background: [ 'rgba(127,127,127,.1)' , path + 'img/blackboard.png' ], rememberColor: [true, true], boardmarkerWidth: 5, },});
+</script>
+</body>
+</html>

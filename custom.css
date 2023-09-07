@@ -1,0 +1,63 @@
+.reveal h1 { font-size: 2.0em;
+             text-shadow: none;
+             font-weight: bold;
+             text-transform: none;
+           }
+
+.reveal h2 { font-size: 1.5em;
+           }
+
+.reveal .theorem {
+    display: block;
+    text-align: left;
+    font-style: normal;
+    border-left-style: solid;
+    border-left-color: cornflowerblue;
+    padding-left: 10px;
+    border-left-width: 5px;
+}
+.reveal .theorem:before {
+    content: "Theorem. ";
+    font-weight: bold;
+    color: cornflowerblue;
+    font-style: normal;
+    padding-left: 10px;
+}
+.reveal .theorem[name]:before {
+    content: attr(name);
+}
+
+.reveal blockquote {
+    width: 90%;
+}
+
+.twocolumn {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 40px;
+    text-align: left;
+}
+
+.threecolumn {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    text-align: left;
+}
+
+/* .reveal .title { */
+/*     color: white; */
+/* } */
+
+/* .reveal .date { */
+/*     color: white; */
+/* } */
+
+.reveal .block {
+    border: 5px solid var(--custom-emph);
+    border-radius: 10px;
+    background-color: cornflowerblue;
+    padding: 0.25em;
+    text-align: center;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.5);
+}
