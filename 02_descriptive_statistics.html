@@ -424,7 +424,9 @@ width: 1280,
 height: 720,
 
 transition: 'convex',
-transitionSpeed: 'default',
+    transitionSpeed: 'default',
+
+    chalkboard: { src: "https://raw.githubusercontent.com/kandread/cee260fa23/master/annot/02_descriptive_statistics.json", },
 
 // Plugins with reveal.js 4.x
 plugins: [ RevealHighlight, RevealZoom, RevealNotes, RevealMath, RevealChalkboard, RevealMenu, RevealCustomControls ],
@@ -433,7 +435,7 @@ plugins: [ RevealHighlight, RevealZoom, RevealNotes, RevealMath, RevealChalkboar
 dependencies: [
 { src: './reveal.js/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, skipStartButton: true}); } }]
 
-    ,customcontrols: {controls: [ {id: 'toggle-overview', title: 'Toggle overview (O)', icon: '<i class="fa fa-th"></i>', action: 'Reveal.toggleOverview();'}, { icon: '<i class="fa fa-pen-square"></i>', title: 'Toggle chalkboard (B)', action: 'RevealChalkboard.toggleChalkboard();'}, { icon: '<i class="fa fa-pen"></i>', title: 'Toggle notes canvas (C)', action: 'RevealChalkboard.toggleNotesCanvas();'} ]}, chalkboard: { theme: "whiteboard", grid: false, background: [ 'rgba(127,127,127,.1)' , path + 'img/blackboard.png', src: "https://raw.githubusercontent.com/kandread/cee260fa23/master/annot/02_descriptive_statistics.json" ], rememberColor: [true, true], boardmarkerWidth: 5, },});
+    ,customcontrols: {controls: [ {id: 'toggle-overview', title: 'Toggle overview (O)', icon: '<i class="fa fa-th"></i>', action: 'Reveal.toggleOverview();'}, { icon: '<i class="fa fa-pen-square"></i>', title: 'Toggle chalkboard (B)', action: 'RevealChalkboard.toggleChalkboard();'}, { icon: '<i class="fa fa-pen"></i>', title: 'Toggle notes canvas (C)', action: 'RevealChalkboard.toggleNotesCanvas();'} ]}, chalkboard: { theme: "whiteboard", grid: false, background: [ 'rgba(127,127,127,.1)' , path + 'img/blackboard.png' ], rememberColor: [true, true], boardmarkerWidth: 5, },});
 </script>
 </body>
 </html>
