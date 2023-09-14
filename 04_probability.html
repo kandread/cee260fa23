@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Probability &amp; Statistics in Engineering</title>
+<meta name="author" content="Kostas Andreadis"/>
+<meta name="description" content="Setup file for reveal.js presentations"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/night.css" id="theme"/>
+
+<link rel="stylesheet" href="custom.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/chalkboard/style.css">
+<link rel="stylesheet" href="./reveal.js/plugin/customcontrols/style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1 class="title">Probability &amp; Statistics in Engineering</h1><h2 class="date">Fall 2023 - 14 Sep</h2>
+</section>
+<section>
+<section id="slide-org81c066d">
+<h2 id="org81c066d">Probability</h2>
+<p>
+Quantifies the likelihood that an outcome of a random experiment will occur
+</p>
+<span class="fragment">
+<p>
+\[P(A) = \dfrac{n}{N} = \dfrac{\text{# outcomes in A}}{\text{# outcomes in sample space}}\]
+</p>
+</span>
+</section>
+<section id="slide-orgea5573a">
+<h3 id="orgea5573a">Equally likely outcomes</h3>
+<div class="block">
+<p>
+Whenever a sample space consists of \(N\) possible outcomes that are equally likely, the probability of each outcome is \(1/N\)
+</p>
+</div>
+</section>
+<section id="slide-org65eaf04">
+<h3 id="org65eaf04">Example</h3>
+<p>
+Sample space: \(\{a, b, c, d\}\)
+</p>
+<span class="fragment">
+<p>
+\[a=0.1, b=0.3, c=0.5, d=0.1\]
+A={a,b}; B={b,c,d}; C={d}
+</p>
+</span>
+<div class="twocolumn"><div>
+<span class="fragment">
+<ul>
+<li>\(P(A)\)</li>
+<li>\(P(B)\)</li>
+<li>\(P(C^c)\)</li>
+<li>\(P(A \cup B)\)</li>
+<li>\(P(A \cap C)\)</li>
+
+</ul>
+</span>
+</div><div>
+<ul>
+<li class="fragment appear">\(0.1+0.3 = 0.4\)</li>
+<li class="fragment appear">\(0.3+0.5+0.1 = 0.9\)</li>
+<li class="fragment appear">\(1.0 - 0.1 = 0.9\)</li>
+<li class="fragment appear">\(0.1+0.3+0.5+0.1=1\)</li>
+<li class="fragment appear">\(0\)</li>
+
+</ul>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgf136ce5">
+<h2 id="orgf136ce5">Axioms of probability</h2>
+<div class="block">
+<span class="fragment">
+<p>
+\[0 \leq P(A) \leq 1\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[P(S)=1\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[A \cap B = \emptyset \Rightarrow P(A \cup B) = P(A) + P(B)\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[P(A^c) = 1 - P(A)\]
+</p>
+</span>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org0c5b63c">
+<h2 id="org0c5b63c">Probability of a union</h2>
+<p>
+Wafers in semiconductor manufacturing
+</p>
+<table>
+
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-right">
+
+<col  class="org-right">
+
+<col  class="org-right">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Contamination</th>
+<th scope="col" class="org-right">Center</th>
+<th scope="col" class="org-right">Edge</th>
+<th scope="col" class="org-right">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Low</td>
+<td class="org-right">514</td>
+<td class="org-right">68</td>
+<td class="org-right">582</td>
+</tr>
+
+<tr>
+<td class="org-left">High</td>
+<td class="org-right">112</td>
+<td class="org-right">246</td>
+<td class="org-right">358</td>
+</tr>
+
+<tr>
+<td class="org-left">Total</td>
+<td class="org-right">626</td>
+<td class="org-right">314</td>
+<td class="org-right">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+<p>
+\(H\): high contamination, \(C\): center of sputtering tool
+</p>
+
+<span class="fragment">
+<p>
+\(P(H \cap C)\) and \(P(H \cup C)\)?
+</p>
+</span>
+</section>
+<section>
+<div class="block">
+<p>
+<b>Addition rule</b>
+\[P(A \cup B) = P(A) + P(B) - P(A \cap B)\]
+</p>
+</div>
+<br><div class="fragment block">
+<p>
+<b>Mutually exclusive</b> events
+\[P(A \cup B) = P(A) + P(B)\]
+</p>
+</div>
+</section>
+<section>
+
+<figure id="org3434467">
+<img src="images/venn.png" alt="venn.png" width="60%">
+
+</figure>
+</section>
+</section>
+<section>
+<section id="slide-org83c0b34">
+<h2 id="org83c0b34">Problem 4.1</h2>
+<p>
+Can you prove that \(P(A^c)=1-P(A)\)?
+</p>
+</section>
+</section>
+<section>
+<section id="slide-orga5b8fa2">
+<h2 id="orga5b8fa2">Problem 4.2</h2>
+<p>
+Airline industry is subject to labor strikes by pilots (\(A\)), mechanics (\(B\)), and flight attendants (\(C\)). Assuming probabilities \(P(A)=0.03\), \(P(B)=0.05\), \(P(C)=0.05\) and that strikes are statistically independent, that is \(P(A \cap B)=P(A)P(B)\) etc., what is the probability of a labor strike in the next 3 years?
+</p>
+</section>
+</section>
+<section>
+<section id="slide-orgd1e7122">
+<h2 id="orgd1e7122">Problem 4.3</h2>
+<p>
+Prove the following relationships:
+</p>
+<ul>
+<li>\(P(EF) \geq P(E) + P(F) - 1\)</li>
+<li>\(P(EF^c) = P(E) - P(EF)\)</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgf38e4b9">
+<h2 id="orgf38e4b9">Conditional probability</h2>
+<p>
+When <i>prior</i> information is available
+</p>
+<ul>
+<li class="fragment appear">Roll a pair of dice</li>
+<li class="fragment appear">36 possible outcomes with 1/36 probability</li>
+<li class="fragment appear">First die lands on 3, what is the probability that the sum of the dice is 8?</li>
+<li class="fragment appear">Only 6 possible outcomes: (3, 1..6)</li>
+<li class="fragment appear">Each of these now has probability 1/6</li>
+<li class="fragment appear">Only one of these can result in a sum of 8</li>
+
+</ul>
+</section>
+<section>
+<div class="block">
+<p>
+Conditional probability of an event A given event B (\(P(B)>0\)) is denoted as \(P(A|B)\) and calculated from \[P(A|B) = \dfrac{P(AB)}{P(B)}\]
+</p>
+</div>
+</section>
+<section>
+
+<figure id="org977d66f">
+<img src="images/venn.png" alt="venn.png" width="60%">
+
+</figure>
+<span class="fragment">
+<p>
+<a href="https://setosa.io/conditional">https://setosa.io/conditional</a>
+</p>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-org7003caa">
+<h2 id="org7003caa">Statistical independence</h2>
+<p>
+If two events \(A\) and \(B\) are statistically independent then
+\[P(A|B) = P(A)\]
+\[P(B|A) = P(B)\]
+</p>
+<span class="fragment">
+<p>
+\[P(A \cap B) = P(A|B)P(B) = P(B|A)P(A)\]
+\[\Rightarrow P(A \cap B) = P(A) P(B)\]
+</p>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-org2f80205">
+<h2 id="org2f80205">Problem 4.4</h2>
+
+<figure id="org2effb0f">
+<img src="images/figure_e27a.png" alt="figure_e27a.png" width="50%">
+
+</figure>
+
+<p>
+\(E_1\): Route 1 is open, \(E_2\): Route 2 is open. During a snow storm, \(P(E_1)=0.75\), \(P(E_2)=0.50\), and \(P(E_1 \cap E_2)=0.40\)
+</p>
+</section>
+<section>
+<p>
+What is the probability that Route 1 is open if Route 2 is open?
+</p>
+</section>
+<section>
+<p>
+What is the probability that Route 1 is closed if Route 2 is closed?
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org404d66e">
+<h2 id="org404d66e">Problem 4.5</h2>
+<p>
+Casting of concrete structural elements depends on the materials availability. The required material may be produced at the job site or delivered from a supplier. Sometimes sources of material are not available or rain precludes casting.
+</p>
+<ul>
+<li>\(E_1\): no rain</li>
+<li>\(E_2\): production at job site is feasible</li>
+<li>\(E_3\): supply of premixed concrete available</li>
+
+</ul>
+<p>
+with the following probabilities: \(P(E_1)=0.8\), \(P(E_2)=0.7\), \(P(E_3)=0.95\), \(P(E_3|E_2^c)=0.6\) and \(E_2\), \(E_3\) are statistically independent from \(E_1\).
+</p>
+</section>
+<section>
+<p>
+Identify the events in terms of \(E_1\), \(E_2\), and \(E_3\):
+</p>
+<ul>
+<li>\(A\): casting of concrete can be performed</li>
+<li>\(B\): casting of concrete cannot be performed</li>
+
+</ul>
+</section>
+<section>
+<p>
+Determine the probability of event \(B\).
+</p>
+</section>
+<section>
+<p>
+If production of concrete material at the job site is not feasible, what is the probability that casting can still be performed on a given day?
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org5376862">
+<h2 id="org5376862">Readings</h2>
+<ul>
+<li>Sections 3.1-3.4</li>
+<li>Section 3.5 (up to <i>Basic principle of counting</i>)</li>
+<li>Section 3.6</li>
+
+</ul>
+<span class="fragment">
+<p>
+<font color="firebrick">Homework #1 due 21 Sep!</font>
+</p>
+</span>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/dist/reveal.js"></script>
+<script src="./reveal.js/plugin/highlight/highlight.js"></script>
+<script src="./reveal.js/plugin/zoom/zoom.js"></script>
+<script src="./reveal.js/plugin/notes/notes.js"></script>
+<script src="./reveal.js/plugin/math/math.js"></script>
+<script src="./reveal.js/plugin/chalkboard/plugin.js"></script>
+<script src="./reveal.js/plugin/menu/menu.js"></script>
+<script src="./reveal.js/plugin/customcontrols/plugin.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+width: 1280,
+height: 720,
+
+transition: 'convex',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealHighlight, RevealZoom, RevealNotes, RevealMath, RevealChalkboard, RevealMenu, RevealCustomControls ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+{ src: './reveal.js/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, skipStartButton: true}); } }]
+
+,pdfSeparateFragments: false, customcontrols: {controls: [ {id: 'toggle-overview', title: 'Toggle overview (O)', icon: '<i class="fa fa-th"></i>', action: 'Reveal.toggleOverview();'}, { icon: '<i class="fa fa-pen-square"></i>', title: 'Toggle chalkboard (B)', action: 'RevealChalkboard.toggleChalkboard();'}, { icon: '<i class="fa fa-pen"></i>', title: 'Toggle notes canvas (C)', action: 'RevealChalkboard.toggleNotesCanvas();'} ]}, chalkboard: { theme: "whiteboard", grid: false, background: [ 'rgba(127,127,127,.1)' , path + 'img/blackboard.png' ], rememberColor: [true, true], boardmarkerWidth: 5, },});
+</script>
+</body>
+</html>

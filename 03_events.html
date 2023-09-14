@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Probability &amp; Statistics in Engineering</title>
+<meta name="author" content="Kostas Andreadis"/>
+<meta name="description" content="Setup file for reveal.js presentations"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/night.css" id="theme"/>
+
+<link rel="stylesheet" href="custom.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/chalkboard/style.css">
+<link rel="stylesheet" href="./reveal.js/plugin/customcontrols/style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1 class="title">Probability &amp; Statistics in Engineering</h1><h2 class="date">Fall 2023 - 12 Sep</h2>
+</section>
+<section>
+<section id="slide-orgca88d11" data-background="https://cdn2.psychologytoday.com/assets/styles/manual_crop_1_91_1_1528x800/public/field_blog_entry_teaser_image/2020-08/cube-689618_1920.jpg" data-background-transition="slide">
+<h2 id="orgca88d11"></h2>
+</section>
+</section>
+<section>
+<section id="slide-orge5ff8a1">
+<h2 id="orge5ff8a1">Random experiments</h2>
+<ul>
+<li class="fragment roll-in">Repeat measurements of current in copper wire</li>
+<li class="fragment roll-in">What are some factors that can cause variations in measurements?
+<ul>
+<li>Ambient temperature</li>
+<li>Small impurities in the wire</li>
+<li>Current source drifts</li>
+
+</ul></li>
+<li class="fragment roll-in"><b>Random component in the experiment</b></li>
+
+</ul>
+</section>
+<section id="slide-orge48ffd2">
+<h3 id="orge48ffd2">Random experiment</h3>
+<div class="block">
+<p>
+An experiment that can result in different outcomes, even though it is repeated in the same manner every time
+</p>
+</div>
+</section>
+<section id="slide-org472bd40">
+<h3 id="org472bd40"></h3>
+<p>
+Noise variables affect transformation of inputs to outputs
+</p>
+
+<figure id="orgc59a3a4">
+<img src="images/figure21.png" alt="figure21.png" width="80%">
+
+</figure>
+</section>
+<section id="slide-org6c04f33">
+<h3 id="org6c04f33"></h3>
+<div class="twocolumn"><div>
+
+<figure id="orgd6d2316">
+<img src="images/figure22.png" alt="figure22.png">
+
+</figure>
+</div><div>
+
+<figure id="org35084f6">
+<img src="images/figure23.png" alt="figure23.png">
+
+</figure>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org65b54fa">
+<h2 id="org65b54fa">Example</h2>
+<p>
+A contractor needs to acquire bulldozers for a new project and from prior experience knows that there is a 50% chance that each bulldozer will remain operational for at least 6 months. If they purchased 3 bulldozers, what is the probability that there will be only 1 bulldozer that is operational after 6 months?
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org2b42fdf">
+<h2 id="org2b42fdf">Sample space</h2>
+<div class="block">
+<p>
+The set of all possible outcomes of a random experiment is called the <b>sample space</b> of the experiment, denoted as \(S\)
+</p>
+</div>
+</section>
+<section id="slide-org1598c78">
+<h3 id="org1598c78">depends on the objective</h3>
+<p>
+Consider measurements of the recycle time of a flash for a camera, what is the sample space for:
+</p>
+<div class="twocolumn"><div>
+<ul>
+<li>Recycle time</li>
+<li>If recycle times are between 1.5 and 5 secs</li>
+<li>If objective is whether time is low, medium or high</li>
+<li>If objective is whether camera meets a specification threshold</li>
+
+</ul>
+</div><div>
+<ul>
+<li class="fragment appear">$S$={x &gt; 0}</li>
+<li class="fragment appear">$S$={1.5 &lt; x &lt; 5&gt;}</li>
+<li class="fragment appear">$S$={<i>low</i>, <i>medium</i>, <i>high</i>}</li>
+<li class="fragment appear">$S$={<i>yes</i>, <i>no</i>}</li>
+
+</ul>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org4a511bb">
+<h2 id="org4a511bb">Discrete vs continuous sample spaces</h2>
+<ul>
+<li class="fragment appear">When sample points are discrete entities and countable: <b>discrete space</b></li>
+<li class="fragment appear">When sample space consists of a continuum of sample points: <b>continuous space</b></li>
+<li class="fragment appear">Locations of possible traffic accidents on a bridge?</li>
+<li class="fragment appear">Number of flaws in a given length of welding?</li>
+<li class="fragment appear">Bearing capacity of clay soil deposit that is between 1.5 and 4.0 tons/ft<sup>2</sup>?</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org93ca25e">
+<h2 id="org93ca25e">Events</h2>
+<div class="block">
+<p>
+An <b>event</b> is a subset of the sample space of a random experiment
+</p>
+</div>
+</section>
+<section id="slide-orgcf7f9f1">
+<h3 id="orgcf7f9f1">Example</h3>
+
+<figure id="orgbfd05ae">
+<img src="images/fig2_4.png" alt="fig2_4.png">
+
+</figure>
+<ul>
+<li class="fragment appear">What is the sample space for the reaction \(R_A\)?</li>
+<li class="fragment appear">What is the probability of the <b>event</b> \(10 \leq R_A \leq 20\,\mathrm{kg}\)?</li>
+<li class="fragment appear">What is the probability of the <b>event</b> \(R_A \geq 60\,\mathrm{kg}\)?</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org32c90fc">
+<h2 id="org32c90fc">Combination of events</h2>
+<ul>
+<li class="fragment appear"><b>union</b> of two events is the event that consists of all outcomes contained in either of two events</li>
+<li class="fragment appear"><b>intersection</b> of two events is the event that consists of all outcomes contained in both events</li>
+<li class="fragment appear"><b>complement</b> of an event is the set of outcomes that are not in the event</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org7109556">
+<h2 id="org7109556">Venn diagrams</h2>
+
+<figure id="org5e34bc5">
+<img src="images/venn.png" alt="venn.png" width="60%">
+
+</figure>
+</section>
+</section>
+<section>
+<section id="slide-orgc4fb322">
+<h2 id="orgc4fb322">Event \(A\)</h2>
+
+<figure id="org64a8284">
+<img src="images/venn_event_a.png" alt="venn_event_a.png" width="60%">
+
+</figure>
+</section>
+</section>
+<section>
+<section id="slide-org17b7d95">
+<h2 id="org17b7d95">Union \(A \cup B\)</h2>
+
+<figure id="org8367674">
+<img src="images/venn_union.png" alt="venn_union.png" width="60%">
+
+</figure>
+</section>
+</section>
+<section>
+<section id="slide-orgb468615">
+<h2 id="orgb468615">Intersection \(A \cap B\)</h2>
+
+<figure id="org19906fe">
+<img src="images/venn_intersection.png" alt="venn_intersection.png" width="60%">
+
+</figure>
+</section>
+</section>
+<section>
+<section id="slide-orgf0691d8">
+<h2 id="orgf0691d8">Complement \(A^c\)</h2>
+
+<figure id="orgdcb0464">
+<img src="images/venn_Ac.png" alt="venn_Ac.png" width="60%">
+
+</figure>
+</section>
+<section id="slide-org1213325">
+<h3 id="org1213325">Complement \((AB)^c\)</h3>
+
+<figure id="org09c2783">
+<img src="images/venn_ABc.png" alt="venn_ABc.png" width="60%">
+
+</figure>
+</section>
+<section id="slide-orga72981b">
+<h3 id="orga72981b">Complement relations</h3>
+<span class="fragment">
+<p>
+\[(A^c)^c = A\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[A \cup A^c = S\]
+</p>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-org28552c3">
+<h2 id="org28552c3">Contained events \(A \subset B\)</h2>
+
+<figure id="orgc35eddf">
+<img src="images/venn_contained.png" alt="venn_contained.png" width="60%">
+
+</figure>
+</section>
+</section>
+<section>
+<section id="slide-org1e71701">
+<h2 id="org1e71701">Mutually exclusive events</h2>
+
+<figure id="org2060244">
+<img src="images/venn_exclusive.png" alt="venn_exclusive.png" width="60%">
+
+</figure>
+</section>
+<section id="slide-orgd99f1a8">
+<h3 id="orgd99f1a8">Empty set</h3>
+<p>
+Mutually exclusive intersection
+\[ A \cap B = \emptyset \]
+</p>
+<span class="fragment">
+<p>
+\[ A \cap A^c = \emptyset \]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[S^c = \emptyset \]
+</p>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-org698cd12">
+<h2 id="org698cd12">Let's recap</h2>
+<iframe width="100%" height="561" frameborder="0" style="background: #FFFFFF;"
+  src="https://observablehq.com/embed/902f7a3c0fcdceda@1513?cells=viewof+vennDiagramWithLegend"></iframe>
+</section>
+</section>
+<section>
+<section id="slide-orgaaec45f">
+<h2 id="orgaaec45f">Hands-on exercise</h2>
+<p>
+Let \(A\), \(B\), and \(C\) are three events. Find expressions for the following events:
+</p>
+<ol>
+<li>only \(A\) occurs</li>
+<li>both \(A\) and \(C\) occur but not \(B\) occurs</li>
+<li>at least one of the events occurs</li>
+<li>all three occur</li>
+<li>none of the events occur</li>
+<li>at most one of them occurs</li>
+<li>exactly two of them occur</li>
+
+</ol>
+</section>
+</section>
+<section>
+<section id="slide-org5b41994">
+<h2 id="org5b41994">Mathematical operations</h2>
+<span class="fragment">
+<p>
+\[A \cup A = A\]
+\[A \cap A = A\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[A \cup S = S\]
+\[A \cap S = A\]
+</p>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-org26cc814">
+<h2 id="org26cc814">Commutative rule</h2>
+<p>
+\[A \cup B = B \cup A\]
+\[A \cap B = B \cap A\]
+</p>
+</section>
+</section>
+<section>
+<section id="slide-orgd269b89">
+<h2 id="orgd269b89">Associative rule</h2>
+<p>
+\[(A \cup B) \cup C = A \cup (B \cup C)\]
+\[(A \cap B) \cap C = A \cap (B \cap C)\]
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org22bf08c">
+<h2 id="org22bf08c">Distributive rule</h2>
+<div class="twocolumn"><div>
+<p>
+\[(A \cup B) \cap C\]
+</p>
+
+<figure id="org27dfba3">
+<img src="images/venn_3events.png" alt="venn_3events.png" width="80%">
+
+</figure>
+</div><div>
+<p>
+\[(A \cap C) \cup (B \cap C)\]
+</p>
+
+<figure id="org3268465">
+<img src="images/venn_3events.png" alt="venn_3events.png" width="80%">
+
+</figure>
+</div>
+</section>
+<section id="slide-org1f0c015">
+<h3 id="org1f0c015">Distributive rule</h3>
+<p>
+\[(A \cup B) \cap C = (A \cap C) \cup (B \cap C)\]
+\[(A \cap B) \cup C = (A \cup C) \cap (B \cup C)\]
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org1ea69a6">
+<h2 id="org1ea69a6">DeMorgan's law</h2>
+<p>
+For two sets (or events) \(A\) and \(B\)
+</p>
+<div class="block">
+<p>
+\[(A \cup B)^c = A^c \cap B^c\]
+</p>
+</div>
+</section>
+<section id="slide-org479c0c7">
+<h3 id="org479c0c7"></h3>
+<div class="twocolumn"><div>
+<p>
+\[(A \cup B)^c\]
+</p>
+
+<figure id="org0167a15">
+<img src="images/venn.png" alt="venn.png" width="80%">
+
+</figure>
+</div><div>
+<p>
+\[A^C \cap B^c\]
+</p>
+
+<figure id="org1011bbf">
+<img src="images/venn.png" alt="venn.png" width="80%">
+
+</figure>
+</div>
+</section>
+<section id="slide-org4244e73">
+<h3 id="org4244e73">General DeMorgan's law</h3>
+<p>
+\[(E_1 \cup E_2 \cup ... \cup E_n)^c = E_1^c \cap E_2^c \cap ... \cap E_n^c\]
+</p>
+<span class="fragment">
+<p>
+\[(E_1^c \cup E_2^c \cup ... \cup E_n^c)^c = E_1 \cap E_2 \cap ... \cap E_n\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[(E_1 \cap E_2 \cap ... \cap E_n)^c = E_1^c \cup E_2^c \cup ... \cup E_n^c\]
+</p>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-org6d27ef7">
+<h2 id="org6d27ef7">Problem 1</h2>
+<p>
+The direction of wind at a site is between due East (\(\theta=0^{\mathrm{\circ}}\)) and due North (\(\theta=90^{\mathrm{\circ}}\)). The wind speed \(V\) can be any positive value.
+</p>
+
+<ul>
+<li>Sketch the sample space for wind speed and direction.</li>
+<li>Denote the events
+\[E_1=(V > 35 \,\mathrm{kph})\]
+\[E_2=(15\,\mathrm{kph} < V \leq 45\,\mathrm{kph})\]
+\[E_3 = (\theta \leq 30^{\mathrm{\circ}})\]
+Identify the events \(E_1\), \(E_2\), \(E_3\), and \(E_1^c\).</li>
+
+</ul>
+</section>
+<section>
+<ul>
+<li>Identify the events \(A=E_1 \cap E_3\), \(B=E_1 \cup E_2\), and \(C=E_1 \cap E_2 \cap E_3\). Are events \(A\) and \(B\) mutually exclusive? How about events \(A\) and \(C\)?</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgbe7c0cd">
+<h2 id="orgbe7c0cd">Problem 2</h2>
+<p>
+Consider a simple chain that would fail if either link breaks: \(E_1\) breakage of link 1 and \(E_2\) breakage of link 2.
+</p>
+<p width="60%">
+<img src="images/figure_e211.png" alt="figure_e211.png" width="60%">
+ <br>Define the failure of the chain and non-failure in terms of \(E_1\) and \(E_2\).
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org9a9e88e">
+<h2 id="org9a9e88e">Problem 3</h2>
+<p>
+Water supply for two cities C and D comes from sources A and B via pipelines 1-4.
+</p>
+<p width="60%">
+<img src="images/figure_e212.png" alt="figure_e212.png" width="60%">
+Assume that either one of the sources is by itself sufficient to supply water to both cities. If \(E_i\) is the failure of branch \(i\), describe the events of no shortage in each of the cities.
+</p>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/dist/reveal.js"></script>
+<script src="./reveal.js/plugin/highlight/highlight.js"></script>
+<script src="./reveal.js/plugin/zoom/zoom.js"></script>
+<script src="./reveal.js/plugin/notes/notes.js"></script>
+<script src="./reveal.js/plugin/math/math.js"></script>
+<script src="./reveal.js/plugin/chalkboard/plugin.js"></script>
+<script src="./reveal.js/plugin/menu/menu.js"></script>
+<script src="./reveal.js/plugin/customcontrols/plugin.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+width: 1280,
+height: 720,
+
+transition: 'convex',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealHighlight, RevealZoom, RevealNotes, RevealMath, RevealChalkboard, RevealMenu, RevealCustomControls ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+{ src: './reveal.js/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, skipStartButton: true}); } }]
+
+,pdfSeparateFragments: false, customcontrols: {controls: [ {id: 'toggle-overview', title: 'Toggle overview (O)', icon: '<i class="fa fa-th"></i>', action: 'Reveal.toggleOverview();'}, { icon: '<i class="fa fa-pen-square"></i>', title: 'Toggle chalkboard (B)', action: 'RevealChalkboard.toggleChalkboard();'}, { icon: '<i class="fa fa-pen"></i>', title: 'Toggle notes canvas (C)', action: 'RevealChalkboard.toggleNotesCanvas();'} ]}, chalkboard: { theme: "whiteboard", grid: false, background: [ 'rgba(127,127,127,.1)' , path + 'img/blackboard.png' ], rememberColor: [true, true], boardmarkerWidth: 5, },});
+</script>
+</body>
+</html>
