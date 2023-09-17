@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Probability &amp; Statistics in Engineering</title>
+<meta name="author" content="Kostas Andreadis"/>
+<meta name="description" content="Setup file for reveal.js presentations"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/night.css" id="theme"/>
+
+<link rel="stylesheet" href="custom.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/chalkboard/style.css">
+<link rel="stylesheet" href="./reveal.js/plugin/customcontrols/style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1 class="title">Probability &amp; Statistics in Engineering</h1><h2 class="date">Fall 2023 - 26 Sep</h2>
+</section>
+<section>
+<section id="slide-org3fa5a2f">
+<h2 id="org3fa5a2f">Recap on conditional probability</h2>
+<ul>
+<li class="fragment appear">When <i>prior</i> information is available</li>
+<li class="fragment appear">Probability of \(A\) <b>given</b> \(B\)</li>
+
+</ul>
+<div class="fragment block">
+<p>
+Conditional probability of an event A given event B (\(P(B)>0\)) is denoted as \(P(A|B)\) and calculated from \[P(A|B) = \dfrac{P(AB)}{P(B)}\]
+</p>
+</div>
+</section>
+<section>
+<ul>
+<li class="fragment appear">\(P(A)\) is the <i>unconditional</i> probability</li>
+<li class="fragment appear"><b>Statistically independent</b> events \(P(A|B)=P(A)\) and \(P(B|A)=P(B)\)</li>
+
+</ul>
+<div class="fragment block">
+<p>
+If \(A\) and \(B\) are statistically independent then \[P(A \cap B)=P(A) P(B)\]
+</p>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgf122bb7">
+<h2 id="orgf122bb7"></h2>
+<script data-quiz="quiz" src="./quizzes/probability.js"></script>
+</section>
+</section>
+<section>
+<section id="slide-org91fe409">
+<h2 id="org91fe409">Problem 5.1</h2>
+<p>
+Let \(A\), \(B\), \(C\) be events such that \(P(A)=0.2\), \(P(B)=0.3\), \(P(C)=0.4\). Find the probability that at least one of the events A and B occurs if
+</p>
+<ol>
+<li>A and B are mutually exclusive;</li>
+<li>A and B are independent.</li>
+
+</ol>
+</section>
+<section>
+<p>
+Find the probability that all of the events A, B, C occur if
+</p>
+<ol>
+<li>A, B, C are independent;</li>
+<li>A, B, C are mutually exclusive.</li>
+
+</ol>
+</section>
+</section>
+<section>
+<section id="slide-org9be4f1b">
+<h2 id="org9be4f1b">Independence with complement</h2>
+<div class="theorem" name="">
+<p>
+If \(A\) and \(B\) are independent, then so are \(A\) and \(B^c\)
+</p>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgf4fbcee">
+<h2 id="orgf4fbcee">Independence with combination of other events</h2>
+<div class="theorem" name="">
+<p>
+If \(A\), \(B\), and \(C\) are independent, then \(A\) is independent of both \(B \cap C\) and \(B \cup C\)
+</p>
+</div>
+<span class="fragment">
+<p>
+Let's show this for \(B \cup C\) and \(A\)
+</p>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-orgee54f54" data-background="./images/hurricane.jpg" data-background-transition="slide">
+<h2 id="orgee54f54">Problem 5.2</h2>
+<ul>
+<li class="fragment appear">High-wind storms in the county occur once every other year</li>
+<li class="fragment appear">During such a storm probability of tornadoes is 0.25</li>
+<li class="fragment appear">Probability of tornadoes in the county striking the town is 0.15</li>
+<li class="fragment appear">Probability of damages during wind storm with no tornadoes is 0.05</li>
+<li class="fragment appear">If tornadoes do not strike the town, probability of damages is 0.10</li>
+<li class="fragment appear">Damages are certain if tornadoes strike the town</li>
+
+</ul>
+</section>
+<section id="slide-org45607de">
+<h3 id="org45607de"></h3>
+<p>
+\[F = \text{damage to houses}\]
+\[S = \text{occurrence of storm in county}\]
+\[T = \text{occurrence of tornadoes in county}\]
+\[H = \text{tornado striking town}\]
+</p>
+<span class="fragment">
+<p>
+<font color="IndianRed">What is the annual probability of damage to houses in the town?</font>
+</p>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-org47849e5">
+<h2 id="org47849e5">Rules for conditional probabilities</h2>
+<p>
+Addition and multiplication rules work the same way
+</p>
+<span class="fragment">
+<p>
+\[P(E_1 \cup E_2 | A) = P(E_1|A) + P(E_2|A) - P(E_1 \cap E_2 | A)\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[P(E_1 \cap E_2 | A) = P(E_1|E_2|A)P(E_2|A)\]
+</p>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-org8b3e520">
+<h2 id="org8b3e520"></h2>
+
+<figure id="org3d05355">
+<img src="images/paper1.png" alt="paper1.png">
+
+</figure>
+<span class="fragment">
+<p>
+\[P \left( \text{civilian race} | \text{shot} \right)\]
+</p>
+</span>
+</section>
+<section id="slide-orgf338e27">
+<h3 id="orgf338e27"></h3>
+<ul>
+<li class="fragment appear">Given that a civilian was shot, it was found that there is a higher chance of being white (0.64 vs 0.36)</li>
+<li class="fragment appear">What is wrong with \(P \left( \text{civilian race} | \text{shot} \right)\)?</li>
+<li class="fragment appear">Imagine police encounter civilians with 90 white and 10 POC</li>
+<li class="fragment appear">5 POC and 9 white civilians are shot</li>
+<li class="fragment appear">\(P\left( \text{shot} | \text{civilian race} \right)\)</li>
+
+</ul>
+</section>
+<section id="slide-org8792fcd">
+<h3 id="org8792fcd"></h3>
+
+<figure id="org46d0994">
+<img src="images/paper2.png" alt="paper2.png">
+
+</figure>
+</section>
+</section>
+<section>
+<section id="slide-org87fe5b9">
+<h2 id="org87fe5b9">Problem 5.3</h2>
+<p>
+There is a 1% chance of hazardous material leaking from site X. Either of towns A and B would get contaminated water if there is leakage and there exists a continuous seam of sand. Probability of seam to A and B is 2% and 3% respectively. If a seam exists between X and A, the probability of a seam between X and B increases to 20%. Assume that leakage and presence of seams of sand are independent.
+</p>
+</section>
+<section id="slide-org75fcf93">
+<h3 id="org75fcf93"></h3>
+
+<figure id="org7cff4ae">
+<img src="images/problem_waste_storage.png" alt="problem_waste_storage.png" width="50%">
+
+</figure>
+
+<span class="fragment">
+<p>
+\(P(L)=0.01\), \(P(S_A)=0.02\), \(P(S_B)=0.03\), \(P(S_B|S_A)=0.2\)
+</p>
+</span>
+</section>
+<section id="slide-org5da0270">
+<h3 id="org5da0270"></h3>
+<p>
+What is the probability that water in town A will be contaminated?
+</p>
+</section>
+<section id="slide-orgf97a046">
+<h3 id="orgf97a046"></h3>
+<p>
+What is the probability that at least one of the two towns' water will be contaminated?
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-org323ab45">
+<h2 id="org323ab45">Example</h2>
+<ul>
+<li>A lab test is 99% effective in detecting a disease when it is present.</li>
+<li>It also yields a false positive for 1% of healthy people tested.</li>
+<li>If 0.5% of the population has the disease, <i>what is the probability that a person who tested positive actually has the disease</i>?</li>
+
+</ul>
+</section>
+<section>
+<ul>
+<li class="fragment appear">Since 0.5% have the disease, 1 out of 200 tested will have it</li>
+<li class="fragment appear">On average, for every 200 people the test will correctly confirm that (0.99)(1) have the disease</li>
+<li class="fragment appear">On average, the test will also incorrectly state that (0.01)(199) people have the disease</li>
+<li class="fragment appear">The proportion of people having the disease out of all the positive tests is</li>
+<li class="fragment appear">\(\dfrac{(0.99)(1)}{(0.99)(1)+(0.01)(199)}=\)</li>
+<li class="fragment appear">\(0.3322\)</li>
+
+</ul>
+</section>
+<section>
+<p>
+Let D be the event that the tested person has the disease and E the event that his test result is positive
+</p>
+<span class="fragment">
+<p>
+\[P(D|E)=\dfrac{P(DE)}{P(E)}\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[=\dfrac{P(E|D)P(D)}{P(E|D)P(D)+P(E|D^c)P(D^c)}\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[=\dfrac{(0.99)(0.005)}{(0.99)(0.005)+(0.01)(0.995)}=0.3322\]
+</p>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-orgbbd1a57">
+<h2 id="orgbbd1a57">Bayes theorem</h2>
+<div class="twocolumn"><div>
+
+<figure id="org0063e72">
+<img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Thomas_Bayes.gif" alt="Thomas_Bayes.gif">
+
+</figure>
+</div><div>
+<ul>
+<li class="fragment appear">Statistical inference</li>
+<li class="fragment appear">Frequentist vs Bayesian</li>
+<li class="fragment appear">Example of the color for 24 circles</li>
+<li class="fragment appear">"If you pick a random circle, 75% chance that it is blue although it could be 74% or 76%"</li>
+<li class="fragment appear">"I am 99% confident that there are 18 blue circles"</li>
+
+</ul>
+</section>
+<section id="slide-orge642c4d">
+<h3 id="orge642c4d">But what is the equation?</h3>
+<div class="fragment block">
+<p>
+\[P(A|B) = \dfrac{P(B|A) \times P(A)}{P(B)}\]
+</p>
+</div>
+<span class="fragment">
+<p>
+\(P(B): \textbf{evidence}\), \(P(A|B): \textbf{posterior}\), \(P(A): \textbf{prior}\), \(P(B|A): \textbf{likelihood}\)
+</p>
+</span>
+</section>
+<section>
+<p>
+\[P(A|B) = \dfrac{P(A \cap B)}{P(B)} \Rightarrow P(A \cap B) = P(A|B) P(B)\]
+</p>
+<span class="fragment">
+<p>
+\[P(B|A) = \dfrac{P(B \cap A)}{P(A)} \Rightarrow P(A \cap B) = P(B|A) P(A)\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[P(A|B)P(B) = P(B|A)P(A) \Rightarrow P(A|B)=\dfrac{P(B|A)P(A)}{P(B)}\]
+</p>
+</span>
+</section>
+<section id="slide-org6fff972">
+<h3 id="org6fff972">Back to our example</h3>
+<iframe width="100%" height="604" frameborder="0" style="background: #FFFFFF;"
+  src="https://observablehq.com/embed/b0ba5dee649c3bb7@499?cells=viewof+infectedSlider2%2CinfectedText%2Cviewof+accuracySlider2%2CaccuracyText%2Cchart%2Clegend"></iframe>
+</section>
+</section>
+<section>
+<section id="slide-org2498d6d">
+<h2 id="org2498d6d">Problem 5.4</h2>
+<p>
+80% probability that mix from concrete plant is of good quality. Tests on site for compressive strength are performed, but test has 90% reliability: a good-quality mix (\(G\)) will pass test (\(T\)) with 0.9 probability and a poor-quality mix will pass with 0.1 probability.
+</p>
+</section>
+<section id="slide-org64ffa12">
+<h3 id="org64ffa12"></h3>
+<p>
+What is the probability that mix is of good quality if it passes the QC test?
+</p>
+</section>
+<section id="slide-orgc786f2c">
+<h3 id="orgc786f2c"></h3>
+<p>
+Suppose a second sample is tested after the first, what is the probability that the mix is of good quality?
+</p>
+</section>
+<section id="slide-orga9cd14c">
+<h3 id="orga9cd14c"></h3>
+<p>
+Let's perform these two calculations in a single step.
+</p>
+</section>
+<section id="slide-orgf9ac3a7">
+<h3 id="orgf9ac3a7"></h3>
+<p>
+What if either one of the tests was negative?
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org69620be">
+<h2 id="org69620be">A more general equation</h2>
+<div class="fragment block">
+<p>
+If \(E_1,E_2,...,E_k\) are mutually exclusive and exhaustive events and \(B\) is any event with \(PB)>0\)
+\[P(E_1|B) = \dfrac{P(B|E_1)P(E_1)}{P(B|E_1)P(E_1)+...+P(B|E_k)P(E_k)}\]
+</p>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgd0148d4">
+<h2 id="orgd0148d4">Problem 5.5</h2>
+<p>
+Amount of materials at a construction site is either 100 or 200 units with respective probabilities of 0.6 and 0.4. If the amount of material required in a day is 100, probability of shortage is 0.1, whereas if the requirement is 200 the probability of shortage is 0.3.
+</p>
+<ul>
+<li class="fragment appear">What is the probability of shortage on a given day? (<font color="cornflowerblue">0.18</font>)</li>
+<li class="fragment appear">If there is a shortage, what is the probability of the requirement being 100 units? (<font color="cornflowerblue">1/3</font>)</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org4e85246">
+<h2 id="org4e85246">Additional information</h2>
+<ul>
+<li><a href="https://www.readthesequences.com/An-Intuitive-Explanation-Of-Bayess-Theorem">An intuitive explanation of Bayes' Theorem</a></li>
+<li><a href="http://confidence.success-equation.com/">Do you know what you know?</a></li>
+<li><a href="https://youtu.be/rwtDBhD6Mq0">Bayes Billiards</a></li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/dist/reveal.js"></script>
+<script src="./reveal.js/plugin/highlight/highlight.js"></script>
+<script src="./reveal.js/plugin/zoom/zoom.js"></script>
+<script src="./reveal.js/plugin/notes/notes.js"></script>
+<script src="./reveal.js/plugin/math/math.js"></script>
+<script src="./reveal.js/plugin/chalkboard/plugin.js"></script>
+<script src="./reveal.js/plugin/menu/menu.js"></script>
+<script src="./reveal.js/plugin/customcontrols/plugin.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+width: 1280,
+height: 720,
+
+transition: 'convex',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealHighlight, RevealZoom, RevealNotes, RevealMath, RevealChalkboard, RevealMenu, RevealCustomControls ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+{ src: './reveal.js/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, skipStartButton: true}); } }]
+
+,pdfSeparateFragments: false, customcontrols: {controls: [ {id: 'toggle-overview', title: 'Toggle overview (O)', icon: '<i class="fa fa-th"></i>', action: 'Reveal.toggleOverview();'}, { icon: '<i class="fa fa-pen-square"></i>', title: 'Toggle chalkboard (B)', action: 'RevealChalkboard.toggleChalkboard();'}, { icon: '<i class="fa fa-pen"></i>', title: 'Toggle notes canvas (C)', action: 'RevealChalkboard.toggleNotesCanvas();'} ]}, chalkboard: { theme: "whiteboard", grid: false, background: [ 'rgba(127,127,127,.1)' , path + 'img/blackboard.png' ], rememberColor: [true, true], boardmarkerWidth: 5, },});
+</script>
+</body>
+</html>
