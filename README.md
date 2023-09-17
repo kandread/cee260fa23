@@ -10,4 +10,4 @@ Repository of lecture slides for Probability & Statistics (Fall 2023).
 
 [Lecture #4 - Probability](https://kandread.github.io/cee260fa23/04_probability.html)
 
-[Lecture #5 - Probability](https://kandread.github.io/cee260fa23/05_bayes.html)
+[Lecture #5 - Bayes Theorem](https://kandread.github.io/cee260fa23/05_bayes.html)
