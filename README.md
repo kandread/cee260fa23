@@ -16,4 +16,4 @@ Repository of lecture slides for Probability & Statistics (Fall 2023).
 
 [Lecture #7 - Random variables](https://kandread.github.io/cee260fa23/07_random_variables.html)
 
-[Lecture #8 - Random variables](https://kandread.github.io/cee260fa23/08_expectation.html)
+[Lecture #8 - Expectation](https://kandread.github.io/cee260fa23/08_expectation.html)
