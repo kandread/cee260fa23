@@ -25,8 +25,8 @@
 <h1 class="title">Probability &amp; Statistics in Engineering</h1><h2 class="date">Fall 2023 - 28 Sep</h2>
 </section>
 <section>
-<section id="slide-org7faa265">
-<h2 id="org7faa265">Total probability</h2>
+<section id="slide-org420ef7c">
+<h2 id="org420ef7c">Total probability</h2>
 <p>
 Sometimes we know the probability of an event given other conditions
 </p>
@@ -65,12 +65,12 @@ Sometimes we know the probability of an event given other conditions
 </span>
 <span class="fragment">
 <p>
-\[P(F) = P(F \cap H) + P(F \cap H')\]
+\[P(F) = P(F \cap H) + P(F \cap H^c)\]
 </p>
 </span>
 <span class="fragment">
 <p>
-\[P(F) = P(F|H)P(H) + P(F|H')P(H')\]
+\[P(F) = P(F|H)P(H) + P(F|H^c)P(H^c)\]
 </p>
 </span>
 <span class="fragment">
@@ -79,8 +79,8 @@ Sometimes we know the probability of an event given other conditions
 </p>
 </span>
 </section>
-<section id="slide-orge64fb9b">
-<h3 id="orge64fb9b">Total probability theorem (multiple events)</h3>
+<section id="slide-orgc4c64fe">
+<h3 id="orgc4c64fe">Total probability theorem (multiple events)</h3>
 <p>
 Assume \(E_1\), \(E_2\),&#x2026;,\(E_k\) are mutually exclusive and exhaustive sets. Then
 </p>
@@ -93,13 +93,13 @@ Assume \(E_1\), \(E_2\),&#x2026;,\(E_k\) are mutually exclusive and exhaustive s
 </section>
 </section>
 <section>
-<section id="slide-org456c4e4">
-<h2 id="org456c4e4">Problem 6.1</h2>
+<section id="slide-orgecc3863">
+<h2 id="orgecc3863">Problem 6.1</h2>
 <p>
 Highways I<sub>1</sub> and I<sub>2</sub> merge into I<sub>3</sub>: I<sub>1</sub> and I<sub>2</sub> have the same traffic capacities, but rush-hour traffic in I<sub>2</sub> is twice that on I<sub>1</sub> with probabilities of congestion being \(P(E_1)=0.1\) and \(P(E_2)=0.2\).
 </p>
 
-<figure id="org9939292">
+<figure id="org419680b">
 <img src="images/figure_e226.png" alt="figure_e226.png" width="50%">
 
 </figure>
@@ -107,14 +107,15 @@ Highways I<sub>1</sub> and I<sub>2</sub> merge into I<sub>3</sub>: I<sub>1</sub>
 <section>
 <ul>
 <li>When I<sub>2</sub> has excessive traffic, the chance of excessive traffic on I<sub>1</sub> increases to \(P(E_1|E_2)=0.4\).</li>
+<li>If there is congestion in either I<sub>1</sub> or I<sub>2</sub> there will be congestion in I<sub>3</sub></li>
 <li>When there is no congestion on either I<sub>1</sub> or I<sub>2</sub>, the probability of congestion in I<sub>3</sub> is 0.2 assuming that I<sub>3</sub> has the same capacity as I<sub>1</sub> and I<sub>2</sub>. What is the probability of congestion in I<sub>3</sub> on any given day?</li>
 
 </ul>
 </section>
 </section>
 <section>
-<section id="slide-org86432cb">
-<h2 id="org86432cb">Problem 6.2</h2>
+<section id="slide-org1f3b315">
+<h2 id="org1f3b315">Problem 6.2</h2>
 <p>
 Successful completion (\(C\)) of a project depends on supply of materials, labor, and weather:
 </p>
@@ -145,28 +146,6 @@ Determine the probability of successful completion.
 <section>
 <p>
 If the project completes successfully, what is the probability that labor supply had been inadequate?
-</p>
-</section>
-</section>
-<section>
-<section id="slide-orga71c4e1">
-<h2 id="orga71c4e1">Problem 6.3</h2>
-<ul>
-<li class="fragment appear">Concrete mixes used in a construction site are delivered in batches of cylinders.</li>
-<li class="fragment appear">From past experience, 80% of them from that plant are good or of satisfactory quality.</li>
-<li class="fragment appear">Concrete delivered us further tested after 7 days of curing for minimum compressive strength.</li>
-<li class="fragment appear">Test is not perfect, with probability that a good-quality concrete cylinder will pass the test being 90% and a poor-quality one passing is 10%</li>
-
-</ul>
-</section>
-<section>
-<p class="fragment (appear)">
-If \(G\): good quality concrete and \(T\): cylinder passes the test, what is the probability of a good-quality concrete batch if the test is positive?
-</p>
-</section>
-<section>
-<p>
-If a second cylinder is tested positive, what is the probability of a good-quality concrete batch now?
 </p>
 </section>
 </section>

@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Probability &amp; Statistics in Engineering</title>
+<meta name="author" content="Kostas Andreadis"/>
+<meta name="description" content="Setup file for reveal.js presentations"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/night.css" id="theme"/>
+
+<link rel="stylesheet" href="custom.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/chalkboard/style.css">
+<link rel="stylesheet" href="./reveal.js/plugin/customcontrols/style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1 class="title">Probability &amp; Statistics in Engineering</h1><h2 class="date">Fall 2023 - 3 Oct</h2>
+</section>
+<section>
+<section id="slide-orgcd3c088">
+<h2 id="orgcd3c088">So far&#x2026;</h2>
+<ul>
+<li class="fragment appear">Events and their combinations</li>
+<li class="fragment appear">Probability rules</li>
+<li class="fragment appear">Conditional events and Bayes theorem</li>
+
+</ul>
+<span class="fragment">
+
+<figure id="org21f214b">
+<img src="images/hw1.png" alt="hw1.png" width="60%">
+
+</figure>
+</span>
+<span class="fragment">
+<p>
+\[M_A?\]
+</p>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-org8ac0db0">
+<h2 id="org8ac0db0">Random variables</h2>
+<ul>
+<li class="fragment appear">Sample space and events for simple cases: outcomes</li>
+<li class="fragment appear">Sometimes we need an analytical form to describe these</li>
+<li class="fragment appear">Variable that associates outcomes with real numbers</li>
+
+</ul>
+
+<div class="fragment block">
+<p>
+A random variable is a function that assigns a real number to each outcome in the sample space of a random experiment
+</p>
+</div>
+</section>
+<section id="slide-org4290c1b">
+<h3 id="org4290c1b">Notation</h3>
+<p>
+\[X: \text{random variable}\]
+\[x: \text{value of random variable}\]
+</p>
+
+<span class="fragment">
+<p>
+Any event can be expressed as \(X=a\), or \(X \leq a\), or \(a < X \leq b\)
+</p>
+</span>
+</section>
+<section id="slide-org7188b5c">
+<h3 id="org7188b5c">Mapping of events</h3>
+
+<figure id="orge9aeacb">
+<img src="images/random_variable_mapping.png" alt="random_variable_mapping.png" width="65%">
+
+</figure>
+</section>
+<section id="slide-orged0c25a">
+<h3 id="orged0c25a">Example</h3>
+<ul>
+<li class="fragment appear">Two electronic components that could either be defective (d) or acceptable (a)</li>
+<li class="fragment appear">P[(d,d)]=0.09, P[(d,a)]=0.21, P[(a,d)]=0.21, P[(a,a)]=0.49</li>
+<li class="fragment appear">\(X\): the number of acceptable components</li>
+<li class="fragment appear">\(P(X=0)=0.09\), \(P(X=1)=0.42\), \(P(X=2)=0.49\)</li>
+<li class="fragment appear">\(A\): event of at least one acceptable component</li>
+<li class="fragment appear">\(I\): <i>indicator</i> variable of \(A\)</li>
+<li class="fragment appear">\(P(I=0)=0.09\) and \(P(I=1)=0.91\)</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orged41c6b">
+<h2 id="orged41c6b">Discrete and Continuous random variables</h2>
+<ul>
+<li class="fragment appear">Discrete and continuous sample space</li>
+<li class="fragment appear"><b>Discrete random variable</b>
+<ul>
+<li>random variable with a finite (or countably infinite) range</li>
+
+</ul></li>
+<li class="fragment appear"><b>Continuous random variable</b>
+<ul>
+<li>random variable with an interval (either finite or infinite) of real numbers for its range</li>
+
+</ul></li>
+
+</ul>
+</section>
+<section id="slide-org3508c28">
+<h3 id="org3508c28">Examples of random variables</h3>
+<ul>
+<li class="fragment appear">Electrical current</li>
+<li class="fragment appear">Length</li>
+<li class="fragment appear">Pressure</li>
+<li class="fragment appear">Number of surface scratches</li>
+<li class="fragment appear">Proportion of defective parts among 1000 tested</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgfa00393">
+<h2 id="orgfa00393">Probability distributions</h2>
+<p>
+Mathematically describing the probability of <b>values</b> or <b>ranges</b> of a random variable
+</p>
+<div class="fragment block">
+<p>
+The <i>cumulative distribution function</i> (or <i>distribution function</i>) \(F\) or a random variable \(X\) can be defined as \[F(x) \equiv P(X \leq x)\]
+</p>
+</div>
+</section>
+<section id="slide-orgd285eb5">
+<h3 id="orgd285eb5">Probability rules apply here too!</h3>
+<blockquote>
+<p>
+How can we calculate the probability of \(a < X \leq b\) in terms of \(F\)?
+</p>
+</blockquote>
+<span class="fragment">
+<p>
+\[\{X \leq b\} = \{X \leq a\} \cup \{a < X \leq b}\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[P(X \leq b) = P(X \leq a) + P(a < X \leq b)\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[P(a < X \leq b) = F(b) - F(a)\]
+</p>
+</span>
+</section>
+<section id="slide-org82d2e9c">
+<h3 id="org82d2e9c">Hands-on exercise</h3>
+<p>
+For a random variable \(X\), the distribution function is \[F(x)\begin{cases} 0 & x \leq 0 \\ 1-e^{-x^2} & x > 0 \end{cases}\]
+</p>
+
+<p>
+What is the probability that \(X>1\)?
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org20ea766">
+<h2 id="org20ea766">Probability Mass Function</h2>
+<div class="block">
+<p>
+For a discrete random variable \(X\), the probability mass function (PMF) describes the probability that \(X=a\)
+\[p(a)=P(X=a)\]
+</p>
+</div>
+<span class="fragment">
+<p>
+If \(X\) takes only values in {x<sub>1</sub>, x<sub>2</sub>,&#x2026;}  then \[\begin{cases}p(x_i)>0 & i=1,2,... \\ p(x)=0 & \text{all other values}\end{cases}\]
+</p>
+</span>
+</section>
+<section>
+<p>
+\[\sum_{i=1}^{}^{\infty} p(x_i) = 1\]
+</p>
+<span class="fragment">
+<p>
+The cumulative distribution function can be expressed as \[F(a)=\sum_{\forall x \leq a} p(x)\]
+</p>
+</span>
+</section>
+<section>
+<div class="twocolumn"><div>
+
+<figure id="orgcc7213e">
+<img src="images/pmf_example.png" alt="pmf_example.png">
+
+</figure>
+</div><div>
+
+<figure id="org1b9747a">
+<img src="images/discrete_cdf_example.png" alt="discrete_cdf_example.png">
+
+</figure>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org813c1c8">
+<h2 id="org813c1c8">Probability Density Function</h2>
+<div class="block">
+<p>
+For a continuous random variable \(X\), the probability density function (PDF) \(f(x)\) is a non-negative function defined for \(x \in (-\infty, \infty)\)
+\[P(X)=\int_{-\infty}^{\infty} f(x)dx\]
+</p>
+</div>
+<span class="fragment">
+<p>
+\[P(a \leq X \leq b) = \int_{a}^{b} f(x) dx\]
+</p>
+</span>
+</section>
+<section>
+<p>
+The cumulative distribution function (CDF) will be
+\[F(a)=P(X \leq a)=\int_{\infty}^{a} f(x) dx\]
+</p>
+<span class="fragment">
+<p>
+If we differentiate \[\dfrac{d}{da}F(a) = f(a)\]
+</p>
+</span>
+</section>
+<section>
+
+<figure id="orgc1b471b">
+<img src="images/pdf_area_example.png" alt="pdf_area_example.png">
+
+</figure>
+<span class="fragment">
+<p>
+What is the probability that \(P(x=a)\)?
+</p>
+</span>
+</section>
+<section>
+<div class="twocolumn"><div>
+
+<figure id="orge91d81a">
+<img src="images/pdf_example.png" alt="pdf_example.png">
+
+</figure>
+</div><div>
+
+<figure id="org35ebb2d">
+<img src="images/continuous_cdf_example.png" alt="continuous_cdf_example.png">
+
+</figure>
+</div>
+</section>
+<section id="slide-org61edb4b">
+<h3 id="org61edb4b">Problem 7.1</h3>
+<p>
+Suppose the random variable \(X\) has the PDF
+\[f(x) = \begin{cases}cx^3 & 0 \leq x \leq 1 \\ 0 & \text{otherwise} \end{cases}\]
+</p>
+<ul>
+<li>What is the value of \(c\)?</li>
+<li>Find \(P(0.4 < X < 0.5)\).</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgdab60ae" data-background="https://americanlegalnews.com/wp-content/uploads/sites/8/2018/02/AdobeStock_4803779.jpg" data-background-opacity="0.7" data-background-transition="slide">
+<h2 id="orgdab60ae"></h2>
+<ul>
+<li class="fragment appear">Air quality monitoring stations measuring PM10 and O<sub>3</sub></li>
+<li class="fragment appear">EPA sets limits for both, remedial actions needed if exceeded</li>
+<li class="fragment appear">What is the probability of both pollutants exceeding limits?</li>
+<li class="fragment appear"><b>Measurements are most likely not independent</b></li>
+<li class="fragment appear"><b>Joint relationship becomes important!</b></li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org82a6081">
+<h2 id="org82a6081">Joint probability distributions</h2>
+<div class="block">
+<p>
+The probability distribution that defines the <i>simultaneous</i> behavior of two or more random variables
+</p>
+</div>
+</section>
+<section id="slide-org7f84140">
+<h3 id="org7f84140">Joint cumulative probability distribution function</h3>
+<p>
+\[F(x,y)=P(X \leq x, Y \leq y)\]
+</p>
+<span class="fragment">
+<p>
+The distribution function of \(X\) would be \[F_X(x) = P(X \leq x) = P(X \leq x, Y \leq \infty) = F(x,\infty)\]
+</p>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-orgefc3e62">
+<h2 id="orgefc3e62">Joint probability mass function</h2>
+<div class="block">
+<p>
+The joint PMF of the discrete random variables \(X\) and \(Y\), denoted as \(f_{XY}(x, y)\), satisfies
+\[f_{X,Y}(x, y) \geq 0\]
+\[\sum_X f_{XY}(x,y) = 1\]
+\[f_{XY}(x,y) = P(X=x, Y=y)\]
+</p>
+</div>
+</section>
+<section id="slide-org58331d8">
+<h3 id="org58331d8">How do we find the marginal probability?</h3>
+<p>
+\[P(X=x_i)?\]
+</p>
+<span class="fragment">
+<p>
+\[\{X=x_i\}= \bigcup_j \{X=x_i, Y=y_j\}\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[P(X=x_i) = \sum_j P(X=x_i, Y=y_j)\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[P(X=x_i) = \sum_j p(x_i, y_j)\]
+</p>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-org507d93f">
+<h2 id="org507d93f">Joint probability density function</h2>
+<div class="block">
+<p>
+A joint PDF for the continuous random variables \(X\) and \(Y\), denoted as \(f_{XY}(x,y)\), satisfies
+\[f_{XY}(x,y) \geq 0\]
+\[\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} f_{XY}(x,y) dx dy = 1\]
+\[P[(X,Y) \in \mathbb{R}] = \int \int_{\mathbb{R}} f_{XY}(x,y) dx dy\]
+</p>
+</div>
+</section>
+<section>
+
+<figure id="org097e79c">
+<img src="images/joint_pdf_example.png" alt="joint_pdf_example.png" width="80%">
+
+</figure>
+</section>
+<section id="slide-org6a94e1a">
+<h3 id="org6a94e1a">Problem 7.2</h3>
+<p>
+If the joint PDF is \[f(x,y)=\begin{cases}2e^{-x} e^{-2y} & x > 0, y > 0 \\ 0 & \text{otherwise}\end{cases}\]
+Calculate the probabilities \(P(X>1, Y<1>)\) and \(P(X<Y)\).
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org9e78114">
+<h2 id="org9e78114">Independent random variables</h2>
+<div class="block">
+<p>
+Random variables \(X\) and \(Y\) are said to be <i>independent</i> if for any two sets of real numbers \(A\) and \(B\)
+\[P(X \in A, Y \in B)=P(X \in A)P(X \in B)\]
+</p>
+</div><br>
+<div class="fragment block">
+<p>
+For discrete variables \(X\) and \(Y\), independence is equivalent to \[p(x,y)=p_X(x)p_Y(y)\,\,\forall x,y\]
+</p>
+</div>
+</section>
+<section>
+<p>
+For any two sets \(A\) and \(B\)
+\[P(X \in A, Y \in B)= \sum_{y \in B} \sum_{x \in A} p(x,y)\]
+</p>
+<span class="fragment">
+<p>
+\[= \sum_{y \in B} \sum_{x \in A} p_x(x)p_Y(y) = \sum_{y \in B} p_Y(y) \sum_{x \in A} p_X(x)\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[= P(Y \in B) P(X \in A)\]
+</p>
+</span>
+</section>
+<section>
+<p>
+For continuous variables
+\[f(x,y)=f_X(x) f_Y(y)\]
+</p>
+<span class="fragment">
+<p>
+\[P(X \leq a, Y \leq b) = P(X \leq a)P(Y \leq b)\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[F(a, b) = F_X(a) F_Y(b)\]
+</p>
+</span>
+</section>
+<section id="slide-org85708c1">
+<h3 id="org85708c1">Problem 7.3</h3>
+<p>
+Suppose that \(X\) and \(Y\) are independent random variables having the common PDF \[f(x)=\begin{cases}e^{-x} & x>0 \\ 0 & \text{otherwise}\end{cases}\]
+</p>
+</section>
+</section>
+<section>
+<section id="slide-orgc669434">
+<h2 id="orgc669434">Conditional distributions</h2>
+<p>
+Recall that \(P(A|B)=\dfrac{P(AB)}{P(B)}\)
+</p>
+<div class="fragment block">
+<p>
+For discrete variables we have \[p_{X|Y}(x|y) = P(X=x|Y=y) = \dfrac{P(X=x,Y=y)}{P(Y=y)} = \dfrac{p(x,y)}{p(y)}\]
+</p>
+</div><br>
+</section>
+<section>
+<div class="block">
+<p>
+For continuous variables we have \[f_{X|Y}(x|y)=\dfrac{f(x,y)}{f_Y(y)}\]
+\[P(X \in A| Y = y) = \int_A f_{X|Y}(x|y) dx\]
+</p>
+</div>
+</section>
+<section id="slide-org0f34ae9">
+<h3 id="org0f34ae9">Problem 7.4</h3>
+<p>
+The joint density of \(X\) and \(Y\) is given by \[f(x,y)=\begin{cases} \frac{12}{5} x (2-x-y) & 0<x<1, 0<y<1 \\ 0 & \text{otherwise}\]
+Compute the conditional density of \(X\) given that \(Y=y\).
+</p>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/dist/reveal.js"></script>
+<script src="./reveal.js/plugin/highlight/highlight.js"></script>
+<script src="./reveal.js/plugin/zoom/zoom.js"></script>
+<script src="./reveal.js/plugin/notes/notes.js"></script>
+<script src="./reveal.js/plugin/math/math.js"></script>
+<script src="./reveal.js/plugin/chalkboard/plugin.js"></script>
+<script src="./reveal.js/plugin/menu/menu.js"></script>
+<script src="./reveal.js/plugin/customcontrols/plugin.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+width: 1280,
+height: 720,
+
+transition: 'convex',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealHighlight, RevealZoom, RevealNotes, RevealMath, RevealChalkboard, RevealMenu, RevealCustomControls ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+{ src: './reveal.js/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, skipStartButton: true}); } }]
+
+,pdfSeparateFragments: false, customcontrols: {controls: [ {id: 'toggle-overview', title: 'Toggle overview (O)', icon: '<i class="fa fa-th"></i>', action: 'Reveal.toggleOverview();'}, { icon: '<i class="fa fa-pen-square"></i>', title: 'Toggle chalkboard (B)', action: 'RevealChalkboard.toggleChalkboard();'}, { icon: '<i class="fa fa-pen"></i>', title: 'Toggle notes canvas (C)', action: 'RevealChalkboard.toggleNotesCanvas();'} ]}, chalkboard: { theme: "whiteboard", grid: false, background: [ 'rgba(127,127,127,.1)' , path + 'img/blackboard.png' ], rememberColor: [true, true], boardmarkerWidth: 5, },});
+</script>
+</body>
+</html>
