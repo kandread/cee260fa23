@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Probability &amp; Statistics in Engineering</title>
+<meta name="author" content="Kostas Andreadis"/>
+<meta name="description" content="Setup file for reveal.js presentations"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/night.css" id="theme"/>
+
+<link rel="stylesheet" href="custom.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/chalkboard/style.css">
+<link rel="stylesheet" href="./reveal.js/plugin/customcontrols/style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1 class="title">Probability &amp; Statistics in Engineering</h1><h2 class="date">Fall 2023 - 5 Oct</h2>
+</section>
+<section>
+<section id="slide-orga9a9025">
+<h2 id="orga9a9025">Expectation</h2>
+<div class="fragment block">
+<p>
+The expected value for a discrete random variable \(X\) taking on possible values {x<sub>1</sub>, x<sub>2</sub>,&#x2026;, x<sub>n</sub>} is defined by \[E[X]=\sum_i x_i P(X=x_i)\]
+</p>
+</div>
+</section>
+<section id="slide-org4253788">
+<h3 id="org4253788">Example</h3>
+<p>
+What is \(E[X]\) where is \(X\) is the outcome of rolling a die?
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org29cf331">
+<h2 id="org29cf331">Expectation of a continuous variable</h2>
+<div class="block">
+<p>
+The expected value of a continuous random variable \(X\) is defined by \[E[X] = \int_{-\infty}^{\infty} x f(x) dx\]
+</p>
+</div>
+</section>
+<section id="slide-org241ec76">
+<h3 id="org241ec76">Example</h3>
+<p>
+Calculate the expected value of a random variable \(X\) with PDF
+\[f(x) = \begin{cases} 1/1.5 & 0 < x < 1.5 \\ 0 & \text{otherwise} \end{cases}\]
+</p>
+</section>
+</section>
+<section>
+<section id="slide-orge44fc47">
+<h2 id="orge44fc47">What about the expected value of a random function?</h2>
+<ul>
+<li class="fragment appear">A random function \(g(X)\) is a function of a random variable \(X\)</li>
+<li class="fragment appear">Each evaluation of the function will have the probability associated with the corresponding value of the random variable</li>
+<li class="fragment appear">Distribution of \(g(X)\) allow calculation of all relevant properties</li>
+
+</ul>
+</section>
+<section id="slide-org3b9be30">
+<h3 id="org3b9be30">Example</h3>
+<p>
+The time (hrs) to repair an electrical breakdown in a factory is a random variable (\(X\)) whose PDF is
+\[f_X(x) = \begin{cases} 1 & 0<x<1 \\ 0 & \text{otherwise} \end{cases}\]
+If the cost involved for a breakdown lasting \(x\) is \(x^3\), what is the expected cost of a breakdown?
+</p>
+</section>
+<section id="slide-org39157ff">
+<h3 id="org39157ff">Another way&#x2026;</h3>
+<div class="block">
+<p>
+If \(X\) is a discrete random variable with PMF \(p(x)\) then \[E[g(X)]= \sum_x g(x) p(x)\]
+</p>
+</div><br>
+<div class="fragment block">
+<p>
+If \(X\) is a continuous random variable with PDF \(f(x)\) then \[E[g(X)]= \int_{-\infty}^{\infty} g(x) f(x) dx\]
+</p>
+</div>
+</section>
+<section id="slide-org8f28caf">
+<h3 id="org8f28caf">Let's show that \(E[aX+b] = aE[X] + b\)</h3>
+</section>
+</section>
+<section>
+<section id="slide-orgede1c8d">
+<h2 id="orgede1c8d">Expected value of sums of random variables</h2>
+<p>
+\[ E[X+Y] = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} (x+y) f(x+y) dx dy \]
+</p>
+<span class="fragment">
+<p>
+\[E[X+Y] = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} x f(x+y) dx dy + \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} y f(x+y) dx dy\]
+</p>
+</span>
+<span class="fragment">
+<p>
+E[X+Y] = E[X] + E[Y]
+</p>
+</span>
+</section>
+<section>
+<div class="block">
+<p>
+The expected value of the sum of any number of random variables is \[E[X_1 + X_2 + ... + X_n] = E[X_1] + E[X_2] + ... + E[X_n]\]
+</p>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org78ca261">
+<h2 id="org78ca261">Problem 8.1</h2>
+<p>
+The density function of \(X\) is \[f(x)=\begin{cases}a+bx^2 & 0 \leq x \leq 1 \\ 0 & \text{otherwise}\]
+If \(E[X]=3/5\), find \(a\) and \(b\).
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org46ede52">
+<h2 id="org46ede52">Variance</h2>
+<div class="fragment block">
+<p>
+If \(X\) is a random variable with mean \(\mu\) then the variance of \(X\) is \[\mathrm{Var}(X)=E[(X - \mu)^2]\]
+</p>
+</div>
+</section>
+<section id="slide-org2d41d96">
+<h3 id="org2d41d96">Let's derive an alternative formula for variance</h3>
+</section>
+<section id="slide-org4e20459">
+<h3 id="org4e20459">What about \(\mathrm{Var}(aX+b)\)?</h3>
+</section>
+</section>
+<section>
+<section id="slide-org0efbd64">
+<h2 id="org0efbd64">Covariance</h2>
+<p>
+Similar in concept to correlation
+</p>
+<div class="fragment block">
+<p>
+The covariance of two random variables \(X\) and \(Y\) is defined as \[\mathrm{Cov}(X, Y) = E[(X - \mu_X)(Y - \mu_Y)]\]
+</p>
+</div><br>
+<ul>
+<li class="fragment appear">\(\mathrm{Cov}(X,Y) = \mathrm{Cov}(Y,X)\)</li>
+<li class="fragment appear">\(\mathrm{Cov}(X,X) = \mathrm{Var}(X)\)</li>
+
+</ul>
+</section>
+<section id="slide-orgfa09e55">
+<h3 id="orgfa09e55">Additive property</h3>
+<div class="block">
+<p>
+\[\mathrm{Cov}(X_1 + X_2, Y) = \mathrm{Cov}(X_1, Y) + \mathrm{Cov}(X_2, Y)\]
+</p>
+</div>
+<div class="fragment block">
+<p>
+\[\mathrm{Cov} \left( \sum_{i=1}^n X_i, Y \right) = \sum_{i=1}^n \mathrm{Cov}(X_i, Y)\]
+</p>
+</div>
+</section>
+<section id="slide-org33d05cf">
+<h3 id="org33d05cf">Variance and covariance</h3>
+<div class="block">
+<p>
+\[\mathrm{Var}\left( \sum_{i=1}^n X_i \right) = \sum_{i=1}^n \mathrm{Var}(X_i) + \sum_{i=1}^n \sum_{j=1, i \neq j}^n \mathrm{Cov}(X_i, X_j)\]
+</p>
+</div>
+</section>
+<section id="slide-orgc55592e">
+<h3 id="orgc55592e">Independent random variables</h3>
+<div class="block">
+<p>
+If \(X\) and \(Y\) are independent random variables, then \[\mathrm{Cov}(X,Y)=0\] \[\mathrm{Var}\left( \sum_{i=1}^n X_i \right) = \sum_{i=1}^n \mathrm{Var}(X_i)\]
+</p>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgd8b15f3">
+<h2 id="orgd8b15f3">Correlation</h2>
+<div class="block">
+<p>
+The correlation between two random variables \(X\) and \(Y\) is defined by
+\[\mathrm{Corr}(X, Y) = \dfrac{\mathrm{Cov}(X, Y)}{\sqrt{\mathrm{Var}(X) \mathrm{Var}(Y)}}\]
+</p>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org4f9f45c">
+<h2 id="org4f9f45c">Problem 8.2</h2>
+<p>
+Compute the expectation and variance of the number of successes in \(n\) independent trials, each of which results in a success with probability \(p\).
+</p>
+</section>
+</section>
+<section>
+<section id="slide-orgb4bf1d6">
+<h2 id="orgb4bf1d6">Readings</h2>
+<ul>
+<li>Random variables
+<ul>
+<li>Sections 4.1-4.3</li>
+
+</ul></li>
+<li>Expectation
+<ul>
+<li>Sections 4.4-4.7</li>
+
+</ul></li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/dist/reveal.js"></script>
+<script src="./reveal.js/plugin/highlight/highlight.js"></script>
+<script src="./reveal.js/plugin/zoom/zoom.js"></script>
+<script src="./reveal.js/plugin/notes/notes.js"></script>
+<script src="./reveal.js/plugin/math/math.js"></script>
+<script src="./reveal.js/plugin/chalkboard/plugin.js"></script>
+<script src="./reveal.js/plugin/menu/menu.js"></script>
+<script src="./reveal.js/plugin/customcontrols/plugin.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+width: 1280,
+height: 720,
+
+transition: 'convex',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealHighlight, RevealZoom, RevealNotes, RevealMath, RevealChalkboard, RevealMenu, RevealCustomControls ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+{ src: './reveal.js/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, skipStartButton: true}); } }]
+
+,pdfSeparateFragments: false, customcontrols: {controls: [ {id: 'toggle-overview', title: 'Toggle overview (O)', icon: '<i class="fa fa-th"></i>', action: 'Reveal.toggleOverview();'}, { icon: '<i class="fa fa-pen-square"></i>', title: 'Toggle chalkboard (B)', action: 'RevealChalkboard.toggleChalkboard();'}, { icon: '<i class="fa fa-pen"></i>', title: 'Toggle notes canvas (C)', action: 'RevealChalkboard.toggleNotesCanvas();'} ]}, chalkboard: { theme: "whiteboard", grid: false, background: [ 'rgba(127,127,127,.1)' , path + 'img/blackboard.png' ], rememberColor: [true, true], boardmarkerWidth: 5, },});
+</script>
+</body>
+</html>
