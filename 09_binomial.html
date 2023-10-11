@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Probability &amp; Statistics in Engineering</title>
+<meta name="author" content="Kostas Andreadis"/>
+<meta name="description" content="Setup file for reveal.js presentations"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/night.css" id="theme"/>
+
+<link rel="stylesheet" href="custom.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/chalkboard/style.css">
+<link rel="stylesheet" href="./reveal.js/plugin/customcontrols/style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1 class="title">Probability &amp; Statistics in Engineering</h1><h2 class="date">Fall 2023 - 12 Oct</h2>
+</section>
+<section>
+<section id="slide-org0a0cd1e">
+<h2 id="org0a0cd1e">Recap</h2>
+<div class="twocolumn"><div>
+<ul>
+<li class="fragment appear">Cumulative distribution function</li>
+<li class="fragment appear">Probability Mass/Density function</li>
+<li class="fragment appear">\(F(a) = P(X \leq a)\)</li>
+<li class="fragment appear">\(F(x) = \int f(x) dx\)</li>
+<li class="fragment appear">Expectation</li>
+<li class="fragment appear">\(E[X] = \int x f(x) dx\)</li>
+
+</ul>
+</div><div>
+<span class="fragment">
+<p>
+<img src="images/pdf_example.png" alt="pdf_example.png">
+<img src="images/continuous_cdf_example.png" alt="continuous_cdf_example.png">
+</p>
+</span>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org9cadf24">
+<h2 id="org9cadf24">Special random variables</h2>
+<ul>
+<li class="fragment appear">Random variables describing different types of processes/experiments</li>
+<li class="fragment appear">Associated probability distribution</li>
+<li class="fragment appear">Some examples
+<ul>
+<li>Bernoulli</li>
+<li>Binomial</li>
+<li>Normal</li>
+<li>Poisson</li>
+<li>Exponential</li>
+<li>Gamma</li>
+
+</ul></li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgd9bf50c">
+<h2 id="orgd9bf50c">Bernoulli random variable</h2>
+<ul>
+<li class="fragment appear">When allocating fleet of construction equipment, their expected condition over the duration of the project would determine the required fleet size</li>
+<li class="fragment appear">When planning a flood control system, the annual maximum flow magnitude relative to a flood threshold would determine system sizing</li>
+<li class="fragment appear"><font color="lawngreen">Trials</font></li>
+
+</ul>
+</section>
+<section id="slide-org1346c9f">
+<h3 id="org1346c9f">Bernoulli sequence properties</h3>
+<ol>
+<li>In each trial, there are only two possibilities: <font color="skyblue">occurrence (success)</font> and <font color="orangered">non-occurrence (failure)</font></li>
+<li>Probability of occurrence of the event in each trial is constant</li>
+<li>The trials are statistically independent</li>
+
+</ol>
+</section>
+<section id="slide-org22f178f">
+<h3 id="org22f178f">Bernoulli variable</h3>
+<p>
+Let \(X=1\) be success, and \(X=0\) be failure
+</p>
+<span class="fragment">
+<p>
+\[P(X=0)=1-p\]
+\[P(X=1)=p\]
+\[0 \leq p \leq 1\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[E[X] = (1)P(X=1) + (0)P(X=0) = p\]
+</p>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-orgf0b856a">
+<h2 id="orgf0b856a">Binomial random variable</h2>
+<ul>
+<li class="fragment appear">Suppose there are \(n\) independent trials</li>
+<li class="fragment appear">Success with probability \(p\), failure with probability \(1-p\)</li>
+<li class="fragment appear">\(X\) is the number of successes</li>
+
+</ul>
+<div class="fragment block">
+<p>
+\(X\) is a <i>binomial</i> random variable (i.e., follows the binomial distribution) with parameters \((n,p)\)
+</p>
+</div>
+</section>
+<section id="slide-org1dba13d">
+<h3 id="org1dba13d">Probability Mass Function</h3>
+<div class="block">
+<p>
+The probability mass function of a binomial random variable is given by
+\[P(X=i) = \binom{n}{i} p^i (1-p)^{n-i}\]
+</p>
+</div><br>
+<div class="fragment block">
+<p>
+The CDF of the binomial distribution is \[F(x) = \sum_{k=0}^{x} \binom{n}{k} p^k (1-p)^{n-k}\]
+</p>
+</div>
+</section>
+<section id="slide-orgacd30c2">
+<h3 id="orgacd30c2">Binomial coefficient</h3>
+<div class="block">
+<p>
+Describes the number of combinations of choosing \(i\) from \(n\)
+\[\binom{n}{i} = \dfrac{n!}{i!(n-i)!}\]
+</p>
+</div>
+</section>
+<section id="slide-org62720b4">
+<h3 id="org62720b4"></h3>
+<iframe width="100%" height="612" frameborder="0" style="background: #FFFFFF;"
+  src="https://observablehq.com/embed/33d09819ff816d98@347?cells=viewof+n%2Cviewof+p%2Cdensity"></iframe>
+</section>
+<section id="slide-org66f715f">
+<h3 id="org66f715f">Example</h3>
+<p>
+Each water sample has 10% chance of containing a pollutant. What is the probability that the next 18 samples, exactly 2 will contain the pollutant?
+</p>
+</section>
+<section>
+<p>
+Determine the probability that at least 4 samples contain the pollutant.
+</p>
+</section>
+<section id="slide-org8932153">
+<h3 id="org8932153">Mean and variance</h3>
+<div class="block">
+<p>
+The mean of a binomial random variable is \[E[X]=np\] and the variance is \[\text{Var}(X)=np(1-p)\]
+</p>
+</div>
+</section>
+<section id="slide-org8716d57">
+<h3 id="org8716d57"></h3>
+<script data-quiz="quiz" src="./quizzes/binomial.js"></script>
+</section>
+</section>
+<section>
+<section id="slide-orgb4a7411">
+<h2 id="orgb4a7411">Problem 9.1</h2>
+<p>
+Let \(X\) be a binomial random variable with \(E[X]=7\) and \(\text{Var}(X)=2.1\), calculate \(P(X>12)\).
+</p>
+</section>
+</section>
+<section>
+<section id="slide-orga21b54c">
+<h2 id="orga21b54c">Geometric distribution</h2>
+<ul>
+<li class="fragment appear">Assume series of Bernoulli trials</li>
+<li class="fragment appear">Constant probability of success \(p\)</li>
+<li class="fragment appear">Instead of a fixed number of trials, <b>trials are conducted until success is obtained</b></li>
+<li class="fragment appear">\(X\) is the random variable describing number of trials until first success</li>
+
+</ul>
+</section>
+<section>
+<div class="block">
+<p>
+In a series of Bernoulli trials, the random variable \(X\) that equals the number of trials until the first success is a geometric random variable with parameter \(0 < p < 1\) and \[f(x)=(1-p)^{x-1}p\]
+</p>
+</div>
+</section>
+<section id="slide-org7f50096">
+<h3 id="org7f50096">Return period</h3>
+<ul>
+<li class="fragment appear">Time intervals until first occurrence of an event can be described as a set of Bernoulli trials</li>
+<li class="fragment appear">Time between two occurrences is also a geometric distribution (<b>recurrence time</b>)</li>
+
+</ul>
+<br>
+<div class="fragment block">
+<p>
+Return period is the mean recurrence time between two occurrences, and is given by
+\[\overline{T} = \dfrac{1}{p}\]
+</p>
+</div>
+</section>
+<section>
+
+<figure id="org9f08562">
+<img src="images/return_period_headline.png" alt="return_period_headline.png" width="100%">
+
+</figure>
+
+<p>
+<a href="https://www.vox.com/science-and-health/2017/8/28/16211392/100-500-year-flood-meaning">https://www.vox.com/science-and-health/2017/8/28/16211392/100-500-year-flood-meaning</a>
+</p>
+</section>
+<section id="slide-org1c9716a">
+<h3 id="org1c9716a">Mean and variance</h3>
+<div class="block">
+<p>
+If \(X\) is a geometric random variable with parameter \(p\), then
+\[E[X]=\dfrac{1}{p}\]
+\[\text{Var}(X)=\dfrac{1-p}{p^2}\]
+</p>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orga3fcab6">
+<h2 id="orga3fcab6">Problem 9.2</h2>
+<p>
+A fixed offshore platform is designed for a wave height of 8 m above the mean sea level. This wave height corresponds to a 5% probability of being exceeded per year.
+</p>
+</section>
+<section>
+<p>
+What is the probability that the platform will be subjected to the design height within the return period?
+</p>
+</section>
+<section>
+<p>
+What is the probability that the first exceedance of the design height will occur after year 3?
+</p>
+</section>
+<section>
+<p>
+If the first exceedance of the design height occurs after year 3, what is the probability that it will occur in year 5?
+</p>
+</section>
+</section>
+<section>
+<section id="slide-orgace7d2c">
+<h2 id="orgace7d2c">Problem 9.3</h2>
+<p>
+The code for the design of a building in a coastal region specifies the 50-yr wind as the "design wind". What is the probability that a newly completed building is subjected to the design wind for the first time on the fifth year after completion?
+</p>
+</section>
+<section>
+<p>
+What is the probability that it is subjected <i>within</i> 5 years after completion?
+</p>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/dist/reveal.js"></script>
+<script src="./reveal.js/plugin/highlight/highlight.js"></script>
+<script src="./reveal.js/plugin/zoom/zoom.js"></script>
+<script src="./reveal.js/plugin/notes/notes.js"></script>
+<script src="./reveal.js/plugin/math/math.js"></script>
+<script src="./reveal.js/plugin/chalkboard/plugin.js"></script>
+<script src="./reveal.js/plugin/menu/menu.js"></script>
+<script src="./reveal.js/plugin/customcontrols/plugin.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+width: 1280,
+height: 720,
+
+transition: 'convex',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealHighlight, RevealZoom, RevealNotes, RevealMath, RevealChalkboard, RevealMenu, RevealCustomControls ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+{ src: './reveal.js/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, skipStartButton: true}); } }]
+
+,pdfSeparateFragments: false, customcontrols: {controls: [ {id: 'toggle-overview', title: 'Toggle overview (O)', icon: '<i class="fa fa-th"></i>', action: 'Reveal.toggleOverview();'}, { icon: '<i class="fa fa-pen-square"></i>', title: 'Toggle chalkboard (B)', action: 'RevealChalkboard.toggleChalkboard();'}, { icon: '<i class="fa fa-pen"></i>', title: 'Toggle notes canvas (C)', action: 'RevealChalkboard.toggleNotesCanvas();'} ]}, chalkboard: { theme: "whiteboard", grid: false, background: [ 'rgba(127,127,127,.1)' , path + 'img/blackboard.png' ], rememberColor: [true, true], boardmarkerWidth: 5, },});
+</script>
+</body>
+</html>
