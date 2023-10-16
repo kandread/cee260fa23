@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Probability &amp; Statistics in Engineering</title>
+<meta name="author" content="Kostas Andreadis"/>
+<meta name="description" content="Setup file for reveal.js presentations"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/night.css" id="theme"/>
+
+<link rel="stylesheet" href="custom.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/chalkboard/style.css">
+<link rel="stylesheet" href="./reveal.js/plugin/customcontrols/style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1 class="title">Probability &amp; Statistics in Engineering</h1><h2 class="date">Fall 2023 - 17 Oct</h2>
+</section>
+<section>
+<section id="slide-org71e04e5">
+<h2 id="org71e04e5">Poisson process</h2>
+<ul>
+<li class="fragment appear">Occurrence of events at any point in space and/or time
+<ul>
+<li>Earthquakes could strike anywhere at any time in an active region</li>
+<li>Fatigue cracks can occur anywhere along a continuous weld</li>
+
+</ul></li>
+<li class="fragment appear">Bernoulli trials could be used but are limited</li>
+<li class="fragment appear"><i>Poisson process</i> (or sequence)</li>
+
+</ul>
+</section>
+<section id="slide-org1fbeb26">
+<h3 id="org1fbeb26">Example</h3>
+<ul>
+<li>Flaws occur at random along the length of a thin copper wire</li>
+<li>\(X\) is the number of flaws in a length of \(L\) millimeters of wire</li>
+<li>Suppose that the average number of flaws on a wire is \(\lambda\)</li>
+
+</ul>
+
+<span class="fragment">
+
+<p>
+\[E[X]=\lambda\]
+</p>
+</span>
+<span class="fragment">
+<p>
+Partition the length of the wire into \(n\) intervals of small length
+\(\Delta L=L/n\)
+</p>
+</span>
+</section>
+<section>
+<ul>
+<li>If intervals small enough, probability that more than one flaws occurs in each is negligible</li>
+<li>Flaws occur at random = same probability of flaw (\(p\))</li>
+<li>Occurrence of flaw in interval independent of other intervals</li>
+
+</ul>
+<span class="fragment">
+<p>
+Approximate with binomial
+\[E[X]=\lambda = n p \Rightarrow p = \dfrac{\lambda}{n}\]
+</p>
+
+<p>
+\[P(X=x) \approx \binom{n}{x}p^x(1-p)^{n-x}\]
+</p>
+</span>
+</section>
+<section>
+
+<p>
+\[\lim_{n \rightarrow \infty} P(X=x) = \dfrac{e^{\lambda}(\lambda)^x}{x!}\]
+</p>
+<span class="fragment">
+<p>
+<a href="https://medium.com/@andrew.chamberlain/deriving-the-poisson-distribution-from-the-binomial-distribution-840cc1668239">Proof!</a>
+</p>
+</span>
+</section>
+<section>
+<div class="block">
+<p>
+A random experiment with subintervals of very small length
+\(\Delta L\), and
+</p>
+<ol>
+<li>Probability of more than one event in a subinterval tends to zero</li>
+<li>The probability of one event in a subinterval tends to
+\(\lambda\)</li>
+<li>The event in each subinterval is independent of  other subintervals</li>
+
+</ol>
+<p>
+is a <b>Poisson process</b>
+</p>
+</div>
+</section>
+<section id="slide-org303e377">
+<h3 id="org303e377">Poisson distribution</h3>
+<div class="block">
+<p>
+The random variable \(X\) that equals the number of events in a Poisson process is a <b>Poisson random variable</b> with parameter \(\lambda > 0\), and
+\[f(x)=\dfrac{e^{-\lambda}(\lambda)^x}{x!}\]
+</p>
+</div>
+</section>
+<section>
+<iframe width="100%" height="548" frameborder="0" style="background: #FFFFFF;"
+  src="https://observablehq.com/embed/0d535009bcb79bf5@361?cells=viewof+lam%2Cpdf"></iframe>
+</section>
+<section id="slide-org6ded2ea">
+<h3 id="org6ded2ea">Problem 10.1</h3>
+<p>
+Historical records of severe storms over last 20 years indicate there were an average of 4 storms per year. Assuming that storms are modeled as Poisson process, what is the probability that there would be no storms next year?
+</p>
+</section>
+<section>
+<p>
+What is the probability of 4 storms next year?
+</p>
+</section>
+<section>
+<p>
+What is the probability of two or more storms next year?
+</p>
+</section>
+<section id="slide-org9873089">
+<h3 id="org9873089">Bernoulli vs Poisson</h3>
+<p>
+In the last 50 years, there have been two major (\(M \geq 6\)) earthquakes in California. What is the probability of such a large earthquake in the next 15 years if we model them as Bernoulli or Poisson sequence?
+</p>
+</section>
+<section id="slide-orgfd2cd23">
+<h3 id="orgfd2cd23">Problem 10.2</h3>
+<p>
+A steel pipeline that transports crude oil over a distance of 100 km, is subject to damaging corrosion. From past annual inspection, the average distance between locations of such corrosion is 0.15/km. The occurrence of corrosion is modeled as a Poisson process. What is the probability that there will be 10 locations of corrosion between inspections?
+</p>
+</section>
+<section>
+<p>
+What is the probability of at least 5 corrosion sites between inspections?
+</p>
+</section>
+<section id="slide-org9358c5d">
+<h3 id="org9358c5d">Mean and variance</h3>
+<div class="block">
+<p>
+If \(X\) is a Poisson random variable with parameter \(\lambda\), then
+\[\mu = E[X] = \lambda\]
+\[\sigma^2 = Var(X) = \lambda\]
+</p>
+</div>
+</section>
+<section id="slide-orgcc275b3">
+<h3 id="orgcc275b3">Problem 10.3</h3>
+<p>
+A structure with a design life of 50 yrs is planned for a site with high-intensity earthquakes with a return period of 100 yr. The structure is designed to have a 0.99 probability of not suffering damage within its design life. Damage effects between earthquakes are statistically independent.
+</p>
+</section>
+<section>
+<p>
+If the occurrence of high-intensity earthquakes is modeled by a Bernoulli sequence, what is the probability of damage to the structure  under a single earthquake?
+</p>
+</section>
+<section>
+<p>
+What is the probability of damage to the structure in the next 20 yrs, assuming that the occurrences of earthquakes follow a Poisson process?
+</p>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/dist/reveal.js"></script>
+<script src="./reveal.js/plugin/highlight/highlight.js"></script>
+<script src="./reveal.js/plugin/zoom/zoom.js"></script>
+<script src="./reveal.js/plugin/notes/notes.js"></script>
+<script src="./reveal.js/plugin/math/math.js"></script>
+<script src="./reveal.js/plugin/chalkboard/plugin.js"></script>
+<script src="./reveal.js/plugin/menu/menu.js"></script>
+<script src="./reveal.js/plugin/customcontrols/plugin.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+width: 1280,
+height: 720,
+
+transition: 'convex',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealHighlight, RevealZoom, RevealNotes, RevealMath, RevealChalkboard, RevealMenu, RevealCustomControls ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+{ src: './reveal.js/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, skipStartButton: true}); } }]
+
+,pdfSeparateFragments: false, customcontrols: {controls: [ {id: 'toggle-overview', title: 'Toggle overview (O)', icon: '<i class="fa fa-th"></i>', action: 'Reveal.toggleOverview();'}, { icon: '<i class="fa fa-pen-square"></i>', title: 'Toggle chalkboard (B)', action: 'RevealChalkboard.toggleChalkboard();'}, { icon: '<i class="fa fa-pen"></i>', title: 'Toggle notes canvas (C)', action: 'RevealChalkboard.toggleNotesCanvas();'} ]}, chalkboard: { theme: "whiteboard", grid: false, background: [ 'rgba(127,127,127,.1)' , path + 'img/blackboard.png' ], rememberColor: [true, true], boardmarkerWidth: 5, },});
+</script>
+</body>
+</html>

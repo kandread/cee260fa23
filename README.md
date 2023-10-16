@@ -19,3 +19,5 @@ Repository of lecture slides for Probability & Statistics (Fall 2023).
 [Lecture #8 - Expectation](https://kandread.github.io/cee260fa23/08_expectation.html)
 
 [Lecture #9 - Binomial and Geometric variables](https://kandread.github.io/cee260fa23/09_binomial.html)
+
+[Lecture #9 - Poisson variables](https://kandread.github.io/cee260fa23/10_poisson.html)
