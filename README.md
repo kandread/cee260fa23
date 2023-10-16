@@ -20,4 +20,4 @@ Repository of lecture slides for Probability & Statistics (Fall 2023).
 
 [Lecture #9 - Binomial and Geometric variables](https://kandread.github.io/cee260fa23/09_binomial.html)
 
-[Lecture #9 - Poisson variables](https://kandread.github.io/cee260fa23/10_poisson.html)
+[Lecture #10 - Poisson variables](https://kandread.github.io/cee260fa23/10_poisson.html)
