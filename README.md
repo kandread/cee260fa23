@@ -23,3 +23,5 @@ Repository of lecture slides for Probability & Statistics (Fall 2023).
 [Lecture #10 - Poisson variables](https://kandread.github.io/cee260fa23/10_poisson.html)
 
 [Lecture #11 - Other distributions](https://kandread.github.io/cee260fa23/11_other_distributions.html)
+
+[Lecture #12 - Normal distribution](https://kandread.github.io/cee260fa23/12_normal_distribution.html)
