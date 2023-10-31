@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Probability &amp; Statistics in Engineering</title>
+<meta name="author" content="Kostas Andreadis"/>
+<meta name="description" content="Setup file for reveal.js presentations"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/night.css" id="theme"/>
+
+<link rel="stylesheet" href="custom.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/chalkboard/style.css">
+<link rel="stylesheet" href="./reveal.js/plugin/customcontrols/style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1 class="title">Probability &amp; Statistics in Engineering</h1><h2 class="date">Fall 2023 - 31 Oct</h2>
+</section>
+<section>
+<section id="slide-org06dc282">
+<h2 id="org06dc282">Normal distribution</h2>
+<div class="block">
+<p>
+A random variable \(X\) with probability density function
+</p>
+
+<p>
+\[f(x)=\dfrac{1}{\sqrt{2 \pi \sigma}} e^{-\dfrac{(x-\mu)^2}{2\sigma^2}}\]
+is a <b>normal random variable</b> with parameters \(\mu\) and \(\sigma\)
+</p>
+</div><br>
+</section>
+</section>
+<section>
+<section id="slide-orgb86c528">
+<h2 id="orgb86c528">What is the distribution of \(Y=a+bX\)?</h2>
+<div class="fragment block">
+<p>
+If \(b \neq 0\) then for a normal random variable \(X\), \(Y=a+bX\) is also a normal random variable with parameters
+\[E[Y]=a+bE[X]=a+b\mu\]
+\[\text{Var}(Y)=b^2\Var(X)=b^2\sigma^2\]
+</p>
+</div>
+</section>
+<section>
+<p>
+Let's verify this!
+</p>
+</section>
+<section id="slide-org5ed95d7">
+<h3 id="org5ed95d7">Problem 13.1</h3>
+<p>
+The power \(W\) dissipated in a resistor is proportional to the square of the voltage \(V\)
+\[W=rV^2\]
+where \(r\) is a constant. If \(r=3\) and \(V\sim\text{N}(6,1)\), find \(E[W]\) and \(P(W>120)\).
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org5a9aa09">
+<h2 id="org5a9aa09">Sum of independent normal variables</h2>
+<div class="block">
+<p>
+For two statistically independent random variables \(X\sim\text{N}(\mu_x,\sigma^2_x)\) and
+\(Y\sim\text{N}(\mu_y,\sigma^2_y)\), the random variable \(X+Y\) is also normally distributed with parameters \(\mu_{x+y}=\mu_x + \mu_y\) and \(\sigma^2_{x+y}=\sigma^2_x+\sigma^2_y\)
+</p>
+</div>
+</section>
+<section>
+<div class="block">
+<p>
+For any linear combination of normal random variables \(X_i\sim\text{N}(\mu_{x_i},\sigma^2_{x_i})\) then \(W=\sum_{i=1}^n a_i X_i\) is also normally distributed with mean \[\mu_w = \sum_{i=1}^n a_i \mu_{x_i}\] and variance \[\sigma^2_w = \sum_{i=1}^n a_i^2 \sigma^2_{x_i}\]
+</p>
+</div>
+</section>
+<section id="slide-orga2a4022">
+<h3 id="orga2a4022">Problem 13.2</h3>
+<p>
+Data from NOAA indicate that annual precipitation in Los Angeles is a normal variable with mean 12.08 inches and standard deviation of 3.1 inches.
+</p>
+<ol>
+<li>What is the probability that the total precipitation during the next 2 years will exceed 25 inches?</li>
+<li>Find the probability that next year's precipitation will exceed that of the following year by more than 3 inches.</li>
+
+</ol>
+<p>
+Assume that precipitation totals for each year are independent.
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org4a21ba2">
+<h2 id="org4a21ba2">Lognormal distribution</h2>
+<ul>
+<li class="fragment appear">Another popular distribution where the variable of interest \(X\) can be transformed to a normally-distributed variable</li>
+<li class="fragment appear">\(\ln{X}\) is a Gaussian random variable</li>
+<li class="fragment appear">Lifetime of a product that degrades over time often modeled with lognormal</li>
+
+</ul>
+</section>
+<section>
+<div class="block">
+<p>
+If \(W\) is a normally-distributed variable with mean \(\theta\) and variance \(\omega^2\), then \(X\) with \(\ln{X}=W\) is a <b>lognormal random variable</b> with probability density function
+\[f(x)=\dfrac{1}{x \omega \sqrt{2 \pi}} e^{-\dfrac{(\ln{x}-\theta)^2}{2\omega^2}}\]
+</p>
+</div>
+</section>
+<section>
+<div class="block">
+<p>
+The mean and variance of \(X\) are
+\[E[X]=e^{\theta + \dfrac{\omega^2}{2}}\]
+\[\text{Var}(X)=e^{2\theta + \omega^2}\left( e^{\omega^2} - 1 \right)\]
+</p>
+</div>
+</section>
+<section>
+
+<figure id="orgb8b27b3">
+<img src="images/lognormal_pdf_example.png" alt="lognormal_pdf_example.png" width="75%">
+
+</figure>
+</section>
+<section id="slide-org5855dd7">
+<h3 id="org5855dd7">Calculating lognormal probabilities</h3>
+<p>
+\[P(a < X < b) = \int_a^b \dfrac{1}{x \omega \sqrt{2\pi}} e^{\left[-\dfrac{1}{2} \left(\dfrac{\ln{x}-\theta}{2\omega}\right)^2\right]}\]
+</p>
+<span class="fragment">
+<p>
+Change variables to \(s=\dfrac{\ln{x}-\theta}{\omega}\) and we have
+</p>
+</span>
+<span class="fragment">
+<p>
+\[=\dfrac{1}{2\pi} \int_{(\ln{a}-\theta)/\omega}^{(\ln{b}-\theta)/\omega} e^{-(1/2)[(s-0)/1]^2} ds = \Phi \left( \dfrac{\ln{b}-\theta}{\omega} \right) - \Phi \left( \dfrac{\ln{a}-\theta}{\omega} \right)\]
+</p>
+</span>
+</section>
+<section id="slide-org6be3180">
+<h3 id="org6be3180">Problem 13.3</h3>
+<p>
+The lifetime in hours of a semiconductor laser has a lognormal distribution with \(\theta=10\) and \(\omega=1.5\). What is the probability that the lifetime exceeds 10,000 hours?
+</p>
+</section>
+<section id="slide-org7977eb4">
+<h3 id="org7977eb4">Problem 13.4</h3>
+<p>
+The time between breakdowns of a major equipment is defined by a lognormal distribution with a median of 6 months and coefficient of variation of 0.30. What is the interval between inspections and repairs to be able to ensure a 95% probability that the equipment will be operational at any time?
+</p>
+</section>
+</section>
+<section>
+<section id="slide-orgae544a4">
+<h2 id="orgae544a4">Exponential distribution</h2>
+<ul>
+<li class="fragment appear">Poisson distribution</li>
+<li class="fragment appear">Number of occurrences anywhere in space or time</li>
+<li class="fragment appear">Example: number of flaws along a length of copper wire</li>
+<li class="fragment appear">What if the random variable \(X\) was the length from a starting point on the wire <b>until a flaw is detected</b>?</li>
+
+</ul>
+</section>
+<section>
+<ul>
+<li>Distance to the first flaw exceeds \(x\) mm if there are no flaws within \(x\) mm</li>
+<li>\(N\) is the number flaws in \(x\) mm of wire</li>
+<li>\(\lambda\) is the mean number of flaws per mm</li>
+
+</ul>
+<span class="fragment">
+<p>
+\[P(X>x)=P(N=0)=\dfrac{e^{-\lambda x} (\lambda x)^0}{0!}=e^{-\lambda x}\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[F(x)=P(X \leq x)=1 - e^{-\lambda x}\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[f(x)=\dfrac{dF(x)}{dx}=\lambda e^{-\lambda x}\]
+</p>
+</span>
+</section>
+<section>
+<div class="theorem" name="Exponential Distribution">
+<p>
+The random variable \(X\) that is equal to the distance/time between successive events from a Poisson process with mean number of events \(\lambda > 0\) per unit interval is an <b>exponential random variable</b> with a probability density function \[f(x)=\lambda e^{-\lambda x}\]
+</p>
+</div>
+</section>
+<section id="slide-orgfc09e63">
+<h3 id="orgfc09e63">Mean and variance</h3>
+<div class="block">
+<p>
+If the random variable \(X\) has an exponential distribution with parameter \(\lambda\) then
+\[\mu = E(X) = \dfrac{1}{\lambda}\]
+\[\sigma^2 = V(X) = \dfrac{1}{\lambda^2}\]
+</p>
+</div>
+</section>
+<section id="slide-orga5feae7">
+<h3 id="orga5feae7">Exponential PDFs for various \(\lambda\)</h3>
+
+<figure id="org867d01a">
+<img src="images/exponential_pdf_examples.png" alt="exponential_pdf_examples.png" width="50%">
+
+</figure>
+</section>
+<section id="slide-org1d7bb37">
+<h3 id="org1d7bb37">Problem 13.5</h3>
+<p>
+If the longevity of a device follows an exponential distribution with a mean lifetime of 8 years, what is the probability that it will last a total of over 19 years if we know that it has lasted for 12 years?
+</p>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/dist/reveal.js"></script>
+<script src="./reveal.js/plugin/highlight/highlight.js"></script>
+<script src="./reveal.js/plugin/zoom/zoom.js"></script>
+<script src="./reveal.js/plugin/notes/notes.js"></script>
+<script src="./reveal.js/plugin/math/math.js"></script>
+<script src="./reveal.js/plugin/chalkboard/plugin.js"></script>
+<script src="./reveal.js/plugin/menu/menu.js"></script>
+<script src="./reveal.js/plugin/customcontrols/plugin.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+width: 1280,
+height: 720,
+
+transition: 'convex',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealHighlight, RevealZoom, RevealNotes, RevealMath, RevealChalkboard, RevealMenu, RevealCustomControls ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+{ src: './reveal.js/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, skipStartButton: true}); } }]
+
+,pdfSeparateFragments: false, customcontrols: {controls: [ {id: 'toggle-overview', title: 'Toggle overview (O)', icon: '<i class="fa fa-th"></i>', action: 'Reveal.toggleOverview();'}, { icon: '<i class="fa fa-pen-square"></i>', title: 'Toggle chalkboard (B)', action: 'RevealChalkboard.toggleChalkboard();'}, { icon: '<i class="fa fa-pen"></i>', title: 'Toggle notes canvas (C)', action: 'RevealChalkboard.toggleNotesCanvas();'} ]}, chalkboard: { theme: "whiteboard", grid: false, background: [ 'rgba(127,127,127,.1)' , path + 'img/blackboard.png' ], rememberColor: [true, true], boardmarkerWidth: 5, },});
+</script>
+</body>
+</html>
