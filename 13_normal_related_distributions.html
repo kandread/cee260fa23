@@ -25,8 +25,8 @@
 <h1 class="title">Probability &amp; Statistics in Engineering</h1><h2 class="date">Fall 2023 - 31 Oct</h2>
 </section>
 <section>
-<section id="slide-org06dc282">
-<h2 id="org06dc282">Normal distribution</h2>
+<section id="slide-orgb6d3c2c">
+<h2 id="orgb6d3c2c">Normal distribution</h2>
 <div class="block">
 <p>
 A random variable \(X\) with probability density function
@@ -40,13 +40,13 @@ is a <b>normal random variable</b> with parameters \(\mu\) and \(\sigma\)
 </section>
 </section>
 <section>
-<section id="slide-orgb86c528">
-<h2 id="orgb86c528">What is the distribution of \(Y=a+bX\)?</h2>
+<section id="slide-org4685444">
+<h2 id="org4685444">What is the distribution of \(Y=a+bX\)?</h2>
 <div class="fragment block">
 <p>
 If \(b \neq 0\) then for a normal random variable \(X\), \(Y=a+bX\) is also a normal random variable with parameters
 \[E[Y]=a+bE[X]=a+b\mu\]
-\[\text{Var}(Y)=b^2\Var(X)=b^2\sigma^2\]
+\[\text{Var}(Y)=b^2\text{Var}(X)=b^2\sigma^2\]
 </p>
 </div>
 </section>
@@ -55,8 +55,8 @@ If \(b \neq 0\) then for a normal random variable \(X\), \(Y=a+bX\) is also a no
 Let's verify this!
 </p>
 </section>
-<section id="slide-org5ed95d7">
-<h3 id="org5ed95d7">Problem 13.1</h3>
+<section id="slide-org67a6a37">
+<h3 id="org67a6a37">Problem 13.1</h3>
 <p>
 The power \(W\) dissipated in a resistor is proportional to the square of the voltage \(V\)
 \[W=rV^2\]
@@ -65,8 +65,8 @@ where \(r\) is a constant. If \(r=3\) and \(V\sim\text{N}(6,1)\), find \(E[W]\) 
 </section>
 </section>
 <section>
-<section id="slide-org5a9aa09">
-<h2 id="org5a9aa09">Sum of independent normal variables</h2>
+<section id="slide-org059fba5">
+<h2 id="org059fba5">Sum of independent normal variables</h2>
 <div class="block">
 <p>
 For two statistically independent random variables \(X\sim\text{N}(\mu_x,\sigma^2_x)\) and
@@ -81,8 +81,8 @@ For any linear combination of normal random variables \(X_i\sim\text{N}(\mu_{x_i
 </p>
 </div>
 </section>
-<section id="slide-orga2a4022">
-<h3 id="orga2a4022">Problem 13.2</h3>
+<section id="slide-org139874a">
+<h3 id="org139874a">Problem 13.2</h3>
 <p>
 Data from NOAA indicate that annual precipitation in Los Angeles is a normal variable with mean 12.08 inches and standard deviation of 3.1 inches.
 </p>
@@ -97,8 +97,8 @@ Assume that precipitation totals for each year are independent.
 </section>
 </section>
 <section>
-<section id="slide-org4a21ba2">
-<h2 id="org4a21ba2">Lognormal distribution</h2>
+<section id="slide-org212e3e8">
+<h2 id="org212e3e8">Lognormal distribution</h2>
 <ul>
 <li class="fragment appear">Another popular distribution where the variable of interest \(X\) can be transformed to a normally-distributed variable</li>
 <li class="fragment appear">\(\ln{X}\) is a Gaussian random variable</li>
@@ -125,13 +125,13 @@ The mean and variance of \(X\) are
 </section>
 <section>
 
-<figure id="orgb8b27b3">
+<figure id="orgc29b555">
 <img src="images/lognormal_pdf_example.png" alt="lognormal_pdf_example.png" width="75%">
 
 </figure>
 </section>
-<section id="slide-org5855dd7">
-<h3 id="org5855dd7">Calculating lognormal probabilities</h3>
+<section id="slide-orgd937886">
+<h3 id="orgd937886">Calculating lognormal probabilities</h3>
 <p>
 \[P(a < X < b) = \int_a^b \dfrac{1}{x \omega \sqrt{2\pi}} e^{\left[-\dfrac{1}{2} \left(\dfrac{\ln{x}-\theta}{2\omega}\right)^2\right]}\]
 </p>
@@ -146,22 +146,22 @@ Change variables to \(s=\dfrac{\ln{x}-\theta}{\omega}\) and we have
 </p>
 </span>
 </section>
-<section id="slide-org6be3180">
-<h3 id="org6be3180">Problem 13.3</h3>
+<section id="slide-org49ce0e5">
+<h3 id="org49ce0e5">Problem 13.3</h3>
 <p>
 The lifetime in hours of a semiconductor laser has a lognormal distribution with \(\theta=10\) and \(\omega=1.5\). What is the probability that the lifetime exceeds 10,000 hours?
 </p>
 </section>
-<section id="slide-org7977eb4">
-<h3 id="org7977eb4">Problem 13.4</h3>
+<section id="slide-org9e51600">
+<h3 id="org9e51600">Problem 13.4</h3>
 <p>
 The time between breakdowns of a major equipment is defined by a lognormal distribution with a median of 6 months and coefficient of variation of 0.30. What is the interval between inspections and repairs to be able to ensure a 95% probability that the equipment will be operational at any time?
 </p>
 </section>
 </section>
 <section>
-<section id="slide-orgae544a4">
-<h2 id="orgae544a4">Exponential distribution</h2>
+<section id="slide-orgc8186c5">
+<h2 id="orgc8186c5">Exponential distribution</h2>
 <ul>
 <li class="fragment appear">Poisson distribution</li>
 <li class="fragment appear">Number of occurrences anywhere in space or time</li>
@@ -200,8 +200,8 @@ The random variable \(X\) that is equal to the distance/time between successive 
 </p>
 </div>
 </section>
-<section id="slide-orgfc09e63">
-<h3 id="orgfc09e63">Mean and variance</h3>
+<section id="slide-org643056c">
+<h3 id="org643056c">Mean and variance</h3>
 <div class="block">
 <p>
 If the random variable \(X\) has an exponential distribution with parameter \(\lambda\) then
@@ -210,16 +210,16 @@ If the random variable \(X\) has an exponential distribution with parameter \(\l
 </p>
 </div>
 </section>
-<section id="slide-orga5feae7">
-<h3 id="orga5feae7">Exponential PDFs for various \(\lambda\)</h3>
+<section id="slide-org7976b91">
+<h3 id="org7976b91">Exponential PDFs for various \(\lambda\)</h3>
 
-<figure id="org867d01a">
+<figure id="orgf3cc515">
 <img src="images/exponential_pdf_examples.png" alt="exponential_pdf_examples.png" width="50%">
 
 </figure>
 </section>
-<section id="slide-org1d7bb37">
-<h3 id="org1d7bb37">Problem 13.5</h3>
+<section id="slide-org54a6c54">
+<h3 id="org54a6c54">Problem 13.5</h3>
 <p>
 If the longevity of a device follows an exponential distribution with a mean lifetime of 8 years, what is the probability that it will last a total of over 19 years if we know that it has lasted for 12 years?
 </p>
