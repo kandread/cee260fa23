@@ -29,3 +29,5 @@ Repository of lecture slides for Probability & Statistics (Fall 2023).
 [Lecture #13 - Normal-related and other distributions](https://kandread.github.io/cee260fa23/13_normal_related_distributions.html)
 
 [Lecture #14 - Sampling statistics](https://kandread.github.io/cee260fa23/14_sampling_statistics.html)
+
+[Lecture #15 - Parameter estimation](https://kandread.github.io/cee260fa23/15_parameter_estimation.html)
