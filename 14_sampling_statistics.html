@@ -25,16 +25,16 @@
 <h1 class="title">Probability &amp; Statistics in Engineering</h1><h2 class="date">Fall 2023 - 2 Nov</h2>
 </section>
 <section>
-<section id="slide-org1370d19">
-<h2 id="org1370d19">Sampling from a population</h2>
+<section id="slide-orgd6776da">
+<h2 id="orgd6776da">Sampling from a population</h2>
 
-<figure id="orgc57cf78">
+<figure id="orgc1ac034">
 <img src="images/sampling_inference.png" alt="sampling_inference.png" width="80%">
 
 </figure>
 </section>
-<section id="slide-orga244e55">
-<h3 id="orga244e55">Definitions</h3>
+<section id="slide-org5f77929">
+<h3 id="org5f77929">Definitions</h3>
 <ul>
 <li class="fragment appear"><b>Population</b>: all possible values</li>
 <li class="fragment appear"><b>Sample</b>: subset of the population</li>
@@ -55,8 +55,8 @@ If \(X_1\),&#x2026;, \(X_n\) are independent random variables having a common di
 </section>
 </section>
 <section>
-<section id="slide-org2b0d4af">
-<h2 id="org2b0d4af">Sample statistics and distribution</h2>
+<section id="slide-orgdbef905">
+<h2 id="orgdbef905">Sample statistics and distribution</h2>
 <div class="block">
 <p>
 A <b>statistic</b> is any function of the observations in a random sample.
@@ -78,8 +78,8 @@ The probability distribution of a statistic is called a <b>sampling distribution
 </section>
 </section>
 <section>
-<section id="slide-org528ee77">
-<h2 id="org528ee77">Sample mean</h2>
+<section id="slide-orgd420da9">
+<h2 id="orgd420da9">Sample mean</h2>
 <p>
 Let's assume we have a sample from a population that has mean \(\mu\) and variance \(\sigma^2\)
 </p>
@@ -121,7 +121,7 @@ The sample mean will be \[\overline{X} = \dfrac{X_1+X_2+...+X_n}{n}\] which is a
 </section>
 <section>
 
-<figure id="org8ee5f2e">
+<figure id="orgc52849b">
 <img src="images/sample_mean_densities.png" alt="sample_mean_densities.png" width="80%">
 
 </figure>
@@ -132,8 +132,8 @@ src="https://observablehq.com/embed/3778eae8c36506b1@481?cells=viewof+sample_siz
 </section>
 </section>
 <section>
-<section id="slide-org3360b11">
-<h2 id="org3360b11">Central Limit Theorem</h2>
+<section id="slide-org056e8d8">
+<h2 id="org056e8d8">Central Limit Theorem</h2>
 <div class="block">
 <p>
 Let \(X_1\),\(X_2\),&#x2026;, \(X_n\) be a set of independent and identically distributed random variables each having mean \(\mu\) and variance \(\sigma^2\). Then for a relatively large \(n\), the distribution of \(X_1+...+X_n\) is approximately normal with mean \(n \mu\) and variance \(n \sigma^2\).
@@ -144,18 +144,18 @@ Let \(X_1\),\(X_2\),&#x2026;, \(X_n\) be a set of independent and identically di
 <iframe width="100%" height="745" frameborder="0" style="background: #FFFFFF;"
   src="https://observablehq.com/embed/@kandread/central-limit-theorem?cells=viewof+nums%2Cchart"></iframe>
 </section>
-<section id="slide-org6b59bd1">
-<h3 id="org6b59bd1">Example</h3>
+<section id="slide-org300c738">
+<h3 id="org300c738">Example</h3>
 
-<figure id="org515ebea">
+<figure id="org2e9e250">
 <img src="images/exponential_ctl_example.png" alt="exponential_ctl_example.png" width="80%">
 
 </figure>
 </section>
 </section>
 <section>
-<section id="slide-orge199f2d">
-<h2 id="orge199f2d">Problem 14.1</h2>
+<section id="slide-org5c9b2b4">
+<h2 id="org5c9b2b4">Problem 14.1</h2>
 <p>
 The weights of a population of workers have mean 167 and standard deviation 27. If a sample of 36 workers is chosen, approximate the probability that the sample mean of their weights lies between 163 and 170.
 </p>
@@ -167,16 +167,16 @@ Repeat the calculation for a sample size of 144.
 </section>
 </section>
 <section>
-<section id="slide-orge319e02">
-<h2 id="orge319e02">Problem 14.2</h2>
+<section id="slide-orgc65b232">
+<h2 id="orgc65b232">Problem 14.2</h2>
 <p>
 An astronomer wants to measure the distance to a star \(d\) by making a series of measurements and then using their average as an estimate. If the astronomer believes that the measured values are independent normal variables with mean of \(d\) light-years and a standard deviation of 2 light-years, how many measurements do they need to make to be at least 95% certain that their estimate is accurate to within \(\pm 0.5\) light-years?
 </p>
 </section>
 </section>
 <section>
-<section id="slide-org3573950">
-<h2 id="org3573950">How large a sample is needed?</h2>
+<section id="slide-orga6e5f05">
+<h2 id="orga6e5f05">How large a sample is needed?</h2>
 <ul>
 <li class="fragment appear">Depends on the population distribution</li>
 <li class="fragment appear">If the distribution is normal then the sample mean \(\overline{X}\) will be normal regardless of sample size</li>
@@ -186,8 +186,8 @@ An astronomer wants to measure the distance to a star \(d\) by making a series o
 </section>
 </section>
 <section>
-<section id="slide-orga994490">
-<h2 id="orga994490">Sample variance</h2>
+<section id="slide-org02c15ca">
+<h2 id="org02c15ca">Sample variance</h2>
 <div class="block">
 <p>
 Let \(X_1\),&#x2026;,\(X_n\) be a random sample from a distribution with mean \(\mu\) and variance \(\sigma^2\). If \(\overline{X}\) is the sample mean then the sample variance is
@@ -196,13 +196,13 @@ and \(S=\sqrt{S^2}\) is the sample standard deviation.
 </p>
 </div>
 </section>
-<section id="slide-org7a5a528">
-<h3 id="org7a5a528">Let's calculate its expectation</h3>
+<section id="slide-org084dd56">
+<h3 id="org084dd56">Let's calculate its expectation</h3>
 </section>
 </section>
 <section>
-<section id="slide-orgc1370f0">
-<h2 id="orgc1370f0">Problem 14.3</h2>
+<section id="slide-orgef18598">
+<h2 id="orgef18598">Problem 14.3</h2>
 <p>
 A highway department has enough salt to handle a total of 80 inches of snowfall. Suppose that the daily amount of snow has a mean of 1.5 inches and a standard deviation of 0.3 inches. What is the probability that the available salt will suffice for the next 50 days?
 </p>
@@ -214,8 +214,8 @@ What assumption did we make to solve this?
 </section>
 </section>
 <section>
-<section id="slide-orgf6e3de0">
-<h2 id="orgf6e3de0">Recap</h2>
+<section id="slide-org0fce9dc">
+<h2 id="org0fce9dc">Recap</h2>
 <div class="block">
 <p>
 Let \(X_1\),\(X_2\),&#x2026;, \(X_n\) be a set of independent and identically distributed random variables each having mean \(\mu\) and variance \(\sigma^2\). Then for a relatively large \(n\), the distribution of \(X_1+...+X_n\) is approximately normal with mean \(n \mu\) and variance \(n \sigma^2\).
@@ -240,8 +240,8 @@ For a sample \(X_1\),\(X_2\),&#x2026;,\(X_n\) from a normal population with mean
 </section>
 </section>
 <section>
-<section id="slide-org66bae26">
-<h2 id="org66bae26">Distribution of the sample mean</h2>
+<section id="slide-orgb9fd840">
+<h2 id="orgb9fd840">Distribution of the sample mean</h2>
 <p>
 The sum of independent normal random variables is normally distributed!
 </p>

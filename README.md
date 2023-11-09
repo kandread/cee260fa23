@@ -31,3 +31,5 @@ Repository of lecture slides for Probability & Statistics (Fall 2023).
 [Lecture #14 - Sampling statistics](https://kandread.github.io/cee260fa23/14_sampling_statistics.html)
 
 [Lecture #15 - Parameter estimation](https://kandread.github.io/cee260fa23/15_parameter_estimation.html)
+
+[Lecture #16 - Other continuous distributions](https://kandread.github.io/cee260fa23/16_other_continuous_distributions.html)

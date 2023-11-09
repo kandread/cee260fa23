@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Probability &amp; Statistics in Engineering</title>
+<meta name="author" content="Kostas Andreadis"/>
+<meta name="description" content="Setup file for reveal.js presentations"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/night.css" id="theme"/>
+
+<link rel="stylesheet" href="custom.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/chalkboard/style.css">
+<link rel="stylesheet" href="./reveal.js/plugin/customcontrols/style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1 class="title">Probability &amp; Statistics in Engineering</h1><h2 class="date">Fall 2023 - 9 Nov</h2>
+</section>
+<section>
+<section id="slide-org302c8ab">
+<h2 id="org302c8ab">Some other continuous distributions</h2>
+<ul>
+<li class="fragment appear">Uniform</li>
+<li class="fragment appear">Gamma</li>
+<li class="fragment appear">Beta</li>
+<li class="fragment appear">Chi-square</li>
+<li class="fragment appear">t-distribution</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org228ce02">
+<h2 id="org228ce02">Uniform distribution</h2>
+<div class="block">
+<p>
+A random variable \(X\) is <b>uniformly</b> distributed over the interval \([a,b]\) if its probability density function is given by
+\[f(x) = \begin{cases} \dfrac{1}{b-a} & a \leq x \leq b \\ 0 & \text{otherwise} \end{cases}\]
+</p>
+</div>
+<ul>
+<li class="fragment appear">When \(X\) is <i>equally likely</i> to be near any value in \([a,b]\)</li>
+<li class="fragment appear">Examples of applications include quantization error and random number generation in software</li>
+
+</ul>
+</section>
+<section>
+
+<figure id="orga490edc">
+<img src="images/uniform_pdf_example.png" alt="uniform_pdf_example.png" width="90%">
+
+</figure>
+</section>
+<section id="slide-org595f46a">
+<h3 id="org595f46a">Mean and variance</h3>
+<p>
+\[E[X] = \int_a^b \dfrac{x}{b-a}dx = \dfrac{b^2-a^2}{2(b-a)}\]
+</p>
+<span class="fragment">
+<p>
+\[= \dfrac{(b-a)(b+a)}{2(b-a)} \Rightarrow E[X] = \dfrac{a+b}{2}\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[Var(X) = \dfrac{(b-a)^2}{12}\]
+</p>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-org45b22e6">
+<h2 id="org45b22e6">Gamma function</h2>
+<div class="block">
+<p>
+\[\Gamma(r) = \int_{0}^{\infty} x^{r-1}e^{-x}dx \text{, for } r>0\]
+</p>
+</div>
+<span class="fragment">
+<p>
+\[\Gamma(r)=(r-1)\Gamma(r-1)\]
+\[\Gamma(1)=1\]
+\[\Gamma(0.5)=\sqrt{\pi}\]
+</p>
+</span>
+</section>
+<section id="slide-org555e33f">
+<h3 id="org555e33f">Gamma distribution</h3>
+<div class="block">
+<p>
+The random variable with probability density function \[f(x)=\dfrac{\lambda^r x^{r-1} e^{-\lambda x}}{\Gamma(r)}\] is a <b>gamma random variable</b> with parameters \(\lambda>0\) and \(r>0\).
+</p>
+</div>
+</section>
+<section>
+<ul>
+<li>Consider a sequence of events and the waiting time for each event is exponentially distributed</li>
+
+</ul>
+<ul>
+<li class="fragment appear">The waiting time for the $n$-th event follows the gamma distribution</li>
+<li class="fragment appear">Application examples include the
+<ul>
+<li>waiting time until a repair is needed for a hydraulic system</li>
+<li>size of insurance claims</li>
+<li>rainfall</li>
+<li>fading of wireless communication signal</li>
+
+</ul></li>
+
+</ul>
+</section>
+<section>
+
+<figure id="orgceef371">
+<img src="images/gamma_pdf_examples.png" alt="gamma_pdf_examples.png" width="50%">
+
+</figure>
+</section>
+<section>
+<iframe width="100%" height="617" frameborder="0" style="background: #FFFFFF;"
+  src="https://observablehq.com/embed/629ec581297e54dd@502?cells=viewof+param1%2Cviewof+param2%2Cgpdf"></iframe>
+</section>
+<section id="slide-org3000a7a">
+<h3 id="org3000a7a">Mean and variance</h3>
+<div class="block">
+<p>
+If \(X\) is a gamma random variable with parameters \(\lambda\) and \(r\) then
+\[\mu=E(X)=\dfrac{r}{\lambda}\]
+\[\sigma^2=V(X)=\dfrac{r}{\lambda^2}\]
+</p>
+</div>
+</section>
+<section id="slide-org50c04c4">
+<h3 id="org50c04c4">Incomplete gamma function</h3>
+<p>
+\[\gamma(u,r)=\dfrac{\int_{0}^{u}y^{r-1}e^{-y}dy}{\Gamma(r)}\]
+</p>
+<span class="fragment">
+<p>
+\[P(a < X < b) = P(X < b) - P(X < a)\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[= \dfrac{1}{\Gamma(r)} \left( \int_{0}^{\lambda b} y^{r-1} e^{-y} dy - \int_{0}^{\lambda a} y^{r-1} e^{-y} dy \right)\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[= \gamma(\lambda b, r) - \gamma(\lambda a, r)\]
+</p>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-org1da6a67">
+<h2 id="org1da6a67">Beta distribution</h2>
+<ul>
+<li class="fragment appear">A flexible distribution that is bounded over a finite range</li>
+<li class="fragment appear"><p>
+E.g., proportion of solar radiation absorbed by a material
+</p>
+<div class="fragment block">
+<p>
+The random variable \(X\) with probability density function \[f(x) = \dfrac{\Gamma(\alpha + \beta)}{\Gamma(\alpha) \Gamma(\beta)} x^{\alpha - 1} (1 - x)^{\beta - 1}\] for \(0 \leq x \leq 1\) is a <b>beta random variable</b> with parameters \(\alpha>0\) and \(\beta>0\).
+</p>
+</div>
+</section>
+<section>
+
+<figure id="org1dcc155">
+<img src="images/beta_pdf_examples.png" alt="beta_pdf_examples.png" width="50%">
+
+</figure></li>
+
+</ul>
+</section>
+<section id="slide-org0b57892">
+<h3 id="org0b57892">Mean and variance</h3>
+<div class="block">
+<p>
+If \(X\) has a beta distribution with parameters \(\alpha\) and \(\beta\) then
+\[\mu = E(X) = \dfrac{\alpha}{\alpha + \beta}\]
+\[\sigma^2 = V(X) = \dfrac{\alpha \beta}{(\alpha + \beta)^2 (\alpha + \beta + 1)}\]
+</p>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org50f7532">
+<h2 id="org50f7532">Chi-square distribution</h2>
+<div class="block">
+<p>
+If \(Z_1\), \(Z_2\),&#x2026;, \(Z_n\) are independent standard normal variables, then \(X=\sum_{i=1}^n Z_i\) is said to have a \(\chi^2\) distribution with \(n\) degrees of freedom
+</p>
+</div>
+<ul>
+<li class="fragment appear">Has additive property</li>
+<li class="fragment appear">If \(X_1\), \(X_2\) with \(n_1\), \(n_2\) d.o.f. are \(\chi^2\) then \(X_1+X_2\) is \(\chi^2\) with \(n_1+n_2\) d.o.f.</li>
+<li class="fragment appear">Goodness of fit test</li>
+<li class="fragment appear">Confidence intervals for population variance</li>
+
+</ul>
+</section>
+<section>
+<p>
+Not symmetric!
+</p>
+<iframe width="100%" height="546" frameborder="0" style="background: #FFFFFF;"
+  src="https://observablehq.com/embed/@mattiasvillani/chi2-distribution?cells=viewof+params%2Cplt_pdf"></iframe>
+</section>
+<section id="slide-org71699f5">
+<h3 id="org71699f5">Probabilities from table</h3>
+
+<figure id="org2681988">
+<img src="images/chi2_table.png" alt="chi2_table.png" width="70%">
+
+</figure>
+</section>
+<section id="slide-org9720f96">
+<h3 id="org9720f96">Mean and variance</h3>
+<p>
+\(\chi^2\) distribution is identical to the gamma distribution for \(r=n/2\) and \(\lambda=1/2\)
+</p>
+<div class="fragment block">
+<p>
+The mean and variance for a random variable \(X\) that follows a \(\chi^2\) distribution are
+\[E[X]=n\]
+\[\text{Var}(X)=2n\]
+</p>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgb265d82">
+<h2 id="orgb265d82">t-distribution</h2>
+<ul>
+<li class="fragment appear">The t-distribution generalizes the standard normal distribution</li>
+<li class="fragment appear">Also symmetric around zero and bell-shaped</li>
+<li class="fragment appear">Used in statistical tests for the difference between population means and linear regression</li>
+
+</ul>
+</section>
+<section>
+<div class="block">
+<p>
+If \(Z\) is a standard normal random variable, and \(\chi_n\) follows a \(\chi^2\) distribution with \(n\) d.o.f., then the random variable defined by
+\[T_n = \dfrac{Z}{\sqrt{\chi^2}/n}\]
+is said to have a <i>t-distribution with \(n\) degrees of freedom</i>
+</p>
+</div>
+</section>
+<section>
+<p>
+&lt;iframe width="100%" height="620" frameborder="0" style="background: #FFFFFF;"
+  src="<a href="https://observablehq.com/embed/@mcmcclur/the-t-distribution?cells=viewof+dof%2Ct_with_normal_pic">https://observablehq.com/embed/@mcmcclur/the-t-distribution?cells=viewof+dof%2Ct_with_normal_pic</a>"&gt;&lt;/iframe&gt;
+</p>
+</section>
+<section id="slide-orga22c5ba">
+<h3 id="orga22c5ba">Mean and variance</h3>
+<div class="block">
+<p>
+The mean and variance of \(T_n\) are
+\[E[T_n] = 0\]
+\[\text{Var}(T_n) = \dfrac{n}{n-2}\]
+</p>
+</div>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/dist/reveal.js"></script>
+<script src="./reveal.js/plugin/highlight/highlight.js"></script>
+<script src="./reveal.js/plugin/zoom/zoom.js"></script>
+<script src="./reveal.js/plugin/notes/notes.js"></script>
+<script src="./reveal.js/plugin/math/math.js"></script>
+<script src="./reveal.js/plugin/chalkboard/plugin.js"></script>
+<script src="./reveal.js/plugin/menu/menu.js"></script>
+<script src="./reveal.js/plugin/customcontrols/plugin.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+width: 1280,
+height: 720,
+
+transition: 'convex',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealHighlight, RevealZoom, RevealNotes, RevealMath, RevealChalkboard, RevealMenu, RevealCustomControls ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+{ src: './reveal.js/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, skipStartButton: true}); } }]
+
+,pdfSeparateFragments: false, customcontrols: {controls: [ {id: 'toggle-overview', title: 'Toggle overview (O)', icon: '<i class="fa fa-th"></i>', action: 'Reveal.toggleOverview();'}, { icon: '<i class="fa fa-pen-square"></i>', title: 'Toggle chalkboard (B)', action: 'RevealChalkboard.toggleChalkboard();'}, { icon: '<i class="fa fa-pen"></i>', title: 'Toggle notes canvas (C)', action: 'RevealChalkboard.toggleNotesCanvas();'} ]}, chalkboard: { theme: "whiteboard", grid: false, background: [ 'rgba(127,127,127,.1)' , path + 'img/blackboard.png' ], rememberColor: [true, true], boardmarkerWidth: 5, },});
+</script>
+</body>
+</html>

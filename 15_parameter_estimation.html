@@ -25,18 +25,18 @@
 <h1 class="title">Probability &amp; Statistics in Engineering</h1><h2 class="date">Fall 2023 - 7 Nov</h2>
 </section>
 <section>
-<section id="slide-org569ea31">
-<h2 id="org569ea31">Statistical inference</h2>
+<section id="slide-orge524bfc">
+<h2 id="orge524bfc">Statistical inference</h2>
 
-<figure id="org425bb3b">
+<figure id="org734fa7d">
 <img src="images/population_sampling.png" alt="population_sampling.png" width="90%">
 
 </figure>
 </section>
 </section>
 <section>
-<section id="slide-org16271ca">
-<h2 id="org16271ca">Parameter estimation</h2>
+<section id="slide-org04206ea">
+<h2 id="org04206ea">Parameter estimation</h2>
 <ul>
 <li class="fragment appear">We use the observed data to make inferences the unknown parameters of a distribution</li>
 <li class="fragment appear">Point estimation
@@ -57,8 +57,8 @@
 </section>
 </section>
 <section>
-<section id="slide-orgc3f45f0">
-<h2 id="orgc3f45f0">Method of moments</h2>
+<section id="slide-org95e58fa">
+<h2 id="org95e58fa">Method of moments</h2>
 <ul>
 <li>Equates the sample with the population moments</li>
 <li>Uses the relationships between distribution parameters and moments</li>
@@ -67,14 +67,14 @@
 <div class="fragment block">
 <ul>
 <li>Let \(X_1\), \(X_2\),&#x2026;, \(X_n\) be a random sample from a probability distribution with \(m\) unknown parameters.</li>
-<li>The $k$th moment is \(E[X^k]\) estimated from the sample moment $(1/n)&sum; X<sub>i</sub><sup>k</sup></li>
+<li>The $k$th moment is \(E[X^k]\) estimated from the sample moment \((1/n)\sum X_i^k\)</li>
 <li>The <b>moment estimators</b> \(\hat{\theta_1}\), \(\hat{\theta_2}\),&#x2026;, \(\hat{\theta_m}\) are found by solving the equations relating parameters and moments</li>
 
 </ul>
 </div>
 </section>
-<section id="slide-org3495d83">
-<h3 id="org3495d83">Example</h3>
+<section id="slide-org0fb4caa">
+<h3 id="org0fb4caa">Example</h3>
 <ul>
 <li class="fragment appear">Suppose that \(X_1\), \(X_2\),&#x2026;, \(X_n\) is a random sample from an exponential distribution</li>
 <li class="fragment appear">Exponential distribution has only one parameter \(\lambda\)</li>
@@ -91,16 +91,16 @@
 </p>
 </span>
 </section>
-<section id="slide-orgb85b6d6">
-<h3 id="orgb85b6d6">Problem 15.1</h3>
+<section id="slide-orgfd7ca87">
+<h3 id="orgfd7ca87">Problem 15.1</h3>
 <p>
 Data for the fatigue life of aluminum yielded the sample mean and variance of \(\overline{x}=26.75\) and \(s^2=360.0\) in million cycles. Assuming that fatigue life follows a lognormal distribution, find its parameters \(\theta\) and \(\omega\).
 </p>
 </section>
 </section>
 <section>
-<section id="slide-org1a7232b">
-<h2 id="org1a7232b">Maximum Likelihood Estimation</h2>
+<section id="slide-orgab85a37">
+<h2 id="orgab85a37">Maximum Likelihood Estimation</h2>
 <ul>
 <li class="fragment appear">Consider a random variable \(X\) from a distribution \(f(x;\theta)\)</li>
 <li class="fragment appear">The observed sample values are \(x_1\), \(x_2\),&#x2026;, \(x_n\)</li>
@@ -109,8 +109,8 @@ Data for the fatigue life of aluminum yielded the sample mean and variance of \(
 
 </ul>
 </section>
-<section id="slide-org819e270">
-<h3 id="org819e270">Likelihood function and Estimator</h3>
+<section id="slide-org1267d0e">
+<h3 id="org1267d0e">Likelihood function and Estimator</h3>
 <div class="block">
 <p>
 The <b>likelihood function</b> of the sample \(x_1\), \(x_2\),&#x2026;, \(x_n\) is the product
@@ -123,8 +123,8 @@ The <b>maximum likelihood estimator</b> (MLE) is the value of \(\theta\) that ma
 </p>
 </div>
 </section>
-<section id="slide-org1569d9e">
-<h3 id="org1569d9e">Log-likelihood</h3>
+<section id="slide-org5d9d8e9">
+<h3 id="org5d9d8e9">Log-likelihood</h3>
 <p>
 The value \(\hat{\theta}\) that maximizes \(L(\theta)\) can be obtained by
 \[\dfrac{\partial L(x_1, x_2,..., x_n; \theta)}{\partial \theta} = 0\]
@@ -140,22 +140,22 @@ The value \(\hat{\theta}\) that maximizes \(L(\theta)\) can be obtained by
 </p>
 </span>
 </section>
-<section id="slide-org0f425db">
-<h3 id="org0f425db">Problem 15.2</h3>
+<section id="slide-org02b19f5">
+<h3 id="org02b19f5">Problem 15.2</h3>
 <p>
 Let \(X\) be a Bernoulli random variable with PMF \[\begin{cases} p^x (1-p)^{1-x} & x=0,1 \\ 0 & \text{otherwise}\end{cases}\]
 Find the MLE of the parameter \(p\).
 </p>
 </section>
-<section id="slide-org00218b5">
-<h3 id="org00218b5">Problem 15.3</h3>
+<section id="slide-orgf550df0">
+<h3 id="orgf550df0">Problem 15.3</h3>
 <p>
 Let \(X\) be an exponential random variable with PDF \[\lambda e^{-\lambda x}\]
 Find the MLE for \(\lambda\).
 </p>
 </section>
-<section id="slide-org40f01af">
-<h3 id="org40f01af">Problem 15.4</h3>
+<section id="slide-org4418b9b">
+<h3 id="org4418b9b">Problem 15.4</h3>
 <p>
 Lab tests are performed on five specimens of sand, with each one subjected to loads and the number of cycles the specimens lasted before failure were 25, 20, 28, 33, and 26 cycles. If the number of load cycles to failure is modeled with a lognormal distribution, find the MLE estimates of \(\theta\) and \(\omega\).
 </p>
