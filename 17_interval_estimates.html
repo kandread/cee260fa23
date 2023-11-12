@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Probability &amp; Statistics in Engineering</title>
+<meta name="author" content="Kostas Andreadis"/>
+<meta name="description" content="Setup file for reveal.js presentations"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/night.css" id="theme"/>
+
+<link rel="stylesheet" href="custom.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/chalkboard/style.css">
+<link rel="stylesheet" href="./reveal.js/plugin/customcontrols/style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1 class="title">Probability &amp; Statistics in Engineering</h1><h2 class="date">Fall 2023 - 14 Nov</h2>
+</section>
+<section>
+<section id="slide-org414a5c0">
+<h2 id="org414a5c0">Interval estimates</h2>
+<ul>
+<li class="fragment appear">Suppose that \(X_1\), \(X_2\),&#x2026;, \(X_n\) is a sample of a normal population that has mean \(\mu\) and \(\sigma^2\)</li>
+<li class="fragment appear">The MLE estimate of \(\mu\) is \(\overline{X}=\sum_{i=1}^n X_i / n\)</li>
+<li class="fragment appear">We don't expect \(\overline{X}\) to be exactly equal to \(\mu\)</li>
+<li class="fragment appear"><font color="indianred"> But it should be close</font></li>
+
+</ul>
+</section>
+<section>
+<ul>
+<li class="fragment appear">Rather than a <i>point estimate</i> we can specify an <b>interval</b></li>
+<li class="fragment appear">We can assign a degree of confidence that \(\mu\) lies within that interval</li>
+<li class="fragment appear">The distribution of the point estimator can be used to obtain the <font color="lightgreen"> interval estimator</font></li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orge3d872c">
+<h2 id="orge3d872c">Confidence intervals</h2>
+<ul>
+<li class="fragment appear"><font color="steelblue"> An interval estimate for a population parameter</font></li>
+<li class="fragment appear">Usually they are 90%, 95% and 99%</li>
+<li class="fragment appear">Measure of <b>reliability</b>: if we repeated the experiment multiple times and calculated the 95% bounds then 95% of samples would contain the true mean within their corresponding bounds</li>
+<li class="fragment appear">Confidence interval for mean, variance and proportion</li>
+<li class="fragment appear">Cases of normal distribution with known or unknown variance</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgc1d4ec7">
+<h2 id="orgc1d4ec7">The 95% confidence interval on the mean</h2>
+
+<figure id="org7f6bb93">
+<img src="https://datatab.net/assets/tutorial/confidence_interval.png" alt="confidence_interval.png" width="65%">
+
+</figure>
+<small>https://datatab.net/tutorial/confidence-interval</small>
+</section>
+<section>
+<p>
+Remember that \(\dfrac{\overline{X}-\mu}{\sigma / \sqrt{n}}\) is a standard normal variable
+</p>
+<span class="fragment">
+
+<figure id="org2ab814e">
+<img src="images/confidence_1_96.webp" alt="confidence_1_96.webp" width="60%">
+
+</figure>
+</span>
+</section>
+<section>
+<p>
+\[P \left( -1.96 < \dfrac{\overline{X}-\mu}{\sigma / \sqrt{n}} < 1.96 \right) = 0.95\]
+</p>
+<span class="fragment">
+<p>
+\[P \left( -1.96 \dfrac{\sigma}{\sqrt{n}} < \overline{X}-\mu < 1.96 \dfrac{\sigma}{\sqrt{n}} \right) = 0.95\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[P \left( -1.96 \dfrac{\sigma}{\sqrt{n}} < \mu - \overline{X} < 1.96 \dfrac{\sigma}{\sqrt{n}} \right) = 0.95\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[P \left( \overline{X} - 1.96 \dfrac{\sigma}{\sqrt{n}} < \mu < \overline{X} + 1.96 \dfrac{\sigma}{\sqrt{n}} \right) = 0.95\]
+</p>
+</span>
+</section>
+<section>
+<div class="block">
+<p>
+With 95% confidence, the true mean lies within \(1.96 \dfrac{\sigma}{\sqrt{n}}\) of the sample mean and the 95 percent confidence interval is
+\[\left(\overline{X} - 1.96 \dfrac{\sigma}{\sqrt{n}}, \overline{X} + 1.96 \dfrac{\sigma}{\sqrt{n}} \right)\]
+</p>
+</div>
+</section>
+<section id="slide-orgffa29d3">
+<h3 id="orgffa29d3">Problem 17.1</h3>
+<p>
+The amplitude of a signal received is random variable due to noise during transmission, but it follows a distribution \(\text{N}(\mu, 4)\). If the amplitudes measured 9 times are 5, 8.5, 12, 15, 7, 9, 7.5, 6.5, 10.5 what is the 95% confidence interval for the true amplitude \(\mu\)?
+</p>
+</section>
+</section>
+<section>
+<section id="slide-orgbf5b070">
+<h2 id="orgbf5b070">Two-sided and one-sided intervals</h2>
+<span class="fragment">
+<p>
+What if we were interested in \(\mu\) being <i>at least</i> as large as value (relative to the mean)?
+</p>
+</span>
+<span class="fragment">
+<p>
+\[P(Z < 1.645) = 0.95 \Rightarrow P \left( \dfrac{\overline{X}-\mu}{\sigma / \sqrt{n}} <  1.645 \right) = 0.95\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[P \left( \overline{X} - 1.645 \dfrac{\sigma}{\sqrt{n}} < \mu \right) = 0.95\]
+</p>
+</span>
+</section>
+<section>
+<div class="block">
+<p>
+One-sided <i>upper</i> 95% confidence interval \[\left( \overline{X} - 1.645 \dfrac{\sigma}{\sqrt{n}}, \infty \right)\]
+One-sided <i>lower</i> 95% confidence interval \[\left(-\infty, \overline{X} + 1.645 \dfrac{\sigma}{\sqrt{n}} \right)\]
+</p>
+</div>
+</section>
+<section id="slide-orgc8aa300">
+<h3 id="orgc8aa300">Problem 17.2</h3>
+<p>
+Find the upper and lower 95% confidence intervals from the previous example.
+</p>
+</section>
+</section>
+<section>
+<section id="slide-orgf8d0287">
+<h2 id="orgf8d0287">Confidence intervals of any specified level</h2>
+
+<figure id="orgf178f36">
+<img src="images/confidence_a.png" alt="confidence_a.png" width="80%">
+
+</figure>
+</section>
+<section>
+<p>
+\[P(Z > z_a) = a\]
+</p>
+<span class="fragment">
+<p>
+\[P \left( -z_{a/2} < Z < z_{a/2} \right) = 1-a \Rightarrow P \left( -z_{a/2} < \dfrac{\overline{X}-\mu}{\sigma / \sqrt{n}} < z_{a/2} \right)\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[P \left( \overline{X} - z_{a/2} \dfrac{\sigma}{\sqrt{n}} < \mu < \overline{X} + z_{a/2} \dfrac{\sigma}{\sqrt{n}} \right)\]
+</p>
+</span>
+</section>
+<section>
+<div class="block">
+<p>
+The \(100(1-a)\) percent two-sided confidence interval for \(\mu\) is \[\left( \overline{X} - z_{a/2} \dfrac{\sigma}{\sqrt{n}}, \overline{X} + z_{a/2} \dfrac{\sigma}{\sqrt{n}} \right)\]
+</p>
+</div>
+</section>
+<section>
+<div class="block">
+<p>
+The \(100(1-a)\) percent one-sided lower confidence interval for \(\mu\) is \[\left( -\infty, \overline{X} + z_{a/2} \dfrac{\sigma}{\sqrt{n}} \right)\]
+The \(100(1-a)\) percent one-sided upper confidence interval for \(\mu\) is \[\left( \overline{X} - z_{a/2} \dfrac{\sigma}{\sqrt{n}}, \infty \right)\]
+</p>
+</div>
+</section>
+<section id="slide-orgec2a00c">
+<h3 id="orgec2a00c">Problem 17.3</h3>
+<p>
+Use the previous data to calculate the 99% confidence intervals (both two- and one-sided).
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org08939a0">
+<h2 id="org08939a0">Choosing the sample size</h2>
+<ul>
+<li class="fragment appear">Ten measurements of impact energy on specimens of steel materials had a mean of 64.46 J</li>
+<li class="fragment appear">Impact energy is normally distributed with \(\sigma=1\) J</li>
+<li class="fragment appear">How many steel material specimens do we need to keep the 99% bounds at most 1.0 J?</li>
+
+</ul>
+<span class="fragment">
+
+<figure id="org64732b4">
+<img src="images/interval_sample_size.png" alt="interval_sample_size.png" width="80%">
+
+</figure>
+</span>
+</section>
+<section>
+<p>
+\[\left( \overline{X} - 2.58 \dfrac{\sigma}{\sqrt{n}}, \overline{X} + 2.58 \dfrac{\sigma}{\sqrt{n}} \right)\]
+</p>
+<span class="fragment">
+<p>
+The interval length is \[5.16 \dfrac{\sigma}{\sqrt{n}}\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[n = (51.6 \sigma)^2 = 51.6 \approx 52\]
+</p>
+</span>
+</section>
+<section>
+<div class="block">
+<p>
+If \(\overline{x}\) is used as an estimate of \(\mu\), we can be \(100(1-a)%\) confident that the error \(|\overline{x}-\mu|\) will not exceed \(E\) when the sample size is \[n=\left( \dfrac{z_{a/2}\sigma}{E} \right)^2\]
+</p>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org8886fbd">
+<h2 id="org8886fbd">Interpreting a confidence interval</h2>
+<ul>
+<li class="fragment appear">Probability of \(\mu\) being within the CI we calculated?</li>
+<li class="fragment appear">Subtle difference between probability and confidence</li>
+<li class="fragment appear">The CI is itself a <b>random interval</b></li>
+
+</ul>
+<span class="fragment">
+
+<figure id="org4ba0493">
+<img src="images/ci_interpretation.png" alt="ci_interpretation.png" width="50%">
+
+</figure>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-org1f78fe7">
+<h2 id="org1f78fe7">Problem 17.4</h2>
+<p>
+The average speed of vehicles on a highway is being studied. Observations on 50 vehicles yielded a mean of 65 mph. Assume that the standard deviation is known to be 6 mph. What is the 2-sided 99% confidence interval on the mean speed?
+</p>
+</section>
+<section>
+<p>
+How many additional vehicles need to be observed so that the mean speed can be estimated within \(\pm 1\) mph with 99% confidence?
+</p>
+</section>
+<section>
+<p>
+If two engineers collect data and each one separately observes 10 vehicles, what is the probability that Engineer 1 will have a sample mean larger than Engineer's 2 by 2 mph?
+</p>
+</section>
+<section>
+<p>
+What if the two engineers observed 100 vehicles instead?
+</p>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/dist/reveal.js"></script>
+<script src="./reveal.js/plugin/highlight/highlight.js"></script>
+<script src="./reveal.js/plugin/zoom/zoom.js"></script>
+<script src="./reveal.js/plugin/notes/notes.js"></script>
+<script src="./reveal.js/plugin/math/math.js"></script>
+<script src="./reveal.js/plugin/chalkboard/plugin.js"></script>
+<script src="./reveal.js/plugin/menu/menu.js"></script>
+<script src="./reveal.js/plugin/customcontrols/plugin.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+width: 1280,
+height: 720,
+
+transition: 'convex',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealHighlight, RevealZoom, RevealNotes, RevealMath, RevealChalkboard, RevealMenu, RevealCustomControls ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+{ src: './reveal.js/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, skipStartButton: true}); } }]
+
+,pdfSeparateFragments: false, customcontrols: {controls: [ {id: 'toggle-overview', title: 'Toggle overview (O)', icon: '<i class="fa fa-th"></i>', action: 'Reveal.toggleOverview();'}, { icon: '<i class="fa fa-pen-square"></i>', title: 'Toggle chalkboard (B)', action: 'RevealChalkboard.toggleChalkboard();'}, { icon: '<i class="fa fa-pen"></i>', title: 'Toggle notes canvas (C)', action: 'RevealChalkboard.toggleNotesCanvas();'} ]}, chalkboard: { theme: "whiteboard", grid: false, background: [ 'rgba(127,127,127,.1)' , path + 'img/blackboard.png' ], rememberColor: [true, true], boardmarkerWidth: 5, },});
+</script>
+</body>
+</html>
