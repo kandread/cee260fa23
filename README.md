@@ -35,3 +35,5 @@ Repository of lecture slides for Probability & Statistics (Fall 2023).
 [Lecture #16 - Other continuous distributions](https://kandread.github.io/cee260fa23/16_other_continuous_distributions.html)
 
 [Lecture #17 - Interval estimates](https://kandread.github.io/cee260fa23/17_interval_estimates.html)
+
+[Lecture #18 - More interval estimates](https://kandread.github.io/cee260fa23/18_more_interval_estimates.html)

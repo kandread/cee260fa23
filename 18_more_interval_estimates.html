@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Probability &amp; Statistics in Engineering</title>
+<meta name="author" content="Kostas Andreadis"/>
+<meta name="description" content="Setup file for reveal.js presentations"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/night.css" id="theme"/>
+
+<link rel="stylesheet" href="custom.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/chalkboard/style.css">
+<link rel="stylesheet" href="./reveal.js/plugin/customcontrols/style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1 class="title">Probability &amp; Statistics in Engineering</h1><h2 class="date">Fall 2023 - 16 Nov</h2>
+</section>
+<section>
+<section id="slide-orgfe49c41">
+<h2 id="orgfe49c41">Recap</h2>
+<div class="block">
+<p>
+The \(100(1-a)\) percent two-sided confidence interval for \(\mu\) is \[\left( \overline{X} - z_{a/2} \dfrac{\sigma}{\sqrt{n}}, \overline{X} + z_{a/2} \dfrac{\sigma}{\sqrt{n}} \right)\]
+</p>
+</div>
+<span class="fragment">
+<p>
+Also works when $X is <i>not</i> a Gaussian random variable (if sample size \(n\) is large enough)!
+</p>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-orgadbbde4">
+<h2 id="orgadbbde4">Confidence interval of the mean when variance is unknown</h2>
+<ul>
+<li class="fragment appear">Suppose that \(X_1\), \(X_2\),&#x2026;, \(X_n\) is a sample from a normal population with unknown \(\mu\) and \(\sigma^2\)</li>
+<li class="fragment appear">We cannot use the standard \(Z=\dfrac{\overline{X}-\mu}{\sigma / \sqrt{n}}\)</li>
+<li class="fragment appear">However, we can use the variable \(\dfrac{\overline{X}-\mu}{S}\) which follows a <font color="steelblue">t-distribution</font> with \(n-1\) degrees of freedom</li>
+
+</ul>
+</section>
+<section id="slide-orgaca5f2f">
+<h3 id="orgaca5f2f">Remember that the t-distribution is symmetric</h3>
+
+<figure id="orgbbe37f6">
+<img src="images/t_distribution_confidence.png" alt="t_distribution_confidence.png" width="80%">
+
+</figure>
+</section>
+<section id="slide-org1e663f4">
+<h3 id="org1e663f4">Calculating the interval</h3>
+<p>
+\[P \left( -t_{a/2,n-1} < \dfrac{\overline{X}-\mu}{s / \sqrt{n}} < t_{a/2,n-1} \right) = 1 - a\]
+</p>
+<span class="fragment">
+<p>
+\[P \left( \overline{X} - t_{a/2,n-1}  \dfrac{S}{\sqrt{n}} < \mu < \overline{X} + t_{a/2,n-1}  \dfrac{S}{\sqrt{n}} \right) = 1 - a\]
+</p>
+</span>
+</section>
+<section>
+<div class="block">
+<p>
+The \(100(1-a)\) confidence interval for the mean of a random variable that has unknown mean and variance is
+\[\left( \overline{X} - t_{a/2,n-1}  \dfrac{s}{\sqrt{n}}, \overline{X} + t_{a/2,n-1}  \dfrac{s}{\sqrt{n}} \right)\]
+</p>
+</div>
+</section>
+<section id="slide-org1cf9aea">
+<h3 id="org1cf9aea">t-distribution table</h3>
+<p width="80%">
+<img src="images/t_distribution_table.png" alt="t_distribution_table.png" width="80%">
+ <small>[[https://www.sjsu.edu/faculty/gerstman/StatPrimer/t-table.pdf]]</small>
+</p>
+</section>
+<section id="slide-org6db39a4">
+<h3 id="org6db39a4">Problem 18.1</h3>
+<p>
+A sample of 25 rebars tested for yield strengths yielded \(\overline{x}=37.5\) psi and \(s=3.5\) psi. What is the 95% confidence interval for the mean yield strength?
+</p>
+</section>
+<section id="slide-org46065f3">
+<h3 id="org46065f3">One-sided confidence interval</h3>
+<div class="block">
+<p>
+If \(\overline{X}\) and \(S\) are the mean and standard deviation of a random sample from a normal distribution with unknown variance, then the <i>upper</i> and <i>lower</i> confidence intervals are respectively
+\[\left( \overline{X} - \dfrac{S}{\sqrt{n}} t_{a,n-1}, \infty \right)\]
+\[\left(-\infty, \overline{X} + \dfrac{S}{\sqrt{n}} t_{a,n-1}\right)\]
+</p>
+</div>
+<span class="fragment">
+<p>
+Also works for an unknown distribution (Thanks CTL!)
+</p>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-orgb899e2e">
+<h2 id="orgb899e2e">Confidence intervals for variance of a normal distribution</h2>
+<ul>
+<li class="fragment appear">\(X_1\), \(X_2\),&#x2026;, \(X_n\) is a sample from a normal distribution with unknown \(\mu\) and \(\sigma^2\)</li>
+<li class="fragment appear">Confidence interval is constructed from \((n-1) \dfrac{S^2}{\sigma^2}\) follows the chi-square distribution</li>
+
+</ul>
+<span class="fragment">
+<p>
+\[P \left[ \chi^2_{1-a/2,n-1} \leq (n-1)\dfrac{S^2}{\sigma^2} \leq \chi^2_{a/2,n-1} \right] = 1-a\]
+</p>
+</span>
+</section>
+<section>
+<p>
+\[P \left[ \dfrac{(n-1)S^2}{\chi^2_{1-a/2,n-1}} \leq \sigma^2 \leq \dfrac{(n-1)S^2}{\chi^2_{a/2,n-1}} \right] = 1-a\]
+</p>
+<div class="fragment block">
+<p>
+If \(S^2\) is the sample variance from a random sample of \(n\) observations from a normal distribution, then a \(100(1-a)\%\) confidence interval on \(\sigma^2\) is
+\[\left[ \dfrac{(n-1)S^2}{\chi^2_{a/2,n-1}}, \dfrac{(n-1)S^2}{\chi^2_{1-a/2,n-1}} \right]\]
+</p>
+</div>
+</section>
+<section id="slide-orgf3e2bc8">
+<h3 id="orgf3e2bc8">Calculating \(\chi^2\) values</h3>
+
+<figure id="org328fd78">
+<img src="images/chi2_nonsymmetry.png" alt="chi2_nonsymmetry.png" width="40%">
+
+</figure>
+</section>
+<section>
+<p width="70%">
+<img src="images/chi2_table.png" alt="chi2_table.png" width="70%">
+ <small>[[https://people.richland.edu/james/lecture/m170/tbl-chi.html]]</small>
+</p>
+</section>
+<section id="slide-org243cdce">
+<h3 id="org243cdce">Problem 18.2</h3>
+<p>
+The sample variance of runoff in a river from 25 storms is 0.36 in<sup>2</sup>. What is the upper 95% confidence bound for the standard deviation of runoff?
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org2a0dc22">
+<h2 id="org2a0dc22">Summary</h2>
+
+<figure id="orgac726e3">
+<img src="images/confidence_summary.png" alt="confidence_summary.png" width="90%">
+
+</figure>
+</section>
+</section>
+<section>
+<section id="slide-org501ef3b">
+<h2 id="org501ef3b">Confidence interval for a population proportion</h2>
+<ul>
+<li class="fragment appear">Confidence interval for mean of a Bernoulli random variable</li>
+<li class="fragment appear">A <b>large</b> random sample of size \(n\) from a population</li>
+<li class="fragment appear">\(X\) observations (\(\leq n\)) are of interest</li>
+<li class="fragment appear">Then \(\hat{p}=X/n\) is an estimate of the proportion of the population for values of interest</li>
+<li class="fragment appear">\(n\) and \(p\) are parameters of the binomial distribution</li>
+<li class="fragment appear">We can approximate the binomial with a normal distribution</li>
+
+</ul>
+</section>
+<section id="slide-org8c15912">
+<h3 id="org8c15912">Normal approximation for a binomial proportion</h3>
+<div class="block">
+<p>
+If \(n\) is large, the distribution of
+</p>
+
+<p>
+\[Z=\dfrac{X-np}{\sqrt{np(1-p)}}=\dfrac{\hat{p}-p}{\sqrt{\dfrac{p(1-p)}{n}}}\]
+is approximately standard normal.
+</p>
+</div>
+</section>
+<section id="slide-org1bf5632">
+<h3 id="org1bf5632">Constructing the confidence interval</h3>
+<p>
+\[P(-z_{a/2} \leq Z \leq z_{a/2}) = 1-a\]
+After rearranging terms
+\[P\left( \hat{p} - z_{a/2} \sqrt{\dfrac{p(1-p)}{n}} \leq p \leq \hat{p} + z_{a/2} \sqrt{\dfrac{p(1-p)}{n}} \right) = 1 - a\]
+</p>
+</section>
+<section id="slide-orgbde7fdd">
+<h3 id="orgbde7fdd">Approximate confidence interval on a binomial proportion</h3>
+<div class="block">
+<p>
+If \(\hat{p}\) is the proportion of observations in a random sample of size \(n\) that belongs to a class of interest, an approximate \(100(1-a)\%\) confidence interval on the proportion \(p\) of the population that belongs to that class is
+\[\hat{p} - z_{a/2} \sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}} \leq p \leq \hat{p} + z_{a/2} \sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}}\]
+</p>
+</div>
+</section>
+<section id="slide-orgeae2637">
+<h3 id="orgeae2637">Choice of sample size</h3>
+<div class="block">
+<p>
+Sample size for a specified error on a binomial proportion
+\[n=\left( \dfrac{z_{a/2}}{E} \right)^2 p (1-p)\]
+</p>
+</div>
+<span class="fragment">
+<p>
+If information about \(p\) is unavailable, we can obtain an upper bound of \(n\)
+\[n=\left( \dfrac{z_{a/2}}{E} \right)^2 (0.25)\]
+</p>
+</span>
+</section>
+<section id="slide-org8631a7f">
+<h3 id="org8631a7f">Approximate one-sided bounds on a binomial proportion</h3>
+<div class="block">
+<p>
+The approximate \(100(1-a)\%\) lower and upper confidence bounds are
+\[\hat{p} - z_a \sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}} \leq p\]
+\[p \leq \hat{p} + z_a \sqrt{\dfrac{\hat{p} (1-\hat{p})}{n}}\]
+</p>
+</div>
+</section>
+<section id="slide-org8b63391">
+<h3 id="org8b63391">Problem 18.3</h3>
+<p>
+At a weight station, the weights of trucks were observed before crossing a bridge. Suppose observations of 30 trucks yielded a mean of 12.5 tons. Assume that the standard deviation of truck weights is known to be 3 tons. What is the two-sided 99% confidence interval for the mean weight of trucks?
+</p>
+</section>
+<section>
+<p>
+How many additional trucks should be observed such that the mean truck weight can be estimated to within \(\pm1.0\) ton with 99% confidence?
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org675d0eb">
+<h2 id="org675d0eb">Readings</h2>
+<ul>
+<li>Sections 7.1-7.2</li>
+<li>Sections 7.3.1-7.3.2 (up to p. 267)</li>
+<li>Section 7.3.3</li>
+<li>Section 7.5</li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/dist/reveal.js"></script>
+<script src="./reveal.js/plugin/highlight/highlight.js"></script>
+<script src="./reveal.js/plugin/zoom/zoom.js"></script>
+<script src="./reveal.js/plugin/notes/notes.js"></script>
+<script src="./reveal.js/plugin/math/math.js"></script>
+<script src="./reveal.js/plugin/chalkboard/plugin.js"></script>
+<script src="./reveal.js/plugin/menu/menu.js"></script>
+<script src="./reveal.js/plugin/customcontrols/plugin.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+width: 1280,
+height: 720,
+
+transition: 'convex',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealHighlight, RevealZoom, RevealNotes, RevealMath, RevealChalkboard, RevealMenu, RevealCustomControls ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+{ src: './reveal.js/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, skipStartButton: true}); } }]
+
+,pdfSeparateFragments: false, customcontrols: {controls: [ {id: 'toggle-overview', title: 'Toggle overview (O)', icon: '<i class="fa fa-th"></i>', action: 'Reveal.toggleOverview();'}, { icon: '<i class="fa fa-pen-square"></i>', title: 'Toggle chalkboard (B)', action: 'RevealChalkboard.toggleChalkboard();'}, { icon: '<i class="fa fa-pen"></i>', title: 'Toggle notes canvas (C)', action: 'RevealChalkboard.toggleNotesCanvas();'} ]}, chalkboard: { theme: "whiteboard", grid: false, background: [ 'rgba(127,127,127,.1)' , path + 'img/blackboard.png' ], rememberColor: [true, true], boardmarkerWidth: 5, },});
+</script>
+</body>
+</html>
