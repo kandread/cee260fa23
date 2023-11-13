@@ -25,8 +25,8 @@
 <h1 class="title">Probability &amp; Statistics in Engineering</h1><h2 class="date">Fall 2023 - 16 Nov</h2>
 </section>
 <section>
-<section id="slide-orgfe49c41">
-<h2 id="orgfe49c41">Recap</h2>
+<section id="slide-orgf52c994">
+<h2 id="orgf52c994">Recap</h2>
 <div class="block">
 <p>
 The \(100(1-a)\) percent two-sided confidence interval for \(\mu\) is \[\left( \overline{X} - z_{a/2} \dfrac{\sigma}{\sqrt{n}}, \overline{X} + z_{a/2} \dfrac{\sigma}{\sqrt{n}} \right)\]
@@ -34,14 +34,14 @@ The \(100(1-a)\) percent two-sided confidence interval for \(\mu\) is \[\left( \
 </div>
 <span class="fragment">
 <p>
-Also works when $X is <i>not</i> a Gaussian random variable (if sample size \(n\) is large enough)!
+Also works when \(X\) is <i>not</i> a Gaussian random variable (if sample size \(n\) is large enough)!
 </p>
 </span>
 </section>
 </section>
 <section>
-<section id="slide-orgadbbde4">
-<h2 id="orgadbbde4">Confidence interval of the mean when variance is unknown</h2>
+<section id="slide-org8483ac5">
+<h2 id="org8483ac5">Confidence interval of the mean when variance is unknown</h2>
 <ul>
 <li class="fragment appear">Suppose that \(X_1\), \(X_2\),&#x2026;, \(X_n\) is a sample from a normal population with unknown \(\mu\) and \(\sigma^2\)</li>
 <li class="fragment appear">We cannot use the standard \(Z=\dfrac{\overline{X}-\mu}{\sigma / \sqrt{n}}\)</li>
@@ -49,16 +49,16 @@ Also works when $X is <i>not</i> a Gaussian random variable (if sample size \(n\
 
 </ul>
 </section>
-<section id="slide-orgaca5f2f">
-<h3 id="orgaca5f2f">Remember that the t-distribution is symmetric</h3>
+<section id="slide-orgce70056">
+<h3 id="orgce70056">Remember that the t-distribution is symmetric</h3>
 
-<figure id="orgbbe37f6">
+<figure id="org24f974c">
 <img src="images/t_distribution_confidence.png" alt="t_distribution_confidence.png" width="80%">
 
 </figure>
 </section>
-<section id="slide-org1e663f4">
-<h3 id="org1e663f4">Calculating the interval</h3>
+<section id="slide-orge9cc8df">
+<h3 id="orge9cc8df">Calculating the interval</h3>
 <p>
 \[P \left( -t_{a/2,n-1} < \dfrac{\overline{X}-\mu}{s / \sqrt{n}} < t_{a/2,n-1} \right) = 1 - a\]
 </p>
@@ -76,21 +76,21 @@ The \(100(1-a)\) confidence interval for the mean of a random variable that has 
 </p>
 </div>
 </section>
-<section id="slide-org1cf9aea">
-<h3 id="org1cf9aea">t-distribution table</h3>
+<section id="slide-org5cd56e1">
+<h3 id="org5cd56e1">t-distribution table</h3>
 <p width="80%">
 <img src="images/t_distribution_table.png" alt="t_distribution_table.png" width="80%">
- <small>[[https://www.sjsu.edu/faculty/gerstman/StatPrimer/t-table.pdf]]</small>
+ <small><a href="https://www.sjsu.edu/faculty/gerstman/StatPrimer/t-table.pdf">https://www.sjsu.edu/faculty/gerstman/StatPrimer/t-table.pdf</a></small>
 </p>
 </section>
-<section id="slide-org6db39a4">
-<h3 id="org6db39a4">Problem 18.1</h3>
+<section id="slide-org80ae82d">
+<h3 id="org80ae82d">Problem 18.1</h3>
 <p>
 A sample of 25 rebars tested for yield strengths yielded \(\overline{x}=37.5\) psi and \(s=3.5\) psi. What is the 95% confidence interval for the mean yield strength?
 </p>
 </section>
-<section id="slide-org46065f3">
-<h3 id="org46065f3">One-sided confidence interval</h3>
+<section id="slide-org8ac7989">
+<h3 id="org8ac7989">One-sided confidence interval</h3>
 <div class="block">
 <p>
 If \(\overline{X}\) and \(S\) are the mean and standard deviation of a random sample from a normal distribution with unknown variance, then the <i>upper</i> and <i>lower</i> confidence intervals are respectively
@@ -106,8 +106,8 @@ Also works for an unknown distribution (Thanks CTL!)
 </section>
 </section>
 <section>
-<section id="slide-orgb899e2e">
-<h2 id="orgb899e2e">Confidence intervals for variance of a normal distribution</h2>
+<section id="slide-orge09b16c">
+<h2 id="orge09b16c">Confidence intervals for variance of a normal distribution</h2>
 <ul>
 <li class="fragment appear">\(X_1\), \(X_2\),&#x2026;, \(X_n\) is a sample from a normal distribution with unknown \(\mu\) and \(\sigma^2\)</li>
 <li class="fragment appear">Confidence interval is constructed from \((n-1) \dfrac{S^2}{\sigma^2}\) follows the chi-square distribution</li>
@@ -130,10 +130,10 @@ If \(S^2\) is the sample variance from a random sample of \(n\) observations fro
 </p>
 </div>
 </section>
-<section id="slide-orgf3e2bc8">
-<h3 id="orgf3e2bc8">Calculating \(\chi^2\) values</h3>
+<section id="slide-orge8d5751">
+<h3 id="orge8d5751">Calculating \(\chi^2\) values</h3>
 
-<figure id="org328fd78">
+<figure id="orgee74db2">
 <img src="images/chi2_nonsymmetry.png" alt="chi2_nonsymmetry.png" width="40%">
 
 </figure>
@@ -141,29 +141,29 @@ If \(S^2\) is the sample variance from a random sample of \(n\) observations fro
 <section>
 <p width="70%">
 <img src="images/chi2_table.png" alt="chi2_table.png" width="70%">
- <small>[[https://people.richland.edu/james/lecture/m170/tbl-chi.html]]</small>
+ <small><a href="https://people.richland.edu/james/lecture/m170/tbl-chi.html">https://people.richland.edu/james/lecture/m170/tbl-chi.html</a></small>
 </p>
 </section>
-<section id="slide-org243cdce">
-<h3 id="org243cdce">Problem 18.2</h3>
+<section id="slide-org9131add">
+<h3 id="org9131add">Problem 18.2</h3>
 <p>
 The sample variance of runoff in a river from 25 storms is 0.36 in<sup>2</sup>. What is the upper 95% confidence bound for the standard deviation of runoff?
 </p>
 </section>
 </section>
 <section>
-<section id="slide-org2a0dc22">
-<h2 id="org2a0dc22">Summary</h2>
+<section id="slide-org00a0f9b">
+<h2 id="org00a0f9b">Summary</h2>
 
-<figure id="orgac726e3">
+<figure id="org5e68a8f">
 <img src="images/confidence_summary.png" alt="confidence_summary.png" width="90%">
 
 </figure>
 </section>
 </section>
 <section>
-<section id="slide-org501ef3b">
-<h2 id="org501ef3b">Confidence interval for a population proportion</h2>
+<section id="slide-org4a2f347">
+<h2 id="org4a2f347">Confidence interval for a population proportion</h2>
 <ul>
 <li class="fragment appear">Confidence interval for mean of a Bernoulli random variable</li>
 <li class="fragment appear">A <b>large</b> random sample of size \(n\) from a population</li>
@@ -174,8 +174,8 @@ The sample variance of runoff in a river from 25 storms is 0.36 in<sup>2</sup>. 
 
 </ul>
 </section>
-<section id="slide-org8c15912">
-<h3 id="org8c15912">Normal approximation for a binomial proportion</h3>
+<section id="slide-org431c7e1">
+<h3 id="org431c7e1">Normal approximation for a binomial proportion</h3>
 <div class="block">
 <p>
 If \(n\) is large, the distribution of
@@ -187,16 +187,16 @@ is approximately standard normal.
 </p>
 </div>
 </section>
-<section id="slide-org1bf5632">
-<h3 id="org1bf5632">Constructing the confidence interval</h3>
+<section id="slide-org184aefa">
+<h3 id="org184aefa">Constructing the confidence interval</h3>
 <p>
 \[P(-z_{a/2} \leq Z \leq z_{a/2}) = 1-a\]
 After rearranging terms
 \[P\left( \hat{p} - z_{a/2} \sqrt{\dfrac{p(1-p)}{n}} \leq p \leq \hat{p} + z_{a/2} \sqrt{\dfrac{p(1-p)}{n}} \right) = 1 - a\]
 </p>
 </section>
-<section id="slide-orgbde7fdd">
-<h3 id="orgbde7fdd">Approximate confidence interval on a binomial proportion</h3>
+<section id="slide-orge05082a">
+<h3 id="orge05082a">Approximate confidence interval on a binomial proportion</h3>
 <div class="block">
 <p>
 If \(\hat{p}\) is the proportion of observations in a random sample of size \(n\) that belongs to a class of interest, an approximate \(100(1-a)\%\) confidence interval on the proportion \(p\) of the population that belongs to that class is
@@ -204,8 +204,8 @@ If \(\hat{p}\) is the proportion of observations in a random sample of size \(n\
 </p>
 </div>
 </section>
-<section id="slide-orgeae2637">
-<h3 id="orgeae2637">Choice of sample size</h3>
+<section id="slide-org3c304c9">
+<h3 id="org3c304c9">Choice of sample size</h3>
 <div class="block">
 <p>
 Sample size for a specified error on a binomial proportion
@@ -219,8 +219,8 @@ If information about \(p\) is unavailable, we can obtain an upper bound of \(n\)
 </p>
 </span>
 </section>
-<section id="slide-org8631a7f">
-<h3 id="org8631a7f">Approximate one-sided bounds on a binomial proportion</h3>
+<section id="slide-org506359c">
+<h3 id="org506359c">Approximate one-sided bounds on a binomial proportion</h3>
 <div class="block">
 <p>
 The approximate \(100(1-a)\%\) lower and upper confidence bounds are
@@ -229,8 +229,8 @@ The approximate \(100(1-a)\%\) lower and upper confidence bounds are
 </p>
 </div>
 </section>
-<section id="slide-org8b63391">
-<h3 id="org8b63391">Problem 18.3</h3>
+<section id="slide-orga19b6a6">
+<h3 id="orga19b6a6">Problem 18.3</h3>
 <p>
 At a weight station, the weights of trucks were observed before crossing a bridge. Suppose observations of 30 trucks yielded a mean of 12.5 tons. Assume that the standard deviation of truck weights is known to be 3 tons. What is the two-sided 99% confidence interval for the mean weight of trucks?
 </p>
@@ -242,8 +242,8 @@ How many additional trucks should be observed such that the mean truck weight ca
 </section>
 </section>
 <section>
-<section id="slide-org675d0eb">
-<h2 id="org675d0eb">Readings</h2>
+<section id="slide-org35b3ae7">
+<h2 id="org35b3ae7">Readings</h2>
 <ul>
 <li>Sections 7.1-7.2</li>
 <li>Sections 7.3.1-7.3.2 (up to p. 267)</li>
