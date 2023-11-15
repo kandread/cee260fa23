@@ -25,8 +25,8 @@
 <h1 class="title">Probability &amp; Statistics in Engineering</h1><h2 class="date">Fall 2023 - 14 Nov</h2>
 </section>
 <section>
-<section id="slide-org5a9a2e1">
-<h2 id="org5a9a2e1">Interval estimates</h2>
+<section id="slide-org2f83ce6">
+<h2 id="org2f83ce6">Interval estimates</h2>
 <ul>
 <li class="fragment appear">Suppose that \(X_1\), \(X_2\),&#x2026;, \(X_n\) is a sample of a normal population that has mean \(\mu\) and \(\sigma^2\)</li>
 <li class="fragment appear">The MLE estimate of \(\mu\) is \(\overline{X}=\sum_{i=1}^n X_i / n\)</li>
@@ -45,8 +45,8 @@
 </section>
 </section>
 <section>
-<section id="slide-org1fa9abc">
-<h2 id="org1fa9abc">Confidence intervals</h2>
+<section id="slide-orgd2610df">
+<h2 id="orgd2610df">Confidence intervals</h2>
 <ul>
 <li class="fragment appear"><font color="steelblue"> An interval estimate for a population parameter</font></li>
 <li class="fragment appear">Usually they are 90%, 95% and 99%</li>
@@ -58,10 +58,10 @@
 </section>
 </section>
 <section>
-<section id="slide-org9386039">
-<h2 id="org9386039">The 95% confidence interval on the mean</h2>
+<section id="slide-orge0f7134">
+<h2 id="orge0f7134">The 95% confidence interval on the mean</h2>
 
-<figure id="org054dbdc">
+<figure id="org4df547e">
 <img src="https://datatab.net/assets/tutorial/confidence_interval.png" alt="confidence_interval.png" width="65%">
 
 </figure>
@@ -73,7 +73,7 @@ Remember that \(\dfrac{\overline{X}-\mu}{\sigma / \sqrt{n}}\) is a standard norm
 </p>
 <span class="fragment">
 
-<figure id="orgbbe6de2">
+<figure id="orgdb592c6">
 <img src="images/confidence_1_96.webp" alt="confidence_1_96.webp" width="60%">
 
 </figure>
@@ -107,16 +107,16 @@ With 95% confidence, the true mean lies within \(1.96 \dfrac{\sigma}{\sqrt{n}}\)
 </p>
 </div>
 </section>
-<section id="slide-orgb806186">
-<h3 id="orgb806186">Problem 17.1</h3>
+<section id="slide-org1704aca">
+<h3 id="org1704aca">Problem 17.1</h3>
 <p>
 The amplitude of a signal received is random variable due to noise during transmission, but it follows a distribution \(\text{N}(\mu, 4)\). If the amplitudes measured 9 times are 5, 8.5, 12, 15, 7, 9, 7.5, 6.5, 10.5 what is the 95% confidence interval for the true amplitude \(\mu\)?
 </p>
 </section>
 </section>
 <section>
-<section id="slide-org24ea762">
-<h2 id="org24ea762">Two-sided and one-sided intervals</h2>
+<section id="slide-orgd51c5c0">
+<h2 id="orgd51c5c0">Two-sided and one-sided intervals</h2>
 <span class="fragment">
 <p>
 What if we were interested in \(\mu\) being <i>at least</i> as large as value (relative to the mean)?
@@ -141,18 +141,18 @@ One-sided <i>lower</i> 95% confidence interval \[\left(-\infty, \overline{X} + 1
 </p>
 </div>
 </section>
-<section id="slide-org4bd2d9c">
-<h3 id="org4bd2d9c">Problem 17.2</h3>
+<section id="slide-org84cba42">
+<h3 id="org84cba42">Problem 17.2</h3>
 <p>
 Find the upper and lower 95% confidence intervals from the previous example.
 </p>
 </section>
 </section>
 <section>
-<section id="slide-org0638a81">
-<h2 id="org0638a81">Confidence intervals of any specified level</h2>
+<section id="slide-orgd41a12c">
+<h2 id="orgd41a12c">Confidence intervals of any specified level</h2>
 
-<figure id="orgb61317f">
+<figure id="orgb97913d">
 <img src="images/confidence_a.png" alt="confidence_a.png" width="80%">
 
 </figure>
@@ -182,21 +182,21 @@ The \(100(1-a)\) percent two-sided confidence interval for \(\mu\) is \[\left( \
 <section>
 <div class="block">
 <p>
-The \(100(1-a)\) percent one-sided lower confidence interval for \(\mu\) is \[\left( -\infty, \overline{X} + z_{a/2} \dfrac{\sigma}{\sqrt{n}} \right)\]
-The \(100(1-a)\) percent one-sided upper confidence interval for \(\mu\) is \[\left( \overline{X} - z_{a/2} \dfrac{\sigma}{\sqrt{n}}, \infty \right)\]
+The \(100(1-a)\) percent one-sided lower confidence interval for \(\mu\) is \[\left( -\infty, \overline{X} + z_{a} \dfrac{\sigma}{\sqrt{n}} \right)\]
+The \(100(1-a)\) percent one-sided upper confidence interval for \(\mu\) is \[\left( \overline{X} - z_{a} \dfrac{\sigma}{\sqrt{n}}, \infty \right)\]
 </p>
 </div>
 </section>
-<section id="slide-org574d3cc">
-<h3 id="org574d3cc">Problem 17.3</h3>
+<section id="slide-org87bba4d">
+<h3 id="org87bba4d">Problem 17.3</h3>
 <p>
 Use the previous data to calculate the 99% confidence intervals (both two- and one-sided).
 </p>
 </section>
 </section>
 <section>
-<section id="slide-org9b36998">
-<h2 id="org9b36998">Choosing the sample size</h2>
+<section id="slide-org7d5858a">
+<h2 id="org7d5858a">Choosing the sample size</h2>
 <ul>
 <li class="fragment appear">Ten measurements of impact energy on specimens of steel materials had a mean of 64.46 J</li>
 <li class="fragment appear">Impact energy is normally distributed with \(\sigma=1\) J</li>
@@ -205,7 +205,7 @@ Use the previous data to calculate the 99% confidence intervals (both two- and o
 </ul>
 <span class="fragment">
 
-<figure id="orgaf89bfd">
+<figure id="org67106aa">
 <img src="images/interval_sample_size.png" alt="interval_sample_size.png" width="80%">
 
 </figure>
@@ -235,8 +235,8 @@ If \(\overline{x}\) is used as an estimate of \(\mu\), we can be \(100(1-a)%\) c
 </section>
 </section>
 <section>
-<section id="slide-orgee196e7">
-<h2 id="orgee196e7">Interpreting a confidence interval</h2>
+<section id="slide-orga035f4c">
+<h2 id="orga035f4c">Interpreting a confidence interval</h2>
 <ul>
 <li class="fragment appear">Probability of \(\mu\) being within the CI we calculated?</li>
 <li class="fragment appear">Subtle difference between probability and confidence</li>
@@ -245,7 +245,7 @@ If \(\overline{x}\) is used as an estimate of \(\mu\), we can be \(100(1-a)%\) c
 </ul>
 <span class="fragment">
 
-<figure id="org49e2343">
+<figure id="org39af55b">
 <img src="images/ci_interpretation.png" alt="ci_interpretation.png" width="50%">
 
 </figure>
@@ -253,8 +253,8 @@ If \(\overline{x}\) is used as an estimate of \(\mu\), we can be \(100(1-a)%\) c
 </section>
 </section>
 <section>
-<section id="slide-orga7e673f">
-<h2 id="orga7e673f">Problem 17.4</h2>
+<section id="slide-org280c63d">
+<h2 id="org280c63d">Problem 17.4</h2>
 <p>
 The average speed of vehicles on a highway is being studied. Observations on 50 vehicles yielded a mean of 65 mph. Assume that the standard deviation is known to be 6 mph. What is the 2-sided 99% confidence interval on the mean speed?
 </p>
