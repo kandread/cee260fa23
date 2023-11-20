@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Probability &amp; Statistics in Engineering</title>
+<meta name="author" content="Kostas Andreadis"/>
+<meta name="description" content="Setup file for reveal.js presentations"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/night.css" id="theme"/>
+
+<link rel="stylesheet" href="custom.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/chalkboard/style.css">
+<link rel="stylesheet" href="./reveal.js/plugin/customcontrols/style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1 class="title">Probability &amp; Statistics in Engineering</h1><h2 class="date">Fall 2023 - 21 Nov</h2>
+</section>
+<section>
+<section id="slide-orgc175fad">
+<h2 id="orgc175fad">Example</h2>
+<ul>
+<li class="fragment appear">A construction firm has just purchased a large supply of cables that have been guaranteed to have an average breaking strength of at least 7000 psi</li>
+<li class="fragment appear">To verify this claim we take a random sample of 10 of these cables</li>
+<li class="fragment appear">We calculate the sample mean and other sample properties</li>
+<li class="fragment appear">How do we ascertain that the population mean is at least 7000 psi?</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org746118e">
+<h2 id="org746118e">Hypothesis testing</h2>
+<div class="block">
+<p>
+A <b>statistical hypothesis</b> is a statement about the parameters of one or more populations.
+</p>
+</div>
+<ul>
+<li class="fragment appear">Hypotheses are the two competing statements</li>
+<li class="fragment appear">Closely related to confidence intervals</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org1a5d06c">
+<h2 id="org1a5d06c">Hypotheses</h2>
+<div class="block">
+<p>
+<i>Null hypothesis</i>: \(H_0: \theta = \theta_0\)
+</p>
+
+<p>
+<i>Alternative hypothesis</i>: \(H_1: \theta \neq \theta_0\)
+</p>
+</div>
+<span class="fragment">
+<ul>
+<li>Null hypothesis is most of the time an equality claim</li>
+<li>Unless alternative hypothesis is \(>\) or \(<\)</li>
+<li>When \(H_1 < \theta_0\) or \(H_1 > \theta_0\) then <b>one-sided alternative hypothesis</b></li>
+
+</ul>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-org1833e2c">
+<h2 id="org1833e2c">Developing the hypothesis test</h2>
+<ul>
+<li>interested in the burn rate of a propellant</li>
+<li>\(h_0: \mu = 50\,\text{cm/s}\)</li>
+<li>\(h_1: \mu \neq 50\,\text{cm/s}\)</li>
+<li>sample of \(n=10\) specimens</li>
+
+</ul>
+<span class="fragment">
+<p>
+What is the distribution of the sample mean?
+</p>
+</span>
+</section>
+<section>
+
+<figure id="orgc53daa1">
+<img src="images/critical_regions_example.png" alt="critical_regions_example.png" width="80%">
+
+</figure>
+<ul>
+<li class="fragment appear">Acceptance region</li>
+<li class="fragment appear">Critical region</li>
+<li class="fragment appear">Critical values</li>
+<li class="fragment appear">We reject \(H_0\) if values fall inside the critical region</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org29c5eae">
+<h2 id="org29c5eae">Hypothesis testing errors</h2>
+<div class="block">
+<ul>
+<li class="fragment appear">Type I Error
+<ul>
+<li>Rejecting the null hypothesis when it actually is true</li>
+
+</ul></li>
+<li class="fragment appear">Type II Error
+<ul>
+<li>Failing to reject the null hypothesis when it is actually false</li>
+
+</ul></li>
+
+</ul>
+</div>
+<span class="fragment">
+
+<figure id="org6cf786a">
+<img src="images/error_types.png" alt="error_types.png" width="80%">
+
+</figure>
+</span>
+</section>
+<section id="slide-orgd611bae">
+<h3 id="orgd611bae">Probability of Type I error</h3>
+<div class="block">
+<p>
+\[\alpha = P(\text{type I error})=P(\text{reject }H_0\text{ when }H_0\text{ is true})\]
+</p>
+<span class="fragment">
+<p>
+This probability is also called the <b>significance level</b> (or the size of the test)
+</p>
+</span>
+</div>
+</section>
+<section>
+
+<figure id="org9c9298a">
+<img src="images/type_1_error_example.png" alt="type_1_error_example.png" width="80%">
+
+</figure>
+<span class="fragment">
+<p>
+How can we reduce \(\alpha\)?
+</p>
+</span>
+</section>
+<section id="slide-orga136c23">
+<h3 id="orga136c23">Probability of Type II error</h3>
+<div class="block">
+<p>
+\[\beta = P(\text{type II error})=P(\text{fail to reject }H_0\text{ when }H_0\text{ is false})\]
+</p>
+</div>
+<span class="fragment">
+<p>
+The probability of a type II error increases rapidly when the true value of \(\mu\) approaches the hypothesized value
+</p>
+</span>
+</section>
+<section>
+
+<figure id="org8189410">
+<img src="images/type_2_error_example.png" alt="type_2_error_example.png" width="80%">
+
+</figure>
+</section>
+<section id="slide-org2c7bb4d">
+<h3 id="org2c7bb4d">Summary</h3>
+
+<figure id="orgb9809ec">
+<img src="images/error_type_summary.png" alt="error_type_summary.png" width="90%">
+
+</figure>
+</section>
+<section>
+<ul>
+<li>Size of the critical region (\(\alpha\)) can be reduced by appropriate selection of critical values</li>
+
+</ul>
+<ul>
+<li class="fragment appear">Type I and II errors are related: a decrease in the probability of one type of error always leads to the increase in the probability of the other (assuming \(n\) is constant)</li>
+<li class="fragment appear">An increase in \(n\) reduces \(\beta\) (assuming \(\alpha\) is constant)</li>
+<li class="fragment appear">When the null hypothesis is false, \(\beta\) increases as the true value of the parameter approaches the hypothesized value (and vice versa)</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgf1d31b3">
+<h2 id="orgf1d31b3">Power of a hypothesis test</h2>
+<div class="block">
+<p>
+The <b>power</b> of a statistical test is the probability of rejecting the null hypothesis \(H_0\) when the alternative hypothesis is true.
+</p>
+</div>
+<ul>
+<li class="fragment appear">Power is computed as \(1-\beta\)</li>
+<li class="fragment appear">Probability of correctly rejecting the false null hypothesis</li>
+<li class="fragment appear">If the test's power is deemed too low then we can either increase \(\alpha\) or \(n\)</li>
+
+</ul>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-orge149213">
+<h2 id="orge149213">p-values in hypothesis tests</h2>
+<ul>
+<li class="fragment appear">Fixed significance level</li>
+<li class="fragment appear">Can be limited as it a priori defines a risk associated with the value of \(\alpha\)</li>
+
+</ul>
+<div class="fragment block">
+<p>
+The <b>p-value</b> is the smallest level of significance that would lead to rejection of the null hypothesis \(H_0\) with the given data.
+</p>
+</div>
+</section>
+<section id="slide-orgd1ec05d">
+<h3 id="orgd1ec05d">Example</h3>
+<p>
+\[H_0: \mu=50;H_1: \mu \leq 50\]
+</p>
+<span class="fragment">
+<p>
+Assume \(n=16\), \(\sigma=2.5\) and \(\overline{x}=51.3\)
+</p>
+</span>
+<span class="fragment">
+<div class="twocolumn"><div>
+<p>
+\[P\text{-value}=1-P(48.7<\overline{X}<51.3)\]
+\[=1-P(-2.08< Z <2.08)\]
+\[=0.038\]
+</p>
+</div><div>
+
+<figure id="orgb00d786">
+<img src="images/p-value_example.png" alt="p-value_example.png" width="80%">
+
+</figure>
+</div>
+</span>
+</section>
+<section id="slide-org65c6cf8">
+<h3 id="org65c6cf8">p-values are a random variable</h3>
+
+<figure id="org6a77e44">
+<img src="images/p-value_random.png" alt="p-value_random.png" width="55%">
+
+</figure>
+</section>
+</section>
+<section>
+<section id="slide-orgc2c596a">
+<h2 id="orgc2c596a">General procedure for hypothesis tests</h2>
+<ol>
+<li class="fragment appear">Parameter of interest: identify the parameter</li>
+<li class="fragment appear">Null hypothesis, \(H_0\): state the null hypothesis</li>
+<li class="fragment appear">Alternative hypothesis, \(H_1\): specify an appropriate alternative hypothesis</li>
+<li class="fragment appear">Test statistic: determine the appropriate test statistic</li>
+<li class="fragment appear">Reject \(H_0\) if: state the rejection criteria</li>
+<li class="fragment appear">Computations: compute any sample quantities and test statistics</li>
+<li class="fragment appear">Draw conclusions: Decide whether \(H_0\) can be rejected or not</li>
+
+</ol>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/dist/reveal.js"></script>
+<script src="./reveal.js/plugin/highlight/highlight.js"></script>
+<script src="./reveal.js/plugin/zoom/zoom.js"></script>
+<script src="./reveal.js/plugin/notes/notes.js"></script>
+<script src="./reveal.js/plugin/math/math.js"></script>
+<script src="./reveal.js/plugin/chalkboard/plugin.js"></script>
+<script src="./reveal.js/plugin/menu/menu.js"></script>
+<script src="./reveal.js/plugin/customcontrols/plugin.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+width: 1280,
+height: 720,
+
+transition: 'convex',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealHighlight, RevealZoom, RevealNotes, RevealMath, RevealChalkboard, RevealMenu, RevealCustomControls ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+{ src: './reveal.js/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, skipStartButton: true}); } }]
+
+,pdfSeparateFragments: false, customcontrols: {controls: [ {id: 'toggle-overview', title: 'Toggle overview (O)', icon: '<i class="fa fa-th"></i>', action: 'Reveal.toggleOverview();'}, { icon: '<i class="fa fa-pen-square"></i>', title: 'Toggle chalkboard (B)', action: 'RevealChalkboard.toggleChalkboard();'}, { icon: '<i class="fa fa-pen"></i>', title: 'Toggle notes canvas (C)', action: 'RevealChalkboard.toggleNotesCanvas();'} ]}, chalkboard: { theme: "whiteboard", grid: false, background: [ 'rgba(127,127,127,.1)' , path + 'img/blackboard.png' ], rememberColor: [true, true], boardmarkerWidth: 5, },});
+</script>
+</body>
+</html>
