@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Probability &amp; Statistics in Engineering</title>
+<meta name="author" content="Kostas Andreadis"/>
+<meta name="description" content="Setup file for reveal.js presentations"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/night.css" id="theme"/>
+
+<link rel="stylesheet" href="custom.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/chalkboard/style.css">
+<link rel="stylesheet" href="./reveal.js/plugin/customcontrols/style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1 class="title">Probability &amp; Statistics in Engineering</h1><h2 class="date">Fall 2023 - 28 Nov</h2>
+</section>
+<section>
+<section id="slide-orgf41f4de">
+<h2 id="orgf41f4de">Example</h2>
+<p>
+The specification for yield strength of rebars requires a mean value of 38 psi. From the rebars delivered at the site, we choose 25 at random to test: the sample mean was 37.5 psi and it is known that the standard deviation of rebar strength from the supplier is 3.0 psi.
+</p>
+</section>
+<section>
+
+<figure id="orgc2bf9e8">
+<img src="images/critical_regions.png" alt="critical_regions.png" width="80%">
+
+</figure>
+</section>
+<section>
+<p>
+\[H_0: \mu_Y = 38\text{ psi}\]
+</p>
+<span class="fragment">
+<p>
+\[H_1: \mu_Y < 38\text{ psi}\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[z = \dfrac{\overline{x}-\mu}{\sigma / \sqrt{n}}\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[z=\dfrac{37.5-38}{3.0/\sqrt{25}}=-0.833\]
+</p>
+</span>
+<span class="fragment">
+<p>
+At 5% significance level, \(z_a=\Phi^{-1}(0.05)=-1.95\) and since \(z\) is outside the critical region <b>we cannot reject \(H_0\)</b>
+</p>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-orgf142b8b">
+<h2 id="orgf142b8b">Tests on the mean of a normal distribution, variance known</h2>
+<div class="block">
+<p>
+Suppose that we wish to test the hypotheses \(H_0: \mu = \mu_0\) and \(H_1: \mu \neq \mu_0\). If we have a random  sample \(X_1\), \(X_2\),&#x2026;, \(X_n\) we can use the test statistic \[z_0 = \dfrac{\overline{x}-\mu_0}{\sigma / \sqrt{n}}\] which follows a \(N(0,1)\).
+</p>
+</div>
+</section>
+<section id="slide-orgf4cceb7">
+<h3 id="orgf4cceb7">Distribution of \(z_0\)</h3>
+
+<figure id="orgaedb0cc">
+<img src="images/hypothesis_test_pdfs.png" alt="hypothesis_test_pdfs.png" width="100%">
+
+</figure>
+</section>
+<section id="slide-orga2aaa7b">
+<h3 id="orga2aaa7b">P-values for a \(z\) test</h3>
+
+<figure id="orge3a7cc9">
+<img src="images/p-value_pdfs.png" alt="p-value_pdfs.png" width="100%">
+
+</figure>
+</section>
+<section id="slide-org56152b9">
+<h3 id="org56152b9">Summary</h3>
+
+<figure id="org5f54eb5">
+<img src="images/test_mean_var_known_summary.png" alt="test_mean_var_known_summary.png" width="100%">
+
+</figure>
+</section>
+<section id="slide-org45918f8">
+<h3 id="org45918f8">Type II error and sample size</h3>
+<p>
+\(H_0: \mu = \mu_0\) and \(H_1: \mu \neq \mu_0\)
+</p>
+<span class="fragment">
+<p>
+Suppose that \(H_0\) is false and \(\mu=\mu_0+\delta\)
+</p>
+</span>
+<span class="fragment">
+<p>
+\[E[Z_0]=\dfrac{E[\overline{X}]-\mu_0}{\sigma / \sqrt{n}} = \dfrac{(\mu_0+\delta)-\mu_0}{\sigma / \sqrt{n}} = \dfrac{\delta \sqrt{n}}{\sigma}\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[Z_0 \sim N\left( \dfrac{\delta \sqrt{n}}{\sigma}, 1 \right)\]
+</p>
+</span>
+</section>
+<section>
+
+<figure id="orgb1339d8">
+<img src="images/type_2_error_pdfs.png" alt="type_2_error_pdfs.png" width="90%">
+
+</figure>
+</section>
+<section id="slide-orgcdb28a9">
+<h4 id="orgcdb28a9">Probability of a Type II error for a two-sided test on the mean, variance known</h4>
+<div class="block">
+<p>
+\[\beta = \Phi \left( z_{\alpha/2}-\dfrac{\delta \sqrt{n}}{\sigma} \right) - \Phi \left( -z_{\alpha/2}-\dfrac{\delta \sqrt{n}}{\sigma} \right)\]
+</p>
+</div>
+</section>
+<section id="slide-orga017627">
+<h4 id="orga017627">Sample size formulas</h4>
+<p>
+\[\beta \approx \Phi \left( z_{\alpha/2}-\dfrac{\delta \sqrt{n}}{\sigma} \right)\]
+</p>
+<span class="fragment">
+<p>
+\(z_{\beta}=-\Phi^{-1}(\beta)\) then \(-z_{\beta} \approx z_{\alpha/2}-\dfrac{\delta \sqrt{n}}{\sigma}\)
+</p>
+</span>
+<div class="fragment block">
+<p>
+\[n \approx \dfrac{(z_{\alpha/2}+z_{\beta})^2 \sigma^2}{\delta^2}\]
+\[\delta=\mu-\mu_0\]
+</p>
+</div>
+</section>
+<section id="slide-org9212c61">
+<h4 id="org9212c61">Problem 20.1</h4>
+<p>
+Suppose that the true burning rate of a propellant is 49 cm/s but the specifications require it to be 50 cm/s. If we know that the standard deviation is 2 cm/s, what is \(\beta\) for the two-sided test with \(\alpha=0.05\) and \(n=25\)?
+</p>
+</section>
+<section>
+<p>
+What would be the sample size if the required test power is 90%?
+</p>
+</section>
+</section>
+<section>
+<section id="slide-orgcbdc764">
+<h2 id="orgcbdc764">Example</h2>
+<p>
+What if the variance in the rebar example is unknown? Suppose that the sample mean is 37.5 psi and the sample standard deviation is 3.50 psi. Can you reject the null hypothesis about the mean?
+</p>
+</section>
+</section>
+<section>
+<section id="slide-orga4dc994">
+<h2 id="orga4dc994">Tests on the mean of a normal distribution, variance unknown</h2>
+
+<figure id="org8b086d8">
+<img src="images/test_mean_var_unknown_summary.png" alt="test_mean_var_unknown_summary.png" width="100%">
+
+</figure>
+</section>
+</section>
+<section>
+<section id="slide-orgfa88ecd">
+<h2 id="orgfa88ecd">Tests on the variance of a normal distribution</h2>
+
+<figure id="org2e5c5b1">
+<img src="images/test_var_summary.png" alt="test_var_summary.png" width="100%">
+
+</figure>
+</section>
+<section>
+
+<figure id="orgb00494f">
+<img src="images/test_var_pdfs.png" alt="test_var_pdfs.png" width="100%">
+
+</figure>
+</section>
+</section>
+<section>
+<section id="slide-org9e879de">
+<h2 id="org9e879de">Problem 20.2</h2>
+<p>
+A study of the thermal inertia properties of concrete had 5 samples tested and the average interior temperature was 23.01, 22.22, 22.04, 22.62, and 22.59 deg C. Test the hypothesis for \(\mu=22.8\) and 5% significance level.
+</p>
+</section>
+<section>
+<p>
+What is the p-value?
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org0d60f3b">
+<h2 id="org0d60f3b">Problem 20.3</h2>
+<p>
+Research in traffic accidents suggest that a good predictor is the difference in speeds among the vehicles. The researcher believes that when the standard deviation of vehicle speeds exceeds 10 mph, the rate of accidents increases. During 1 hour, the following 50 sample speeds are measured
+</p>
+
+<figure id="org88c37ae">
+<img src="images/prob_20_3.png" alt="prob_20_3.png" width="60%">
+
+</figure>
+</section>
+<section>
+<p>
+Do the data indicate that the standard deviation in vehicle speeds exceeds
+10 mph? Use \(\alpha=0.05\) in reaching your conclusion.
+</p>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/dist/reveal.js"></script>
+<script src="./reveal.js/plugin/highlight/highlight.js"></script>
+<script src="./reveal.js/plugin/zoom/zoom.js"></script>
+<script src="./reveal.js/plugin/notes/notes.js"></script>
+<script src="./reveal.js/plugin/math/math.js"></script>
+<script src="./reveal.js/plugin/chalkboard/plugin.js"></script>
+<script src="./reveal.js/plugin/menu/menu.js"></script>
+<script src="./reveal.js/plugin/customcontrols/plugin.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+width: 1280,
+height: 720,
+
+transition: 'convex',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealHighlight, RevealZoom, RevealNotes, RevealMath, RevealChalkboard, RevealMenu, RevealCustomControls ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+{ src: './reveal.js/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, skipStartButton: true}); } }]
+
+,pdfSeparateFragments: false, customcontrols: {controls: [ {id: 'toggle-overview', title: 'Toggle overview (O)', icon: '<i class="fa fa-th"></i>', action: 'Reveal.toggleOverview();'}, { icon: '<i class="fa fa-pen-square"></i>', title: 'Toggle chalkboard (B)', action: 'RevealChalkboard.toggleChalkboard();'}, { icon: '<i class="fa fa-pen"></i>', title: 'Toggle notes canvas (C)', action: 'RevealChalkboard.toggleNotesCanvas();'} ]}, chalkboard: { theme: "whiteboard", grid: false, background: [ 'rgba(127,127,127,.1)' , path + 'img/blackboard.png' ], rememberColor: [true, true], boardmarkerWidth: 5, },});
+</script>
+</body>
+</html>

@@ -39,3 +39,5 @@ Repository of lecture slides for Probability & Statistics (Fall 2023).
 [Lecture #18 - More interval estimates](https://kandread.github.io/cee260fa23/18_more_interval_estimates.html)
 
 [Lecture #19 - Introduction to hypothesis testing](https://kandread.github.io/cee260fa23/19_intro_hypothesis_tests.html)
+
+[Lecture #20 - Hypothesis testing](https://kandread.github.io/cee260fa23/20_hypothesis_tests.html)
