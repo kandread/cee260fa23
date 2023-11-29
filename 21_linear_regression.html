@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Probability &amp; Statistics in Engineering</title>
+<meta name="author" content="Kostas Andreadis"/>
+<meta name="description" content="Setup file for reveal.js presentations"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/night.css" id="theme"/>
+
+<link rel="stylesheet" href="custom.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/chalkboard/style.css">
+<link rel="stylesheet" href="./reveal.js/plugin/customcontrols/style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1 class="title">Probability &amp; Statistics in Engineering</h1><h2 class="date">Fall 2023 - 30 Nov</h2>
+</section>
+<section>
+<section id="slide-org6c70e04">
+<h2 id="org6c70e04"></h2>
+<div class="twocolumn"><div>
+
+<figure id="org3a2c87e">
+<img src="images/challenger_explosion.webp" alt="challenger_explosion.webp" width="100%">
+
+</figure>
+</div><div>
+<span class="fragment">
+
+<figure id="org6076a6f">
+<img src="images/challenger_nyt.png" alt="challenger_nyt.png" width="100%">
+
+</figure>
+</span>
+</div>
+</section>
+<section>
+<p width="70%">
+<img src="https://hannahloughridge.files.wordpress.com/2014/04/screen-shot-2014-04-11-at-19-17-11.png" alt="screen-shot-2014-04-11-at-19-17-11.png" width="70%">
+<a href="https://aerossurance.com/safety-management/challenger-launch-decision-30/">https://aerossurance.com/safety-management/challenger-launch-decision-30/</a>
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org83207ac">
+<h2 id="org83207ac">Empirical models</h2>
+<ul>
+<li class="fragment appear">Relationship between two or more variables
+<ul>
+<li>Pressure of a gas in a container related to temperature</li>
+<li>Water velocity in open channel related to width</li>
+
+</ul></li>
+<li class="fragment appear">Regression analysis</li>
+<li class="fragment appear">One <b>independent</b> variable \(X\) and one <b>dependent</b> \(Y\) with a <b>linear</b> relationship</li>
+<li class="fragment appear">\(Y=\beta_0 + \beta_1 x_1 + ... + \beta_r x_r\)</li>
+<li class="fragment appear">\(Y=\beta_0 + \beta_1 x_1 + ... + \beta_r x_r + \epsilon\)</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org60166f3">
+<h2 id="org60166f3">Example</h2>
+<div class="twocolumn"><div>
+
+<figure id="orgc9a7079">
+<img src="images/O2_purity_table.png" alt="O2_purity_table.png" width="100%">
+
+</figure>
+</div><div>
+
+<figure id="org871d9ef">
+<img src="images/O2_purity_plot.png" alt="O2_purity_plot.png" width="100%">
+
+</figure>
+</div>
+</section>
+<section id="slide-org7778040">
+<h3 id="org7778040">Simple linear regression model</h3>
+<p>
+\[E[Y|x]=\mu_{Y|x}=\alpha + \beta x\]
+</p>
+<span class="fragment">
+<p>
+\(\alpha\): intercept and \(\beta\): slope are the <b>regression coefficients</b>
+</p>
+</span>
+<p>
+\[Y=\alpha + \beta x + \epsilon\]
+is the <b>simple linear regression model</b>
+</p>
+</section>
+<section>
+<p>
+\[E[Y|x]=E[\alpha+\beta x+\epsilon]=\alpha+\beta x+E[\epsilon]=\alpha+\beta x\]
+</p>
+<span class="fragment">
+<p>
+\[\text{Var}(Y|x)=\text{Var}(\alpha+\beta x+\epsilon)=\text{Var}(\alpha+\beta x)+\text{Var}(\epsilon)=0+\sigma^2=\sigma^2\]
+</p>
+</span>
+</section>
+<section>
+
+<figure id="orgfe839ba">
+<img src="images/O2_purity_regression_plot.png" alt="O2_purity_regression_plot.png" width="100%">
+
+</figure>
+</section>
+</section>
+<section>
+<section id="slide-orgd6911a4">
+<h2 id="orgd6911a4">Estimating the regression coefficients</h2>
+<p>
+\[Y = \alpha + \beta x + \epsilon\]
+</p>
+<span class="fragment">
+<p>
+\(\epsilon\) are assumed to be uncorrelated random errors with mean zero and unknown variance \(\sigma^2\)
+</p>
+</span>
+<span class="fragment">
+<p>
+\(n\) pairs of observations \((x_1, y_1)\), \((x_2, y_2)\),&#x2026;, \((x_n, y_n)\)
+</p>
+</span>
+<span class="fragment">
+<p>
+\[y_i=\alpha + \beta x_i + \epsilon_{i}\]
+</p>
+</span>
+</section>
+<section id="slide-org6a6b001">
+<h3 id="org6a6b001">Least squares</h3>
+
+<figure id="org98a6e0a">
+<img src="images/regression_example_scatter.png" alt="regression_example_scatter.png" width="50%">
+
+</figure>
+<span class="fragment">
+<p>
+Minimize the sum of squares of the vertical deviations (<b>method of least squares</b>)
+</p>
+</span>
+</section>
+<section>
+<p>
+\[L = \sum_{i=1}^{n} \epsilon_{i}^{2} = \sum_{i=1}^n (y_i - \alpha - b x_i)^2\]
+</p>
+<span class="fragment">
+<p>
+\[ \frac{\partial L}{\partial \alpha} = -2 \sum_{i=1}^n \left( y_i-A-B x_i \right) = 0\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[\dfrac{\partial L}{\partial \beta} = -2 \sum_{i=1}^n \left( y_i-A - B x_i \right)x_i = 0\]
+</p>
+</span>
+</section>
+<section>
+<div class="block">
+<p>
+The least squares estimates of the slope and intercept are
+\[A = \overline{y} - B \overline{x}\]
+\[B=\dfrac{\sum_{i=1}^n x_i y_i - \overline{x} \sum_{i=1}^n y_i}{\sum_{i=1}^n x_i^2 - n \overline{x}^2}\]
+where \(\overline{x}=(1/n)\sum_{i=1}^n x_i\) and \(\overline{y}=(1/n) \sum_{i=1}^n y_i\)
+</p>
+</div>
+</section>
+<section>
+<p>
+The <b>estimated regression line</b> is therefore
+\[\hat{y}=A+B\]
+and each observation pair satisfies \[y_i=A+B+e_i\] where \(e_i=y_i-\hat{y}_i\) is the <b>residual</b>
+</p>
+</section>
+<section id="slide-orged365df">
+<h3 id="orged365df">Example</h3>
+<p>
+Fit a simple linear regression model to the oxygen purity data. From calculations of the \(n=20\) observations we have \(\sum x_i=23.92\), \(\sum y_i=1843.21\), \(\overline{x}=1.1960\), \(\overline{y}=92.1605\), \(\sum y_i^2=170044.5321\), \(\sum x_i^2=29.2892\), and \(\sum x_iy_i=2214.6566\).
+</p>
+</section>
+<section>
+
+<figure id="orga3e3266">
+<img src="images/O2_purity_regression_result.png" alt="O2_purity_regression_result.png" width="60%">
+
+</figure>
+</section>
+<section id="slide-org84a43e7">
+<h3 id="org84a43e7">Alternative notation</h3>
+<p>
+\[S_{xy} = \sum_{i=1}^n (x_i - \overline{x})(y_i - \overline{y}) = \sum_{i=1}^n x_i y_i - n \overline{x} \overline{y}\]
+</p>
+<span class="fragment">
+<p>
+\[S_{xx} = \sum_{i=1}^n (x_i - \overline{x})^2 = \sum_{i=1}^n x_i^2 - n \overline{x}^2\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[S_{yy} = \sum_{i=1}^n (y_i - \overline{y})^2 = \sum_{i=1}^n y_i^2 - n \overline{y}^2\]
+</p>
+</span>
+</section>
+<section>
+<div class="block">
+<p>
+\[B = \dfrac{S_{xy}}{S_{xx}}\]
+\[A = \overline{y} - B \overline{x}\]
+</p>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org4dce8f5">
+<h2 id="org4dce8f5">Estimating \(\sigma^2\)</h2>
+<p>
+\[{SS}_E = \sum_{i=1}^n e_i^2 = \sum_{i=1}^n (y_i-\hat{y}_i)^2\]
+</p>
+<span class="fragment">
+<p>
+\[{SS}_E = {SS}_T - B S_{xy}\]
+\[{SS}_T=\sum_{i=1}^n (y_i-\overline{y})^2 = \sum_{i=1}^n y_i^2 - n\overline{y}^2\]
+</p>
+</span>
+<span class="fragment">
+<p>
+\[\hat{\sigma}^2 = \dfrac{{SS}_E}{n-2}\]
+</p>
+</span>
+</section>
+</section>
+<section>
+<section id="slide-org193d313">
+<h2 id="org193d313">Properties of least squares estimators</h2>
+<span class="fragment">
+<p>
+\[E[B] = B\]
+\[\text{Var}(B) = \dfrac{\sigma^2}{S_{xx}}\]
+\[E[A]=A\]
+\[\text{Var}(A) = \sigma^2 \left( \dfrac{1}{n} + \dfrac{\overline{x}^2}{S_{xx}})\]
+</p>
+</span>
+</section>
+<section>
+<div class="block">
+</section>
+</section>
+<section>
+<section id="slide-org7131c75">
+<h2 id="org7131c75">Problem 21.1</h2>
+<p>
+The following data describe specific gravity \(x\) of a wood sample and its maximum crushing strength \(y\):
+</p>
+<table id="orga1e5d8b">
+
+
+<colgroup>
+<col  class="org-right">
+
+<col  class="org-right">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">x</th>
+<th scope="col" class="org-right">y</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">.41</td>
+<td class="org-right">1850</td>
+</tr>
+
+<tr>
+<td class="org-right">.46</td>
+<td class="org-right">2620</td>
+</tr>
+
+<tr>
+<td class="org-right">.44</td>
+<td class="org-right">3450</td>
+</tr>
+
+<tr>
+<td class="org-right">.47</td>
+<td class="org-right">2690</td>
+</tr>
+
+<tr>
+<td class="org-right">.42</td>
+<td class="org-right">2160</td>
+</tr>
+
+<tr>
+<td class="org-right">.39</td>
+<td class="org-right">1760</td>
+</tr>
+
+<tr>
+<td class="org-right">.41</td>
+<td class="org-right">2500</td>
+</tr>
+
+<tr>
+<td class="org-right">.44</td>
+<td class="org-right">2750</td>
+</tr>
+
+<tr>
+<td class="org-right">.43</td>
+<td class="org-right">2730</td>
+</tr>
+
+<tr>
+<td class="org-right">.44</td>
+<td class="org-right">3120</td>
+</tr>
+</tbody>
+</table>
+<p>
+Plot a scatter diagram. Does a linear relationship seem reasonable?
+</p>
+</section>
+<section>
+
+<figure id="orgc6c8f70">
+<img src="./images/regression_scatter.png" alt="regression_scatter.png">
+
+</figure>
+</section>
+<section>
+<p>
+Estimate the regression coefficients.
+</p>
+</section>
+<section>
+<p>
+Predict the maximum crushing strength of a wood sample whose specific gravity is 0.43
+</p>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/dist/reveal.js"></script>
+<script src="./reveal.js/plugin/highlight/highlight.js"></script>
+<script src="./reveal.js/plugin/zoom/zoom.js"></script>
+<script src="./reveal.js/plugin/notes/notes.js"></script>
+<script src="./reveal.js/plugin/math/math.js"></script>
+<script src="./reveal.js/plugin/chalkboard/plugin.js"></script>
+<script src="./reveal.js/plugin/menu/menu.js"></script>
+<script src="./reveal.js/plugin/customcontrols/plugin.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+width: 1280,
+height: 720,
+
+transition: 'convex',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealHighlight, RevealZoom, RevealNotes, RevealMath, RevealChalkboard, RevealMenu, RevealCustomControls ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+{ src: './reveal.js/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, skipStartButton: true}); } }]
+
+,pdfSeparateFragments: false, customcontrols: {controls: [ {id: 'toggle-overview', title: 'Toggle overview (O)', icon: '<i class="fa fa-th"></i>', action: 'Reveal.toggleOverview();'}, { icon: '<i class="fa fa-pen-square"></i>', title: 'Toggle chalkboard (B)', action: 'RevealChalkboard.toggleChalkboard();'}, { icon: '<i class="fa fa-pen"></i>', title: 'Toggle notes canvas (C)', action: 'RevealChalkboard.toggleNotesCanvas();'} ]}, chalkboard: { theme: "whiteboard", grid: false, background: [ 'rgba(127,127,127,.1)' , path + 'img/blackboard.png' ], rememberColor: [true, true], boardmarkerWidth: 5, },});
+</script>
+</body>
+</html>

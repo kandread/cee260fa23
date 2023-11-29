@@ -25,15 +25,15 @@
 <h1 class="title">Probability &amp; Statistics in Engineering</h1><h2 class="date">Fall 2023 - 28 Nov</h2>
 </section>
 <section>
-<section id="slide-orgf41f4de">
-<h2 id="orgf41f4de">Example</h2>
+<section id="slide-org40da03b">
+<h2 id="org40da03b">Example</h2>
 <p>
 The specification for yield strength of rebars requires a mean value of 38 psi. From the rebars delivered at the site, we choose 25 at random to test: the sample mean was 37.5 psi and it is known that the standard deviation of rebar strength from the supplier is 3.0 psi.
 </p>
 </section>
 <section>
 
-<figure id="orgc2bf9e8">
+<figure id="orgc6470e4">
 <img src="images/critical_regions.png" alt="critical_regions.png" width="80%">
 
 </figure>
@@ -65,40 +65,40 @@ At 5% significance level, \(z_a=\Phi^{-1}(0.05)=-1.95\) and since \(z\) is outsi
 </section>
 </section>
 <section>
-<section id="slide-orgf142b8b">
-<h2 id="orgf142b8b">Tests on the mean of a normal distribution, variance known</h2>
+<section id="slide-org9c8c4bc">
+<h2 id="org9c8c4bc">Tests on the mean of a normal distribution, variance known</h2>
 <div class="block">
 <p>
 Suppose that we wish to test the hypotheses \(H_0: \mu = \mu_0\) and \(H_1: \mu \neq \mu_0\). If we have a random  sample \(X_1\), \(X_2\),&#x2026;, \(X_n\) we can use the test statistic \[z_0 = \dfrac{\overline{x}-\mu_0}{\sigma / \sqrt{n}}\] which follows a \(N(0,1)\).
 </p>
 </div>
 </section>
-<section id="slide-orgf4cceb7">
-<h3 id="orgf4cceb7">Distribution of \(z_0\)</h3>
+<section id="slide-orgb6f7ce6">
+<h3 id="orgb6f7ce6">Distribution of \(z_0\)</h3>
 
-<figure id="orgaedb0cc">
+<figure id="org2184c41">
 <img src="images/hypothesis_test_pdfs.png" alt="hypothesis_test_pdfs.png" width="100%">
 
 </figure>
 </section>
-<section id="slide-orga2aaa7b">
-<h3 id="orga2aaa7b">P-values for a \(z\) test</h3>
+<section id="slide-org272ce50">
+<h3 id="org272ce50">P-values for a \(z\) test</h3>
 
-<figure id="orge3a7cc9">
+<figure id="org8faff38">
 <img src="images/p-value_pdfs.png" alt="p-value_pdfs.png" width="100%">
 
 </figure>
 </section>
-<section id="slide-org56152b9">
-<h3 id="org56152b9">Summary</h3>
+<section id="slide-orgcae04d6">
+<h3 id="orgcae04d6">Summary</h3>
 
-<figure id="org5f54eb5">
+<figure id="org62dfcca">
 <img src="images/test_mean_var_known_summary.png" alt="test_mean_var_known_summary.png" width="100%">
 
 </figure>
 </section>
-<section id="slide-org45918f8">
-<h3 id="org45918f8">Type II error and sample size</h3>
+<section id="slide-org9896775">
+<h3 id="org9896775">Type II error and sample size</h3>
 <p>
 \(H_0: \mu = \mu_0\) and \(H_1: \mu \neq \mu_0\)
 </p>
@@ -120,21 +120,21 @@ Suppose that \(H_0\) is false and \(\mu=\mu_0+\delta\)
 </section>
 <section>
 
-<figure id="orgb1339d8">
+<figure id="orgf412874">
 <img src="images/type_2_error_pdfs.png" alt="type_2_error_pdfs.png" width="90%">
 
 </figure>
 </section>
-<section id="slide-orgcdb28a9">
-<h4 id="orgcdb28a9">Probability of a Type II error for a two-sided test on the mean, variance known</h4>
+<section id="slide-org98b30b3">
+<h4 id="org98b30b3">Probability of a Type II error for a two-sided test on the mean, variance known</h4>
 <div class="block">
 <p>
 \[\beta = \Phi \left( z_{\alpha/2}-\dfrac{\delta \sqrt{n}}{\sigma} \right) - \Phi \left( -z_{\alpha/2}-\dfrac{\delta \sqrt{n}}{\sigma} \right)\]
 </p>
 </div>
 </section>
-<section id="slide-orga017627">
-<h4 id="orga017627">Sample size formulas</h4>
+<section id="slide-org2a1c5ba">
+<h4 id="org2a1c5ba">Sample size formulas</h4>
 <p>
 \[\beta \approx \Phi \left( z_{\alpha/2}-\dfrac{\delta \sqrt{n}}{\sigma} \right)\]
 </p>
@@ -150,8 +150,8 @@ Suppose that \(H_0\) is false and \(\mu=\mu_0+\delta\)
 </p>
 </div>
 </section>
-<section id="slide-org9212c61">
-<h4 id="org9212c61">Problem 20.1</h4>
+<section id="slide-orgb54aa7a">
+<h4 id="orgb54aa7a">Problem 20.1</h4>
 <p>
 Suppose that the true burning rate of a propellant is 49 cm/s but the specifications require it to be 50 cm/s. If we know that the standard deviation is 2 cm/s, what is \(\beta\) for the two-sided test with \(\alpha=0.05\) and \(n=25\)?
 </p>
@@ -163,43 +163,43 @@ What would be the sample size if the required test power is 90%?
 </section>
 </section>
 <section>
-<section id="slide-orgcbdc764">
-<h2 id="orgcbdc764">Example</h2>
+<section id="slide-org2beccee">
+<h2 id="org2beccee">Example</h2>
 <p>
 What if the variance in the rebar example is unknown? Suppose that the sample mean is 37.5 psi and the sample standard deviation is 3.50 psi. Can you reject the null hypothesis about the mean?
 </p>
 </section>
 </section>
 <section>
-<section id="slide-orga4dc994">
-<h2 id="orga4dc994">Tests on the mean of a normal distribution, variance unknown</h2>
+<section id="slide-orgaf2d815">
+<h2 id="orgaf2d815">Tests on the mean of a normal distribution, variance unknown</h2>
 
-<figure id="org8b086d8">
+<figure id="org2944dba">
 <img src="images/test_mean_var_unknown_summary.png" alt="test_mean_var_unknown_summary.png" width="100%">
 
 </figure>
 </section>
 </section>
 <section>
-<section id="slide-orgfa88ecd">
-<h2 id="orgfa88ecd">Tests on the variance of a normal distribution</h2>
+<section id="slide-org6d4c277">
+<h2 id="org6d4c277">Tests on the variance of a normal distribution</h2>
 
-<figure id="org2e5c5b1">
+<figure id="orgf65ff0d">
 <img src="images/test_var_summary.png" alt="test_var_summary.png" width="100%">
 
 </figure>
 </section>
 <section>
 
-<figure id="orgb00494f">
+<figure id="org62240f3">
 <img src="images/test_var_pdfs.png" alt="test_var_pdfs.png" width="100%">
 
 </figure>
 </section>
 </section>
 <section>
-<section id="slide-org9e879de">
-<h2 id="org9e879de">Problem 20.2</h2>
+<section id="slide-orgc42397a">
+<h2 id="orgc42397a">Problem 20.2</h2>
 <p>
 A study of the thermal inertia properties of concrete had 5 samples tested and the average interior temperature was 23.01, 22.22, 22.04, 22.62, and 22.59 deg C. Test the hypothesis for \(\mu=22.8\) and 5% significance level.
 </p>
@@ -211,13 +211,13 @@ What is the p-value?
 </section>
 </section>
 <section>
-<section id="slide-org0d60f3b">
-<h2 id="org0d60f3b">Problem 20.3</h2>
+<section id="slide-orgff116f3">
+<h2 id="orgff116f3">Problem 20.3</h2>
 <p>
 Research in traffic accidents suggest that a good predictor is the difference in speeds among the vehicles. The researcher believes that when the standard deviation of vehicle speeds exceeds 10 mph, the rate of accidents increases. During 1 hour, the following 50 sample speeds are measured
 </p>
 
-<figure id="org88c37ae">
+<figure id="orgbfcfc26">
 <img src="images/prob_20_3.png" alt="prob_20_3.png" width="60%">
 
 </figure>
@@ -227,6 +227,53 @@ Research in traffic accidents suggest that a good predictor is the difference in
 Do the data indicate that the standard deviation in vehicle speeds exceeds
 10 mph? Use \(\alpha=0.05\) in reaching your conclusion.
 </p>
+</section>
+</section>
+<section>
+<section id="slide-orgc77240b">
+<h2 id="orgc77240b">Tests on the equality of means of normal distributions</h2>
+<p>
+Assume that \(X_1\),&#x2026;, \(X_n\) and \(Y_1\),&#x2026;,\(Y_m\) are independent samples from \(\text{N}(\mu_x, \sigma^2_x)\) and \(\text{N}(\mu_y, \sigma_y^2)\)
+</p>
+<span class="fragment">
+<p>
+Null hypothesis \[H_0: \mu_x=\mu_y\]
+Alternative hypothesis: \[H_1: \mu_x \neq \mu_y\]
+</p>
+</span>
+</section>
+<section>
+<p>
+<font color="steelblue"> How close is $\overline{X}-\overline{Y}$ to 0?</font>
+</p>
+<span class="fragment">
+<p>
+\[\overline{X}-\overline{Y} \sim \left( \mu_x-\mu_y, \dfrac{\sigma_x^2}{n}+\dfrac{\sigma_y^2}{m} \right)\]
+</p>
+</span>
+</section>
+<section>
+<div class="block">
+<p>
+accept \(H_0\): \(\dfrac{|\overline{X}-\overline{Y}|}{\sqrt{\sigma_x^2/n}+\sigma_y^2/m} \leq z_{a/2}\)
+</p>
+
+<p>
+reject \(H_0\): \(\dfrac{|\overline{X}-\overline{Y}|}{\sqrt{\sigma_x^2/n}+\sigma_y^2/m} \geq z_{a/2}\)
+</p>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org0228655">
+<h2 id="org0228655">Readings</h2>
+<ul>
+<li>Sections 8.1-8.2</li>
+<li>Section 8.3</li>
+<li>Section 8.4.1</li>
+<li>Section 8.5 (up to p. 337)</li>
+
+</ul>
 </section>
 </section>
 </div>
