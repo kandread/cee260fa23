@@ -25,18 +25,18 @@
 <h1 class="title">Probability &amp; Statistics in Engineering</h1><h2 class="date">Fall 2023 - 30 Nov</h2>
 </section>
 <section>
-<section id="slide-org6c70e04">
-<h2 id="org6c70e04"></h2>
+<section id="slide-orgfd2b80c">
+<h2 id="orgfd2b80c"></h2>
 <div class="twocolumn"><div>
 
-<figure id="org3a2c87e">
+<figure id="org46d303e">
 <img src="images/challenger_explosion.webp" alt="challenger_explosion.webp" width="100%">
 
 </figure>
 </div><div>
 <span class="fragment">
 
-<figure id="org6076a6f">
+<figure id="org5399d0e">
 <img src="images/challenger_nyt.png" alt="challenger_nyt.png" width="100%">
 
 </figure>
@@ -51,8 +51,8 @@
 </section>
 </section>
 <section>
-<section id="slide-org83207ac">
-<h2 id="org83207ac">Empirical models</h2>
+<section id="slide-org66160fc">
+<h2 id="org66160fc">Empirical models</h2>
 <ul>
 <li class="fragment appear">Relationship between two or more variables
 <ul>
@@ -69,24 +69,24 @@
 </section>
 </section>
 <section>
-<section id="slide-org60166f3">
-<h2 id="org60166f3">Example</h2>
+<section id="slide-orgc71d39c">
+<h2 id="orgc71d39c">Example</h2>
 <div class="twocolumn"><div>
 
-<figure id="orgc9a7079">
+<figure id="orga7daab5">
 <img src="images/O2_purity_table.png" alt="O2_purity_table.png" width="100%">
 
 </figure>
 </div><div>
 
-<figure id="org871d9ef">
+<figure id="org773c047">
 <img src="images/O2_purity_plot.png" alt="O2_purity_plot.png" width="100%">
 
 </figure>
 </div>
 </section>
-<section id="slide-org7778040">
-<h3 id="org7778040">Simple linear regression model</h3>
+<section id="slide-org28ae1f7">
+<h3 id="org28ae1f7">Simple linear regression model</h3>
 <p>
 \[E[Y|x]=\mu_{Y|x}=\alpha + \beta x\]
 </p>
@@ -112,15 +112,15 @@ is the <b>simple linear regression model</b>
 </section>
 <section>
 
-<figure id="orgfe839ba">
+<figure id="org6d82e0f">
 <img src="images/O2_purity_regression_plot.png" alt="O2_purity_regression_plot.png" width="100%">
 
 </figure>
 </section>
 </section>
 <section>
-<section id="slide-orgd6911a4">
-<h2 id="orgd6911a4">Estimating the regression coefficients</h2>
+<section id="slide-org5dc0c7c">
+<h2 id="org5dc0c7c">Estimating the regression coefficients</h2>
 <p>
 \[Y = \alpha + \beta x + \epsilon\]
 </p>
@@ -140,10 +140,10 @@ is the <b>simple linear regression model</b>
 </p>
 </span>
 </section>
-<section id="slide-org6a6b001">
-<h3 id="org6a6b001">Least squares</h3>
+<section id="slide-orged1a57e">
+<h3 id="orged1a57e">Least squares</h3>
 
-<figure id="org98a6e0a">
+<figure id="org13bf6c2">
 <img src="images/regression_example_scatter.png" alt="regression_example_scatter.png" width="50%">
 
 </figure>
@@ -185,21 +185,21 @@ The <b>estimated regression line</b> is therefore
 and each observation pair satisfies \[y_i=A+B+e_i\] where \(e_i=y_i-\hat{y}_i\) is the <b>residual</b>
 </p>
 </section>
-<section id="slide-orged365df">
-<h3 id="orged365df">Example</h3>
+<section id="slide-org0dc3787">
+<h3 id="org0dc3787">Example</h3>
 <p>
 Fit a simple linear regression model to the oxygen purity data. From calculations of the \(n=20\) observations we have \(\sum x_i=23.92\), \(\sum y_i=1843.21\), \(\overline{x}=1.1960\), \(\overline{y}=92.1605\), \(\sum y_i^2=170044.5321\), \(\sum x_i^2=29.2892\), and \(\sum x_iy_i=2214.6566\).
 </p>
 </section>
 <section>
 
-<figure id="orga3e3266">
+<figure id="org9928140">
 <img src="images/O2_purity_regression_result.png" alt="O2_purity_regression_result.png" width="60%">
 
 </figure>
 </section>
-<section id="slide-org84a43e7">
-<h3 id="org84a43e7">Alternative notation</h3>
+<section id="slide-orgfe36d59">
+<h3 id="orgfe36d59">Alternative notation</h3>
 <p>
 \[S_{xy} = \sum_{i=1}^n (x_i - \overline{x})(y_i - \overline{y}) = \sum_{i=1}^n x_i y_i - n \overline{x} \overline{y}\]
 </p>
@@ -224,8 +224,8 @@ Fit a simple linear regression model to the oxygen purity data. From calculation
 </section>
 </section>
 <section>
-<section id="slide-org4dce8f5">
-<h2 id="org4dce8f5">Estimating \(\sigma^2\)</h2>
+<section id="slide-org97d9535">
+<h2 id="org97d9535">Estimating \(\sigma^2\)</h2>
 <p>
 \[{SS}_E = \sum_{i=1}^n e_i^2 = \sum_{i=1}^n (y_i-\hat{y}_i)^2\]
 </p>
@@ -243,8 +243,8 @@ Fit a simple linear regression model to the oxygen purity data. From calculation
 </section>
 </section>
 <section>
-<section id="slide-org193d313">
-<h2 id="org193d313">Properties of least squares estimators</h2>
+<section id="slide-org92a797b">
+<h2 id="org92a797b">Properties of least squares estimators</h2>
 <span class="fragment">
 <p>
 \[E[B] = B\]
@@ -259,12 +259,13 @@ Fit a simple linear regression model to the oxygen purity data. From calculation
 </section>
 </section>
 <section>
-<section id="slide-org7131c75">
-<h2 id="org7131c75">Problem 21.1</h2>
+<section id="slide-orgcac8478">
+<h2 id="orgcac8478">Problem 21.1</h2>
 <p>
 The following data describe specific gravity \(x\) of a wood sample and its maximum crushing strength \(y\):
 </p>
-<table id="orga1e5d8b">
+<div class="twocolumn"><div>
+<table id="orga339d86">
 
 
 <colgroup>
@@ -330,13 +331,20 @@ The following data describe specific gravity \(x\) of a wood sample and its maxi
 </tr>
 </tbody>
 </table>
+</div><div>
+
+<figure id="orgc92cfbf">
+<img src="images/regression_problem_table.png" alt="regression_problem_table.png" width="100%">
+
+</figure>
+</div>
 <p>
 Plot a scatter diagram. Does a linear relationship seem reasonable?
 </p>
 </section>
 <section>
 
-<figure id="orgc6c8f70">
+<figure id="org145f848">
 <img src="./images/regression_scatter.png" alt="regression_scatter.png">
 
 </figure>
