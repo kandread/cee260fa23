@@ -25,18 +25,18 @@
 <h1 class="title">Probability &amp; Statistics in Engineering</h1><h2 class="date">Fall 2023 - 30 Nov</h2>
 </section>
 <section>
-<section id="slide-orgfd2b80c">
-<h2 id="orgfd2b80c"></h2>
+<section id="slide-org48fa453">
+<h2 id="org48fa453"></h2>
 <div class="twocolumn"><div>
 
-<figure id="org46d303e">
+<figure id="org933ed8a">
 <img src="images/challenger_explosion.webp" alt="challenger_explosion.webp" width="100%">
 
 </figure>
 </div><div>
 <span class="fragment">
 
-<figure id="org5399d0e">
+<figure id="org8ad0326">
 <img src="images/challenger_nyt.png" alt="challenger_nyt.png" width="100%">
 
 </figure>
@@ -51,8 +51,8 @@
 </section>
 </section>
 <section>
-<section id="slide-org66160fc">
-<h2 id="org66160fc">Empirical models</h2>
+<section id="slide-orgd39810e">
+<h2 id="orgd39810e">Empirical models</h2>
 <ul>
 <li class="fragment appear">Relationship between two or more variables
 <ul>
@@ -69,24 +69,24 @@
 </section>
 </section>
 <section>
-<section id="slide-orgc71d39c">
-<h2 id="orgc71d39c">Example</h2>
+<section id="slide-orgf5c376d">
+<h2 id="orgf5c376d">Example</h2>
 <div class="twocolumn"><div>
 
-<figure id="orga7daab5">
+<figure id="org0814e2f">
 <img src="images/O2_purity_table.png" alt="O2_purity_table.png" width="100%">
 
 </figure>
 </div><div>
 
-<figure id="org773c047">
+<figure id="org7c012f2">
 <img src="images/O2_purity_plot.png" alt="O2_purity_plot.png" width="100%">
 
 </figure>
 </div>
 </section>
-<section id="slide-org28ae1f7">
-<h3 id="org28ae1f7">Simple linear regression model</h3>
+<section id="slide-org39899fc">
+<h3 id="org39899fc">Simple linear regression model</h3>
 <p>
 \[E[Y|x]=\mu_{Y|x}=\alpha + \beta x\]
 </p>
@@ -95,10 +95,12 @@
 \(\alpha\): intercept and \(\beta\): slope are the <b>regression coefficients</b>
 </p>
 </span>
+<span class="fragment">
 <p>
 \[Y=\alpha + \beta x + \epsilon\]
 is the <b>simple linear regression model</b>
 </p>
+</span>
 </section>
 <section>
 <p>
@@ -112,15 +114,15 @@ is the <b>simple linear regression model</b>
 </section>
 <section>
 
-<figure id="org6d82e0f">
+<figure id="orgbcbc3ce">
 <img src="images/O2_purity_regression_plot.png" alt="O2_purity_regression_plot.png" width="100%">
 
 </figure>
 </section>
 </section>
 <section>
-<section id="slide-org5dc0c7c">
-<h2 id="org5dc0c7c">Estimating the regression coefficients</h2>
+<section id="slide-org6bd8d10">
+<h2 id="org6bd8d10">Estimating the regression coefficients</h2>
 <p>
 \[Y = \alpha + \beta x + \epsilon\]
 </p>
@@ -140,10 +142,10 @@ is the <b>simple linear regression model</b>
 </p>
 </span>
 </section>
-<section id="slide-orged1a57e">
-<h3 id="orged1a57e">Least squares</h3>
+<section id="slide-orgcf814c1">
+<h3 id="orgcf814c1">Least squares</h3>
 
-<figure id="org13bf6c2">
+<figure id="orgb8e3e8d">
 <img src="images/regression_example_scatter.png" alt="regression_example_scatter.png" width="50%">
 
 </figure>
@@ -181,25 +183,25 @@ where \(\overline{x}=(1/n)\sum_{i=1}^n x_i\) and \(\overline{y}=(1/n) \sum_{i=1}
 <section>
 <p>
 The <b>estimated regression line</b> is therefore
-\[\hat{y}=A+B\]
-and each observation pair satisfies \[y_i=A+B+e_i\] where \(e_i=y_i-\hat{y}_i\) is the <b>residual</b>
+\[\hat{y}=A + B x\]
+and each observation pair satisfies \[y_i=A+B x_i +e_i\] where \(e_i=y_i-\hat{y}_i\) is the <b>residual</b>
 </p>
 </section>
-<section id="slide-org0dc3787">
-<h3 id="org0dc3787">Example</h3>
+<section id="slide-org9e1644d">
+<h3 id="org9e1644d">Example</h3>
 <p>
 Fit a simple linear regression model to the oxygen purity data. From calculations of the \(n=20\) observations we have \(\sum x_i=23.92\), \(\sum y_i=1843.21\), \(\overline{x}=1.1960\), \(\overline{y}=92.1605\), \(\sum y_i^2=170044.5321\), \(\sum x_i^2=29.2892\), and \(\sum x_iy_i=2214.6566\).
 </p>
 </section>
 <section>
 
-<figure id="org9928140">
+<figure id="orge8c94d6">
 <img src="images/O2_purity_regression_result.png" alt="O2_purity_regression_result.png" width="60%">
 
 </figure>
 </section>
-<section id="slide-orgfe36d59">
-<h3 id="orgfe36d59">Alternative notation</h3>
+<section id="slide-org1bd5bde">
+<h3 id="org1bd5bde">Alternative notation</h3>
 <p>
 \[S_{xy} = \sum_{i=1}^n (x_i - \overline{x})(y_i - \overline{y}) = \sum_{i=1}^n x_i y_i - n \overline{x} \overline{y}\]
 </p>
@@ -224,8 +226,8 @@ Fit a simple linear regression model to the oxygen purity data. From calculation
 </section>
 </section>
 <section>
-<section id="slide-org97d9535">
-<h2 id="org97d9535">Estimating \(\sigma^2\)</h2>
+<section id="slide-orgfb7bbb7">
+<h2 id="orgfb7bbb7">Estimating \(\sigma^2\)</h2>
 <p>
 \[{SS}_E = \sum_{i=1}^n e_i^2 = \sum_{i=1}^n (y_i-\hat{y}_i)^2\]
 </p>
@@ -243,29 +245,28 @@ Fit a simple linear regression model to the oxygen purity data. From calculation
 </section>
 </section>
 <section>
-<section id="slide-org92a797b">
-<h2 id="org92a797b">Properties of least squares estimators</h2>
+<section id="slide-orgb4bce47">
+<h2 id="orgb4bce47">Properties of least squares estimators</h2>
 <span class="fragment">
 <p>
 \[E[B] = B\]
 \[\text{Var}(B) = \dfrac{\sigma^2}{S_{xx}}\]
 \[E[A]=A\]
-\[\text{Var}(A) = \sigma^2 \left( \dfrac{1}{n} + \dfrac{\overline{x}^2}{S_{xx}})\]
+\[\text{Var}(A) = \sigma^2 \left( \dfrac{1}{n} + \dfrac{\overline{x}^2}{S_{xx}} \right)\]
 </p>
 </span>
 </section>
 <section>
-<div class="block">
 </section>
 </section>
 <section>
-<section id="slide-orgcac8478">
-<h2 id="orgcac8478">Problem 21.1</h2>
+<section id="slide-org9b7787c">
+<h2 id="org9b7787c">Problem 21.1</h2>
 <p>
 The following data describe specific gravity \(x\) of a wood sample and its maximum crushing strength \(y\):
 </p>
 <div class="twocolumn"><div>
-<table id="orga339d86">
+<table id="org141a207">
 
 
 <colgroup>
@@ -333,7 +334,7 @@ The following data describe specific gravity \(x\) of a wood sample and its maxi
 </table>
 </div><div>
 
-<figure id="orgc92cfbf">
+<figure id="org2cb69f9">
 <img src="images/regression_problem_table.png" alt="regression_problem_table.png" width="100%">
 
 </figure>
@@ -344,7 +345,7 @@ Plot a scatter diagram. Does a linear relationship seem reasonable?
 </section>
 <section>
 
-<figure id="org145f848">
+<figure id="orgf8868c1">
 <img src="./images/regression_scatter.png" alt="regression_scatter.png">
 
 </figure>
