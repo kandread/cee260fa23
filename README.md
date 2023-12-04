@@ -43,3 +43,5 @@ Repository of lecture slides for Probability & Statistics (Fall 2023).
 [Lecture #20 - Hypothesis testing](https://kandread.github.io/cee260fa23/20_hypothesis_tests.html)
 
 [Lecture #21 - Linear regression](https://kandread.github.io/cee260fa23/21_linear_regression.html)
+
+[Lecture #22 - Linear regression](https://kandread.github.io/cee260fa23/22_linear_regression.html)

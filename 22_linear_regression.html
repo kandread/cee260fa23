@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Probability &amp; Statistics in Engineering</title>
+<meta name="author" content="Kostas Andreadis"/>
+<meta name="description" content="Setup file for reveal.js presentations"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/night.css" id="theme"/>
+
+<link rel="stylesheet" href="custom.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/chalkboard/style.css">
+<link rel="stylesheet" href="./reveal.js/plugin/customcontrols/style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1 class="title">Probability &amp; Statistics in Engineering</h1><h2 class="date">Fall 2023 - 5 Dec</h2>
+</section>
+<section>
+<section id="slide-org1f96da4">
+<h2 id="org1f96da4">Testing hypotheses on regression</h2>
+<ul>
+<li class="fragment appear">As we know the statistical properties of the regression parameters, we can test hypotheses</li>
+<li class="fragment appear">Or calculate probabilities, confidence intervals etc.</li>
+<li class="fragment appear">Important hypothesis to test: \(\beta=0\)?</li>
+<li class="fragment appear">If \(\beta=0\) then <font color="indianred"> there is no regression on the input variable</font></li>
+
+</ul>
+</section>
+<section id="slide-orgc9860da">
+<h3 id="orgc9860da">Distribution of \(\beta\) test statistic</h3>
+<span class="fragment">
+<p>
+Remember that \(B \sim \text{N}\left( \beta, \sigma^2/S_{xx} \right)\)
+</p>
+</span>
+<div class="fragment block">
+<p>
+\[\sqrt{\dfrac{(n-2)S_{xx}}{SS_E}} (B - \beta) \sim t_{n-2}\]
+</p>
+</div>
+</section>
+<section id="slide-org709180b">
+<h3 id="org709180b">Hypothesis test of \(H_0:\;\beta=0\)</h3>
+<div class="block">
+<p>
+reject \(H_0\) if \(\sqrt{\dfrac{(n-2)S_{xx}}{SS_E}}|B| > t_{\gamma/2,n-2}\)
+</p>
+
+<p>
+accept \(H_0\) otherwise/
+</p>
+</div>
+</section>
+<section id="slide-org19ccece">
+<h3 id="org19ccece">Hypothesis test of \(H_0:\;\alpha=a\)</h3>
+<div class="block">
+<p>
+reject \(H_0\) if \(\sqrt{\dfrac{n(n-2)S_{xx}}{SS_E}\sum_i x_i^2}(A-a) > t_{\gamma/2,n-2}\)
+</p>
+
+<p>
+accept \(H_0\) otherwise/
+</p>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org84f342a">
+<h2 id="org84f342a">Confidence intervals on regression</h2>
+<div class="outline-text-2" id="text-org84f342a">
+</div>
+</section>
+<section id="slide-orgbb2b3c0">
+<h3 id="orgbb2b3c0">Confidence interval for \(\beta\)</h3>
+<p>
+A \(100(1-\gamma)\) percent confidence interval estimator of \(\beta\) is
+</p>
+<div class="block">
+<p>
+\[B \pm \sqrt{\dfrac{SS_E}{(n-2)S_{xx}}} t_{\gamma/2, n-2}\]
+</p>
+</div>
+</section>
+<section id="slide-orgb196438">
+<h3 id="orgb196438">Confidence interval for \(\alpha\)</h3>
+<p>
+The \(100(1-\gamma)\) percent confidence interval for \(\alpha\) is
+</p>
+<div class="block">
+<p>
+\[A \pm t_{\gamma/2,n-2} \sqrt{\dfrac{SS_E \sum_i x_i^2}{n(n-2)S_{xx}}}\]
+</p>
+</div>
+</section>
+<section id="slide-orga9b9e82">
+<h3 id="orga9b9e82">Confidence interval for \(\alpha + \beta x_0\)</h3>
+<p>
+With \(100(1-\gamma)\) percent confidence \(\alpha+\beta x_0\) will lie within
+</p>
+<div class="block">
+<p>
+\[A + B x_0 \pm \sqrt{ \dfrac{1}{n} + \dfrac{(x_0 - \overline{x})^2}{S_{xx}}} \sqrt{\dfrac{SS_E}{n-2}} t_{\gamma/2,n-2}\]
+</p>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orged03594">
+<h2 id="orged03594">Problem 22.1</h2>
+<p>
+A survey of car weights (in kip) and MPG gave the following
+</p>
+<table>
+
+
+<colgroup>
+<col  class="org-right">
+
+<col  class="org-right">
+
+<col  class="org-right">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">Car</th>
+<th scope="col" class="org-right">MPG</th>
+<th scope="col" class="org-right">Weight</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">25</td>
+<td class="org-right">2.5</td>
+</tr>
+
+<tr>
+<td class="org-right">2</td>
+<td class="org-right">17</td>
+<td class="org-right">4.2</td>
+</tr>
+
+<tr>
+<td class="org-right">3</td>
+<td class="org-right">20</td>
+<td class="org-right">3.6</td>
+</tr>
+
+<tr>
+<td class="org-right">4</td>
+<td class="org-right">21</td>
+<td class="org-right">3.0</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section>
+<p>
+If car weight is normally distributed and its mean and standard deviation were estimated to be 3.33 and 1.04. What is the probability that another car picked up will weigh more than 4.5 kips?
+</p>
+</section>
+<section>
+<p>
+Using linear regression, answer the following: if you buy a car that weighs 2.3 kips what is the probability that it will have gas mileage of more than 28 mpg?
+</p>
+</section>
+<section>
+<p>
+What are the 95% confidence intervals of the regression equation?
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org68f922a">
+<h2 id="org68f922a">Adequacy of the regression model</h2>
+<ul>
+<li class="fragment appear">Fitting a regression model requires several <b>assumptions</b></li>
+<li class="fragment appear">Uncorrelated errors with zero mean and constant variance</li>
+<li class="fragment appear">When testing hypotheses, errors are normally distributed</li>
+<li class="fragment appear">Relationship between variables is <b>linear</b></li>
+<li class="fragment appear"><font color="steelblue"> Need methods to evaluate these assumptions</font></li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org2fce967">
+<h2 id="org2fce967">Residual analysis</h2>
+<p>
+\[e_i=y_i - \hat{y}_i\]
+</p>
+<ul>
+<li class="fragment appear">Histogram of residuals</li>
+<li class="fragment appear">Normal probability plot</li>
+
+</ul>
+<span class="fragment">
+<p>
+Could also <b>standardize</b> residuals with \[d_i=\dfrac{e_i}{\sqrt{\hat{\sigma}^2}}\]
+95% of residuals should fall within (-2, +2)
+</p>
+</span>
+</section>
+<section>
+
+<figure id="org0521996">
+<img src="images/regression_residuals.png" alt="regression_residuals.png" width="60%">
+
+</figure>
+</section>
+</section>
+<section>
+<section id="slide-org621feb8">
+<h2 id="org621feb8">Coefficient of determination</h2>
+<div class="block">
+<p>
+The coefficient of determination is \[R^2 = \dfrac{SS_{yy}-SS_R}{SS_{yy}} = 1 - \dfrac{SS_R}{SS_{yy}}\]
+</p>
+</div>
+<ul>
+<li class="fragment appear">\(0 \leq R^2 \leq 1\)</li>
+<li class="fragment appear">Amount of variance explained by the regression model</li>
+
+</ul>
+</section>
+<section id="slide-org065aab4">
+<h3 id="org065aab4">Some caveats</h3>
+<ul>
+<li class="fragment appear">\(R^2\) can be artificially increased by adding terms in the regression</li>
+<li class="fragment appear">The larger the dispersion of \(x\), the larger the value of \(R^2\)</li>
+<li class="fragment appear">A large value of \(R^2\) does not imply a steep slope</li>
+<li class="fragment appear">A large value of \(R^2\) does not mean that the model extrapolates accurately</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org686fb11">
+<h2 id="org686fb11">Correlation</h2>
+<p>
+Remember that we defined the correlation coefficient as
+\[r = \dfrac{\sum_{i=1}^n (x_i - \overline{x})(y_i - \overline{y})}{\sqrt{\sum_{i=1}^n (x_i - \overline{x})^2 \sum_{i=1}^n (y_i - \overline{y})^2}}\]
+</p>
+<span class="fragment">
+<p>
+\(r\) provides a measure of the degree of linear association between the \(x\) and \(y\) variables
+</p>
+</span>
+</section>
+<section id="slide-orgaabc308">
+<h3 id="orgaabc308">Using the linear regression notation</h3>
+<p>
+\[r = \dfrac{S_{xy}}{\sqrt{S_{xx}S_{yy}}}\]
+</p>
+<span class="fragment">
+<p>
+\[r^2 = \dfrac{S^2_{xy}}{S_{xx}S_{yy}} = \dfrac{S_{xx}S_{yy} - SS_R S_{xx}}{S_{xx}S_{yy}} = 1 - \dfrac{SS_R}{S_{yy}}\]
+</p>
+</span>
+<div class="fragment block">
+<p>
+\[|r| = \sqrt{R^2}\]
+</p>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgd3ffc83">
+<h2 id="orgd3ffc83">Problem 22.2</h2>
+<p>
+Six makes of cars were assessed for testing the actual vs rated MPG.
+</p>
+<table>
+
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-right">
+
+<col  class="org-right">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Make</th>
+<th scope="col" class="org-right">Rated MPG</th>
+<th scope="col" class="org-right">Actual MPG</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">A</td>
+<td class="org-right">20</td>
+<td class="org-right">16</td>
+</tr>
+
+<tr>
+<td class="org-left">B</td>
+<td class="org-right">25</td>
+<td class="org-right">19</td>
+</tr>
+
+<tr>
+<td class="org-left">C</td>
+<td class="org-right">30</td>
+<td class="org-right">25</td>
+</tr>
+
+<tr>
+<td class="org-left">D</td>
+<td class="org-right">30</td>
+<td class="org-right">22</td>
+</tr>
+
+<tr>
+<td class="org-left">E</td>
+<td class="org-right">25</td>
+<td class="org-right">18</td>
+</tr>
+
+<tr>
+<td class="org-left">F</td>
+<td class="org-right">15</td>
+<td class="org-right">12</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section>
+<p>
+What is the regression equation for determining the mean actual mileage?
+</p>
+</section>
+<section>
+<p>
+What is the variance of the actual mileage predictions?
+</p>
+</section>
+<section>
+<p>
+What is the correlation coefficient between rated and actual mileage?
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org2e86c0e">
+<h2 id="org2e86c0e">Readings</h2>
+<ul>
+<li>Sections 9.1-9.6</li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/dist/reveal.js"></script>
+<script src="./reveal.js/plugin/highlight/highlight.js"></script>
+<script src="./reveal.js/plugin/zoom/zoom.js"></script>
+<script src="./reveal.js/plugin/notes/notes.js"></script>
+<script src="./reveal.js/plugin/math/math.js"></script>
+<script src="./reveal.js/plugin/chalkboard/plugin.js"></script>
+<script src="./reveal.js/plugin/menu/menu.js"></script>
+<script src="./reveal.js/plugin/customcontrols/plugin.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+width: 1280,
+height: 720,
+
+transition: 'convex',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealHighlight, RevealZoom, RevealNotes, RevealMath, RevealChalkboard, RevealMenu, RevealCustomControls ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+{ src: './reveal.js/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, skipStartButton: true}); } }]
+
+,pdfSeparateFragments: false, customcontrols: {controls: [ {id: 'toggle-overview', title: 'Toggle overview (O)', icon: '<i class="fa fa-th"></i>', action: 'Reveal.toggleOverview();'}, { icon: '<i class="fa fa-pen-square"></i>', title: 'Toggle chalkboard (B)', action: 'RevealChalkboard.toggleChalkboard();'}, { icon: '<i class="fa fa-pen"></i>', title: 'Toggle notes canvas (C)', action: 'RevealChalkboard.toggleNotesCanvas();'} ]}, chalkboard: { theme: "whiteboard", grid: false, background: [ 'rgba(127,127,127,.1)' , path + 'img/blackboard.png' ], rememberColor: [true, true], boardmarkerWidth: 5, },});
+</script>
+</body>
+</html>
