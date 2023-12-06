@@ -25,8 +25,8 @@
 <h1 class="title">Probability &amp; Statistics in Engineering</h1><h2 class="date">Fall 2023 - 5 Dec</h2>
 </section>
 <section>
-<section id="slide-org1f96da4">
-<h2 id="org1f96da4">Testing hypotheses on regression</h2>
+<section id="slide-org7e6ecde">
+<h2 id="org7e6ecde">Testing hypotheses on regression</h2>
 <ul>
 <li class="fragment appear">As we know the statistical properties of the regression parameters, we can test hypotheses</li>
 <li class="fragment appear">Or calculate probabilities, confidence intervals etc.</li>
@@ -35,8 +35,8 @@
 
 </ul>
 </section>
-<section id="slide-orgc9860da">
-<h3 id="orgc9860da">Distribution of \(\beta\) test statistic</h3>
+<section id="slide-org5aa7523">
+<h3 id="org5aa7523">Distribution of \(\beta\) test statistic</h3>
 <span class="fragment">
 <p>
 Remember that \(B \sim \text{N}\left( \beta, \sigma^2/S_{xx} \right)\)
@@ -48,8 +48,8 @@ Remember that \(B \sim \text{N}\left( \beta, \sigma^2/S_{xx} \right)\)
 </p>
 </div>
 </section>
-<section id="slide-org709180b">
-<h3 id="org709180b">Hypothesis test of \(H_0:\;\beta=0\)</h3>
+<section id="slide-org8bf9447">
+<h3 id="org8bf9447">Hypothesis test of \(H_0:\;\beta=0\)</h3>
 <div class="block">
 <p>
 reject \(H_0\) if \(\sqrt{\dfrac{(n-2)S_{xx}}{SS_E}}|B| > t_{\gamma/2,n-2}\)
@@ -60,8 +60,8 @@ accept \(H_0\) otherwise/
 </p>
 </div>
 </section>
-<section id="slide-org19ccece">
-<h3 id="org19ccece">Hypothesis test of \(H_0:\;\alpha=a\)</h3>
+<section id="slide-orge4cbcfb">
+<h3 id="orge4cbcfb">Hypothesis test of \(H_0:\;\alpha=a\)</h3>
 <div class="block">
 <p>
 reject \(H_0\) if \(\sqrt{\dfrac{n(n-2)S_{xx}}{SS_E}\sum_i x_i^2}(A-a) > t_{\gamma/2,n-2}\)
@@ -74,13 +74,13 @@ accept \(H_0\) otherwise/
 </section>
 </section>
 <section>
-<section id="slide-org84f342a">
-<h2 id="org84f342a">Confidence intervals on regression</h2>
-<div class="outline-text-2" id="text-org84f342a">
+<section id="slide-orga7a27df">
+<h2 id="orga7a27df">Confidence intervals on regression</h2>
+<div class="outline-text-2" id="text-orga7a27df">
 </div>
 </section>
-<section id="slide-orgbb2b3c0">
-<h3 id="orgbb2b3c0">Confidence interval for \(\beta\)</h3>
+<section id="slide-orga0a479e">
+<h3 id="orga0a479e">Confidence interval for \(\beta\)</h3>
 <p>
 A \(100(1-\gamma)\) percent confidence interval estimator of \(\beta\) is
 </p>
@@ -90,8 +90,8 @@ A \(100(1-\gamma)\) percent confidence interval estimator of \(\beta\) is
 </p>
 </div>
 </section>
-<section id="slide-orgb196438">
-<h3 id="orgb196438">Confidence interval for \(\alpha\)</h3>
+<section id="slide-org0df4a01">
+<h3 id="org0df4a01">Confidence interval for \(\alpha\)</h3>
 <p>
 The \(100(1-\gamma)\) percent confidence interval for \(\alpha\) is
 </p>
@@ -101,8 +101,8 @@ The \(100(1-\gamma)\) percent confidence interval for \(\alpha\) is
 </p>
 </div>
 </section>
-<section id="slide-orga9b9e82">
-<h3 id="orga9b9e82">Confidence interval for \(\alpha + \beta x_0\)</h3>
+<section id="slide-orgb52ea53">
+<h3 id="orgb52ea53">Confidence interval for \(\alpha + \beta x_0\)</h3>
 <p>
 With \(100(1-\gamma)\) percent confidence \(\alpha+\beta x_0\) will lie within
 </p>
@@ -114,8 +114,8 @@ With \(100(1-\gamma)\) percent confidence \(\alpha+\beta x_0\) will lie within
 </section>
 </section>
 <section>
-<section id="slide-orged03594">
-<h2 id="orged03594">Problem 22.1</h2>
+<section id="slide-org4870058">
+<h2 id="org4870058">Problem 22.1</h2>
 <p>
 A survey of car weights (in kip) and MPG gave the following
 </p>
@@ -180,8 +180,8 @@ What are the 95% confidence intervals of the regression equation?
 </section>
 </section>
 <section>
-<section id="slide-org68f922a">
-<h2 id="org68f922a">Adequacy of the regression model</h2>
+<section id="slide-org7a78e80">
+<h2 id="org7a78e80">Adequacy of the regression model</h2>
 <ul>
 <li class="fragment appear">Fitting a regression model requires several <b>assumptions</b></li>
 <li class="fragment appear">Uncorrelated errors with zero mean and constant variance</li>
@@ -193,8 +193,8 @@ What are the 95% confidence intervals of the regression equation?
 </section>
 </section>
 <section>
-<section id="slide-org2fce967">
-<h2 id="org2fce967">Residual analysis</h2>
+<section id="slide-org41eb83e">
+<h2 id="org41eb83e">Residual analysis</h2>
 <p>
 \[e_i=y_i - \hat{y}_i\]
 </p>
@@ -212,15 +212,15 @@ Could also <b>standardize</b> residuals with \[d_i=\dfrac{e_i}{\sqrt{\hat{\sigma
 </section>
 <section>
 
-<figure id="org0521996">
+<figure id="org7b0d021">
 <img src="images/regression_residuals.png" alt="regression_residuals.png" width="60%">
 
 </figure>
 </section>
 </section>
 <section>
-<section id="slide-org621feb8">
-<h2 id="org621feb8">Coefficient of determination</h2>
+<section id="slide-orgfae1ca9">
+<h2 id="orgfae1ca9">Coefficient of determination</h2>
 <div class="block">
 <p>
 The coefficient of determination is \[R^2 = \dfrac{SS_{yy}-SS_R}{SS_{yy}} = 1 - \dfrac{SS_R}{SS_{yy}}\]
@@ -232,8 +232,8 @@ The coefficient of determination is \[R^2 = \dfrac{SS_{yy}-SS_R}{SS_{yy}} = 1 - 
 
 </ul>
 </section>
-<section id="slide-org065aab4">
-<h3 id="org065aab4">Some caveats</h3>
+<section id="slide-org83498f4">
+<h3 id="org83498f4">Some caveats</h3>
 <ul>
 <li class="fragment appear">\(R^2\) can be artificially increased by adding terms in the regression</li>
 <li class="fragment appear">The larger the dispersion of \(x\), the larger the value of \(R^2\)</li>
@@ -244,8 +244,8 @@ The coefficient of determination is \[R^2 = \dfrac{SS_{yy}-SS_R}{SS_{yy}} = 1 - 
 </section>
 </section>
 <section>
-<section id="slide-org686fb11">
-<h2 id="org686fb11">Correlation</h2>
+<section id="slide-orgef1d009">
+<h2 id="orgef1d009">Correlation</h2>
 <p>
 Remember that we defined the correlation coefficient as
 \[r = \dfrac{\sum_{i=1}^n (x_i - \overline{x})(y_i - \overline{y})}{\sqrt{\sum_{i=1}^n (x_i - \overline{x})^2 \sum_{i=1}^n (y_i - \overline{y})^2}}\]
@@ -256,8 +256,8 @@ Remember that we defined the correlation coefficient as
 </p>
 </span>
 </section>
-<section id="slide-orgaabc308">
-<h3 id="orgaabc308">Using the linear regression notation</h3>
+<section id="slide-org1f76468">
+<h3 id="org1f76468">Using the linear regression notation</h3>
 <p>
 \[r = \dfrac{S_{xy}}{\sqrt{S_{xx}S_{yy}}}\]
 </p>
@@ -274,8 +274,8 @@ Remember that we defined the correlation coefficient as
 </section>
 </section>
 <section>
-<section id="slide-orgd3ffc83">
-<h2 id="orgd3ffc83">Problem 22.2</h2>
+<section id="slide-org7815f49">
+<h2 id="org7815f49">Problem 22.2</h2>
 <p>
 Six makes of cars were assessed for testing the actual vs rated MPG.
 </p>
@@ -352,8 +352,8 @@ What is the correlation coefficient between rated and actual mileage?
 </section>
 </section>
 <section>
-<section id="slide-org2e86c0e">
-<h2 id="org2e86c0e">Readings</h2>
+<section id="slide-orgbd86d0a">
+<h2 id="orgbd86d0a">Readings</h2>
 <ul>
 <li>Sections 9.1-9.6</li>
 

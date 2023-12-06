@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Probability &amp; Statistics in Engineering</title>
+<meta name="author" content="Kostas Andreadis"/>
+<meta name="description" content="Setup file for reveal.js presentations"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/dist/theme/night.css" id="theme"/>
+
+<link rel="stylesheet" href="custom.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"/>
+<link rel="stylesheet" href="./reveal.js/plugin/chalkboard/style.css">
+<link rel="stylesheet" href="./reveal.js/plugin/customcontrols/style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1 class="title">Probability &amp; Statistics in Engineering</h1><h2 class="date">Fall 2023 - 7 Dec</h2>
+</section>
+<section>
+<section id="slide-orgf68e2be">
+<h2 id="orgf68e2be">Problem 23.1</h2>
+<p>
+The number of surface flaws in plastic panels in the interior of automobiles has a Poisson distribution with a mean of 0.05 flaw per ft<sup>2</sup> of panel. Assume that an automobile interior contains 10 ft<sup>2</sup> of plastic panel.
+</p>
+</section>
+<section>
+<p>
+What is the probability that there are no surface flaws in an auto's interior?
+</p>
+</section>
+<section>
+<p>
+If 10 cars are sold to a rental company, what is the probability that none of the 10 cars has any surface flaws?
+</p>
+</section>
+</section>
+<section>
+<section id="slide-orgd2eef6d">
+<h2 id="orgd2eef6d">Problem 23.2</h2>
+<p>
+The thickness of a conductive coating in \({\mu}m\) has a density function of \(600x^{-2}\) for \(100\;{\mu}m< x < 120\;{\mu}m\).
+</p>
+</section>
+<section>
+<p>
+Determine the mean and variance of the coating thickness.
+</p>
+</section>
+<section>
+<p>
+If the coating costs $0.50 per micrometer of thickness on each part, what is the average cost of the coating per part?
+</p>
+</section>
+</section>
+<section>
+<section id="slide-orgf74d9ac">
+<h2 id="orgf74d9ac">Problem 23.3</h2>
+<p>
+A large parabolic antenna is designed against wind load. During a wind storm, the maximum wind-induced pressure on the antenna, \(P\), is computed as \[P=\dfrac{1}{2}CRV^2\] where \(C\) is the drag coefficient, \(R\) is the air mass density, \(V\) is the maximum wind speed. These 3 variables are statistically independent lognormal variables with means of 1.80, 2.3 \(\times\) 10<sup>-3</sup> slugs/ft<sup>3</sup>, 120 ft/sec and coefficient of variations 0.20, 0.10, 0.45 respectively.
+</p>
+</section>
+<section>
+<p>
+What is the probability distribution of the maximum wind pressure? What are its parameters?
+</p>
+</section>
+<section>
+<p>
+What is the probability that the maximum wind pressure will exceed 30 lb/ft<sup>2</sup>?
+</p>
+</section>
+<section>
+<p>
+The actual wind resistance capacity of the antenna is also a lognormal variable with a mean of 90 lb/ft<sup>2</sup> and a coefficient of variation of 0.15. During a storm, what is the probability of failure of the antenna?
+</p>
+</section>
+<section>
+<p>
+If the occurrences of storm follow a Poisson process with a mean occurrence rate of once every 5 years, what is the probability of failure of the antenna in 25 years?
+</p>
+</section>
+<section>
+<p>
+Suppose five antennas were built and installed in a given region. What is the probability that at least two of the five antennas will not fail in 25 years? Assume that failures between antennas are statistically independent.
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org7cd9513">
+<h2 id="org7cd9513">Problem 23.4</h2>
+<p>
+Consider the probability density function \[f(x)=\dfrac{1}{\theta^2}x e^{-x/\theta}\] where \(x\) and \(\theta\) are non-zero, positive values. Find the maximum likelihood estimator of \(\theta\).
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org04770c7">
+<h2 id="org04770c7">Problem 23.5</h2>
+<p>
+A manufacturer is interested in the output voltage of a power supply. Output voltage is assumed to be normally distributed with standard deviation 0.25 volt, and the manufacturer wishes to test \(H_0:\;\mu=5\) against \(H_1:\;\mu \neq 5\) using 8 units.
+</p>
+</section>
+<section>
+<p>
+The acceptance region is \(4.85 \leq \overline{x} \leq 5.15\). What is the significance level?
+</p>
+</section>
+<section>
+<p>
+Find the power of the test for detecting a true mean output voltage of 5.1 volts.
+</p>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/dist/reveal.js"></script>
+<script src="./reveal.js/plugin/highlight/highlight.js"></script>
+<script src="./reveal.js/plugin/zoom/zoom.js"></script>
+<script src="./reveal.js/plugin/notes/notes.js"></script>
+<script src="./reveal.js/plugin/math/math.js"></script>
+<script src="./reveal.js/plugin/chalkboard/plugin.js"></script>
+<script src="./reveal.js/plugin/menu/menu.js"></script>
+<script src="./reveal.js/plugin/customcontrols/plugin.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+width: 1280,
+height: 720,
+
+transition: 'convex',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealHighlight, RevealZoom, RevealNotes, RevealMath, RevealChalkboard, RevealMenu, RevealCustomControls ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+{ src: './reveal.js/plugin/quiz/js/quiz.js', async: true, callback: function() { prepareQuizzes({preventUnanswered: true, skipStartButton: true}); } }]
+
+,pdfSeparateFragments: false, customcontrols: {controls: [ {id: 'toggle-overview', title: 'Toggle overview (O)', icon: '<i class="fa fa-th"></i>', action: 'Reveal.toggleOverview();'}, { icon: '<i class="fa fa-pen-square"></i>', title: 'Toggle chalkboard (B)', action: 'RevealChalkboard.toggleChalkboard();'}, { icon: '<i class="fa fa-pen"></i>', title: 'Toggle notes canvas (C)', action: 'RevealChalkboard.toggleNotesCanvas();'} ]}, chalkboard: { theme: "whiteboard", grid: false, background: [ 'rgba(127,127,127,.1)' , path + 'img/blackboard.png' ], rememberColor: [true, true], boardmarkerWidth: 5, },});
+</script>
+</body>
+</html>
